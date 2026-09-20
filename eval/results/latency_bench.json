@@ -1,0 +1,54 @@
+{
+  "pause_baseline": {
+    "pause_ms": 1300,
+    "source": "backend.config.get_settings().pause_ms (env STALL_PAUSE_MS)",
+    "note": "the pause trigger fires pause_ms after the last word BY CONSTRUCTION \u2014 its detection latency equals its threshold"
+  },
+  "acoustic_filler": {
+    "status": "ok",
+    "runs": 24,
+    "fired": 24,
+    "missed": 0,
+    "preamble_false_fires": 3,
+    "note": "onset = start of the appended Um clip; the voiced filler may begin some ms into the clip, so this is a conservative (upper-bound) latency",
+    "n": 24,
+    "median_ms": 754.8,
+    "min_ms": 41.1,
+    "max_ms": 1202.8
+  },
+  "prolongation": {
+    "status": "ok",
+    "runs": 24,
+    "fired": 24,
+    "skipped_quiet_clips": 0,
+    "note": "tracker-level: live stream adds <= 50 ms frame buffering and a >= 800 ms voiced gate at utterance start",
+    "n": 24,
+    "median_ms": 650.0,
+    "min_ms": 650,
+    "max_ms": 650
+  },
+  "serving": {
+    "prefetch": {
+      "n": 20,
+      "median_ms": 0.0,
+      "min_ms": 0.0,
+      "max_ms": 0.0,
+      "served": "prefetch",
+      "note": "cache hit measured via Prediction.latency_ms; independent of LLM round-trip"
+    },
+    "live_simulated": {
+      "n": 5,
+      "median_ms": 1500.4,
+      "min_ms": 1500.2,
+      "max_ms": 1501.1,
+      "served": "live",
+      "injected_delay_ms": 1500.0,
+      "note": "mechanism check only \u2014 proves the live path waits for the predictor round-trip"
+    },
+    "live_gemini_external_ms": [
+      1250,
+      1800
+    ],
+    "live_gemini_citation": "scripts/e2e_live.py (live e2e measurement of Gemini stall-to-word round-trip)"
+  }
+}

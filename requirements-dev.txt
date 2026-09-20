@@ -1,0 +1,11 @@
+-r requirements.txt
+pytest>=7.4
+soundfile>=0.12            # WAV I/O for training/eval scripts (scripts/train_filler.py,
+                            # scripts/fetch_pfsd.py, eval/run_*.py)
+datasets>=2.14             # streams the PodcastFillers HF mirror (scripts/fetch_pfsd.py only)
+websockets>=12.0            # client lib for scripts/e2e_live.py's acoustic replay (also ships
+                            # transitively via uvicorn[standard], listed explicitly since the
+                            # script imports it directly)
+sounddevice>=0.4          # scripts/mic_probe.py only: enumerate + capture from the DJI receiver /
+                            # laptop array (PortAudio). Not needed by the server.
+soxr>=0.3                 # scripts/mic_probe.py only: 48 kHz -> 16 kHz resample of the capture

@@ -1,0 +1,206 @@
+{
+  "before": {
+    "config": {
+      "ckpt": "stutternet_ssl_v2.pt",
+      "min_voiced_ms": 800,
+      "refractory_ms": 1200,
+      "scale": 1.0,
+      "context_lag_ms": 0
+    },
+    "obvious_firing": {
+      "Prolongation/bare": {
+        "fired": 2,
+        "n": 12
+      },
+      "Prolongation/leadin": {
+        "fired": 3,
+        "n": 12
+      },
+      "Block/bare": {
+        "fired": 0,
+        "n": 12
+      },
+      "Block/leadin": {
+        "fired": 0,
+        "n": 12
+      },
+      "SoundRep/bare": {
+        "fired": 4,
+        "n": 12
+      },
+      "SoundRep/leadin": {
+        "fired": 4,
+        "n": 12
+      },
+      "WordRep/bare": {
+        "fired": 3,
+        "n": 12
+      },
+      "WordRep/leadin": {
+        "fired": 5,
+        "n": 12
+      },
+      "Interjection/bare": {
+        "fired": 4,
+        "n": 12
+      },
+      "Interjection/leadin": {
+        "fired": 3,
+        "n": 12
+      }
+    },
+    "aggregate_recall": {
+      "Block": {
+        "frame_thresh": 0.8808,
+        "recall": 0.1727,
+        "n_pos": 440,
+        "clean_fire_rate": 0.0174
+      },
+      "Prolongation": {
+        "frame_thresh": 0.8808,
+        "recall": 0.454,
+        "n_pos": 315,
+        "clean_fire_rate": 0.0181
+      },
+      "SoundRep": {
+        "frame_thresh": 0.8808,
+        "recall": 0.4657,
+        "n_pos": 277,
+        "clean_fire_rate": 0.0118
+      },
+      "WordRep": {
+        "frame_thresh": 0.8808,
+        "recall": 0.7539,
+        "n_pos": 386,
+        "clean_fire_rate": 0.0194
+      },
+      "Interjection": {
+        "frame_thresh": 0.8808,
+        "recall": 0.6425,
+        "n_pos": 744,
+        "clean_fire_rate": 0.0153
+      },
+      "ANY": {
+        "recall": 0.6393,
+        "n_pos": 1769,
+        "clean_fire_rate": 0.0771
+      }
+    },
+    "fluent_false_fires": {
+      "duration_s": 120.0,
+      "events": 1,
+      "per_min": 0.5,
+      "by_kind": {
+        "filler": 1
+      },
+      "by_kind_per_min": {
+        "filler": 0.5
+      }
+    }
+  },
+  "after": {
+    "config": {
+      "ckpt": "stutternet_recall_v2.pt",
+      "min_voiced_ms": 400,
+      "refractory_ms": 1200,
+      "scale": 1.0,
+      "context_lag_ms": 400
+    },
+    "obvious_firing": {
+      "Prolongation/bare": {
+        "fired": 9,
+        "n": 12
+      },
+      "Prolongation/leadin": {
+        "fired": 11,
+        "n": 12
+      },
+      "Block/bare": {
+        "fired": 6,
+        "n": 12
+      },
+      "Block/leadin": {
+        "fired": 7,
+        "n": 12
+      },
+      "SoundRep/bare": {
+        "fired": 10,
+        "n": 12
+      },
+      "SoundRep/leadin": {
+        "fired": 11,
+        "n": 12
+      },
+      "WordRep/bare": {
+        "fired": 8,
+        "n": 12
+      },
+      "WordRep/leadin": {
+        "fired": 8,
+        "n": 12
+      },
+      "Interjection/bare": {
+        "fired": 5,
+        "n": 12
+      },
+      "Interjection/leadin": {
+        "fired": 4,
+        "n": 12
+      }
+    },
+    "aggregate_recall": {
+      "Block": {
+        "frame_thresh": 0.8808,
+        "recall": 0.5477,
+        "n_pos": 440,
+        "clean_fire_rate": 0.1062
+      },
+      "Prolongation": {
+        "frame_thresh": 0.8808,
+        "recall": 0.7048,
+        "n_pos": 315,
+        "clean_fire_rate": 0.0625
+      },
+      "SoundRep": {
+        "frame_thresh": 0.701,
+        "recall": 0.8556,
+        "n_pos": 277,
+        "clean_fire_rate": 0.1035
+      },
+      "WordRep": {
+        "frame_thresh": 0.8808,
+        "recall": 0.829,
+        "n_pos": 386,
+        "clean_fire_rate": 0.0264
+      },
+      "Interjection": {
+        "frame_thresh": 0.8808,
+        "recall": 0.5417,
+        "n_pos": 744,
+        "clean_fire_rate": 0.0118
+      },
+      "ANY": {
+        "recall": 0.814,
+        "n_pos": 1769,
+        "clean_fire_rate": 0.2375
+      }
+    },
+    "fluent_false_fires": {
+      "duration_s": 120.0,
+      "events": 8,
+      "per_min": 4.0,
+      "by_kind": {
+        "sound_rep": 5,
+        "block": 1,
+        "word_rep": 1,
+        "prolongation": 1
+      },
+      "by_kind_per_min": {
+        "sound_rep": 2.5,
+        "block": 0.5,
+        "word_rep": 0.5,
+        "prolongation": 0.5
+      }
+    }
+  }
+}

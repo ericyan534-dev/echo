@@ -1,0 +1,116 @@
+{
+  "status": "OK",
+  "window_pre_ms": 250,
+  "window_post_ms": 2000,
+  "speakers": [
+    "1554",
+    "1731",
+    "1833",
+    "1713",
+    "1738",
+    "1944"
+  ],
+  "gold": "wor_exact only",
+  "control": "a timer firing at fixed intervals at the same rate, using no audio; recall above it is the only evidence of detection",
+  "arms": [
+    {
+      "n_gold": 178,
+      "n_fires": 556,
+      "recall": 0.7416,
+      "precision": 0.536,
+      "fires_per_min": 18.53,
+      "arm": "OLD  gap=0",
+      "timer_recall": 0.6966,
+      "timer_precision": 0.448,
+      "lift_recall": 0.045
+    },
+    {
+      "n_gold": 178,
+      "n_fires": 421,
+      "recall": 0.6573,
+      "precision": 0.5273,
+      "fires_per_min": 14.03,
+      "arm": "OLD  gap=2500",
+      "timer_recall": 0.5337,
+      "timer_precision": 0.4833,
+      "lift_recall": 0.1236
+    },
+    {
+      "n_gold": 178,
+      "n_fires": 278,
+      "recall": 0.4045,
+      "precision": 0.5072,
+      "fires_per_min": 9.27,
+      "arm": "OLD  gap=5000",
+      "timer_recall": 0.3876,
+      "timer_precision": 0.4565,
+      "lift_recall": 0.0169
+    },
+    {
+      "n_gold": 178,
+      "n_fires": 640,
+      "recall": 0.8371,
+      "precision": 0.5125,
+      "fires_per_min": 21.33,
+      "arm": "v3   thr=0.20",
+      "timer_recall": 0.8483,
+      "timer_precision": 0.4595,
+      "lift_recall": -0.0112
+    },
+    {
+      "n_gold": 178,
+      "n_fires": 578,
+      "recall": 0.7584,
+      "precision": 0.5346,
+      "fires_per_min": 19.27,
+      "arm": "v3   thr=0.35",
+      "timer_recall": 0.6685,
+      "timer_precision": 0.4375,
+      "lift_recall": 0.0899
+    },
+    {
+      "n_gold": 178,
+      "n_fires": 521,
+      "recall": 0.6685,
+      "precision": 0.5432,
+      "fires_per_min": 17.37,
+      "arm": "v3   thr=0.50",
+      "timer_recall": 0.5899,
+      "timer_precision": 0.431,
+      "lift_recall": 0.0786
+    },
+    {
+      "n_gold": 178,
+      "n_fires": 648,
+      "recall": 0.8652,
+      "precision": 0.5216,
+      "fires_per_min": 21.6,
+      "arm": "v4   thr=0.20",
+      "timer_recall": 0.8034,
+      "timer_precision": 0.4568,
+      "lift_recall": 0.0618
+    },
+    {
+      "n_gold": 178,
+      "n_fires": 593,
+      "recall": 0.7809,
+      "precision": 0.5396,
+      "fires_per_min": 19.77,
+      "arm": "v4   thr=0.35",
+      "timer_recall": 0.7584,
+      "timer_precision": 0.463,
+      "lift_recall": 0.0225
+    },
+    {
+      "n_gold": 178,
+      "n_fires": 536,
+      "recall": 0.6854,
+      "precision": 0.5466,
+      "fires_per_min": 17.87,
+      "arm": "v4   thr=0.50",
+      "timer_recall": 0.691,
+      "timer_precision": 0.4663,
+      "lift_recall": -0.0056
+    }
+  ]
+}

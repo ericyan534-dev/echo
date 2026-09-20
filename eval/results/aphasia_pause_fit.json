@@ -1,0 +1,135 @@
+{
+  "status": "OK",
+  "dataset": "APROCSA -- 6 speakers, chronic post-stroke aphasia",
+  "method": "Silero VAD inside each CHAT-aligned participant utterance; internal silences >= 200 ms; leading/trailing silence dropped",
+  "shipped_threshold_ms": 1300,
+  "n_utterances": 752,
+  "n_word_search": 459,
+  "n_fluent": 293,
+  "gap_distribution_ms": {
+    "word_search": {
+      "n": 1227,
+      "p50": 672,
+      "p75": 1168,
+      "p90": 1856,
+      "p95": 2464
+    },
+    "fluent": {
+      "n": 167,
+      "p50": 416,
+      "p75": 848,
+      "p90": 1248,
+      "p95": 1926
+    }
+  },
+  "sweep": [
+    {
+      "threshold_ms": 500,
+      "sensitivity": 0.6754,
+      "false_positive_rate": 0.1911,
+      "youden_j": 0.4843
+    },
+    {
+      "threshold_ms": 700,
+      "sensitivity": 0.6013,
+      "false_positive_rate": 0.1638,
+      "youden_j": 0.4375
+    },
+    {
+      "threshold_ms": 900,
+      "sensitivity": 0.5142,
+      "false_positive_rate": 0.1126,
+      "youden_j": 0.4015
+    },
+    {
+      "threshold_ms": 1100,
+      "sensitivity": 0.4444,
+      "false_positive_rate": 0.0853,
+      "youden_j": 0.3591
+    },
+    {
+      "threshold_ms": 1300,
+      "sensitivity": 0.3704,
+      "false_positive_rate": 0.0512,
+      "youden_j": 0.3192
+    },
+    {
+      "threshold_ms": 1500,
+      "sensitivity": 0.3094,
+      "false_positive_rate": 0.041,
+      "youden_j": 0.2684
+    },
+    {
+      "threshold_ms": 1800,
+      "sensitivity": 0.2222,
+      "false_positive_rate": 0.0307,
+      "youden_j": 0.1915
+    },
+    {
+      "threshold_ms": 2200,
+      "sensitivity": 0.1569,
+      "false_positive_rate": 0.0205,
+      "youden_j": 0.1364
+    },
+    {
+      "threshold_ms": 2600,
+      "sensitivity": 0.1111,
+      "false_positive_rate": 0.0137,
+      "youden_j": 0.0975
+    },
+    {
+      "threshold_ms": 3000,
+      "sensitivity": 0.0654,
+      "false_positive_rate": 0.0137,
+      "youden_j": 0.0517
+    }
+  ],
+  "best_by_youden_j": {
+    "threshold_ms": 500,
+    "sensitivity": 0.6754,
+    "false_positive_rate": 0.1911,
+    "youden_j": 0.4843
+  },
+  "per_participant": {
+    "1554": {
+      "n_utterances": 97,
+      "search_gap_median": 704,
+      "search_gap_p90": 2336,
+      "fluent_gap_median": 544,
+      "fluent_gap_p90": 3328
+    },
+    "1713": {
+      "n_utterances": 181,
+      "search_gap_median": 512,
+      "search_gap_p90": 1709,
+      "fluent_gap_median": 368,
+      "fluent_gap_p90": 851
+    },
+    "1738": {
+      "n_utterances": 169,
+      "search_gap_median": 672,
+      "search_gap_p90": 1760,
+      "fluent_gap_median": 320,
+      "fluent_gap_p90": 1126
+    },
+    "1833": {
+      "n_utterances": 209,
+      "search_gap_median": 768,
+      "search_gap_p90": 1824,
+      "fluent_gap_median": 512,
+      "fluent_gap_p90": 1187
+    },
+    "1944": {
+      "n_utterances": 250,
+      "search_gap_median": 640,
+      "search_gap_p90": 1760,
+      "fluent_gap_median": 384,
+      "fluent_gap_p90": 1171
+    }
+  },
+  "caveats": [
+    "Six speakers; between-participant spread is reported and is large.",
+    "The threshold is chosen against a property of the speech, not against Echo's recall/false-alarm curve -- tuning on that would make eval/run_aphasia_eval.py a training-set number.",
+    "Utterance boundaries come from clinician transcription, so a pause the transcriber treated as an utterance boundary is not counted as an internal gap even if the speaker was still searching."
+  ]
+}

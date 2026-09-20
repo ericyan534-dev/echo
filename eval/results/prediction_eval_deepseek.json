@@ -1,0 +1,1305 @@
+{
+  "provenance": {
+    "script": "eval/run_prediction_eval.py",
+    "dataset": "eval\\data\\prediction_eval_set.jsonl",
+    "dataset_sha256": "9fd89ea1d59bc7e8490c50a4749f244e6e808e58ae65c657b19b4351bb9dd467",
+    "n_items": 60,
+    "provider": "deepseek",
+    "model": "deepseek-flash",
+    "ablate_context": false,
+    "entity_memory": false,
+    "context_turns": 6,
+    "sleep_s": 0.5,
+    "timestamp_utc": "2026-09-19T22:02:33+00:00",
+    "normalization": "lowercase; strip one trailing \"'s\"; strip punctuation; collapse whitespace; strip one trailing plural \"s\"",
+    "freeze_protocol": "The dataset eval/data/prediction_eval_set.jsonl is frozen at its first commit. After the first live run, items may never be edited, added, or removed in response to results. One headline live run per condition (full and context-ablated). Any future change to the set requires a new versioned filename and both old and new results files must be kept."
+  },
+  "overall": {
+    "top1": {
+      "hits": 59,
+      "n": 60,
+      "rate": 0.9833
+    },
+    "top3": {
+      "hits": 59,
+      "n": 60,
+      "rate": 0.9833
+    }
+  },
+  "per_category": {
+    "concrete": {
+      "top1": {
+        "hits": 20,
+        "n": 20,
+        "rate": 1.0
+      },
+      "top3": {
+        "hits": 20,
+        "n": 20,
+        "rate": 1.0
+      }
+    },
+    "proper_context": {
+      "top1": {
+        "hits": 20,
+        "n": 20,
+        "rate": 1.0
+      },
+      "top3": {
+        "hits": 20,
+        "n": 20,
+        "rate": 1.0
+      }
+    },
+    "abstract_verb": {
+      "top1": {
+        "hits": 19,
+        "n": 20,
+        "rate": 0.95
+      },
+      "top3": {
+        "hits": 19,
+        "n": 20,
+        "rate": 0.95
+      }
+    }
+  },
+  "confidence": {
+    "definition": "confidence of the top-ranked candidate, split by top-1 hit/miss; items with zero candidates excluded",
+    "mean_when_correct": 0.997,
+    "mean_when_wrong": 0.6,
+    "n_correct": 59,
+    "n_wrong": 1
+  },
+  "latency": {
+    "definition": "wall-clock per-item predict() latency in ms (includes network round-trip); one measurement per item",
+    "n": 60,
+    "p50_ms": 735.9,
+    "p95_ms": 1022.6,
+    "mean_ms": 740.7,
+    "max_ms": 1049.0
+  },
+  "items": [
+    {
+      "id": "concrete_01",
+      "category": "concrete",
+      "gold": [
+        "umbrella"
+      ],
+      "candidates": [
+        {
+          "word": "umbrella",
+          "confidence": 1.0
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true,
+      "latency_ms": 952.4
+    },
+    {
+      "id": "concrete_02",
+      "category": "concrete",
+      "gold": [
+        "remote",
+        "remote control",
+        "TV remote"
+      ],
+      "candidates": [
+        {
+          "word": "remote",
+          "confidence": 1.0
+        },
+        {
+          "word": "remote control",
+          "confidence": 0.95
+        },
+        {
+          "word": "clicker",
+          "confidence": 0.7
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true,
+      "latency_ms": 735.9
+    },
+    {
+      "id": "concrete_03",
+      "category": "concrete",
+      "gold": [
+        "scissors"
+      ],
+      "candidates": [
+        {
+          "word": "scissors",
+          "confidence": 1.0
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true,
+      "latency_ms": 777.5
+    },
+    {
+      "id": "concrete_04",
+      "category": "concrete",
+      "gold": [
+        "wallet"
+      ],
+      "candidates": [
+        {
+          "word": "wallet",
+          "confidence": 1.0
+        },
+        {
+          "word": "purse",
+          "confidence": 0.85
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true,
+      "latency_ms": 809.7
+    },
+    {
+      "id": "concrete_05",
+      "category": "concrete",
+      "gold": [
+        "stapler"
+      ],
+      "candidates": [
+        {
+          "word": "stapler",
+          "confidence": 1.0
+        },
+        {
+          "word": "staple",
+          "confidence": 0.6
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true,
+      "latency_ms": 854.4
+    },
+    {
+      "id": "concrete_06",
+      "category": "concrete",
+      "gold": [
+        "vacuum",
+        "vacuum cleaner"
+      ],
+      "candidates": [
+        {
+          "word": "vacuum",
+          "confidence": 1.0
+        },
+        {
+          "word": "vacuum cleaner",
+          "confidence": 0.95
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true,
+      "latency_ms": 633.6
+    },
+    {
+      "id": "concrete_07",
+      "category": "concrete",
+      "gold": [
+        "dishwasher"
+      ],
+      "candidates": [
+        {
+          "word": "dishwasher",
+          "confidence": 1.0
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true,
+      "latency_ms": 743.4
+    },
+    {
+      "id": "concrete_08",
+      "category": "concrete",
+      "gold": [
+        "flashlight",
+        "torch"
+      ],
+      "candidates": [
+        {
+          "word": "flashlight",
+          "confidence": 1.0
+        },
+        {
+          "word": "torch",
+          "confidence": 0.7
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true,
+      "latency_ms": 588.1
+    },
+    {
+      "id": "concrete_09",
+      "category": "concrete",
+      "gold": [
+        "thermostat"
+      ],
+      "candidates": [
+        {
+          "word": "thermostat",
+          "confidence": 1.0
+        },
+        {
+          "word": "heater",
+          "confidence": 0.7
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true,
+      "latency_ms": 742.4
+    },
+    {
+      "id": "concrete_10",
+      "category": "concrete",
+      "gold": [
+        "corkscrew",
+        "wine opener"
+      ],
+      "candidates": [
+        {
+          "word": "corkscrew",
+          "confidence": 1.0
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true,
+      "latency_ms": 555.0
+    },
+    {
+      "id": "concrete_11",
+      "category": "concrete",
+      "gold": [
+        "clothespin",
+        "clothes peg"
+      ],
+      "candidates": [
+        {
+          "word": "clothespins",
+          "confidence": 1.0
+        },
+        {
+          "word": "pegs",
+          "confidence": 0.9
+        },
+        {
+          "word": "clips",
+          "confidence": 0.6
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true,
+      "latency_ms": 760.6
+    },
+    {
+      "id": "concrete_12",
+      "category": "concrete",
+      "gold": [
+        "wheelbarrow"
+      ],
+      "candidates": [
+        {
+          "word": "wheelbarrow",
+          "confidence": 1.0
+        },
+        {
+          "word": "cart",
+          "confidence": 0.6
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true,
+      "latency_ms": 551.6
+    },
+    {
+      "id": "concrete_13",
+      "category": "concrete",
+      "gold": [
+        "tweezers"
+      ],
+      "candidates": [
+        {
+          "word": "tweezers",
+          "confidence": 1.0
+        },
+        {
+          "word": "needle",
+          "confidence": 0.7
+        },
+        {
+          "word": "pliers",
+          "confidence": 0.5
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true,
+      "latency_ms": 784.2
+    },
+    {
+      "id": "concrete_14",
+      "category": "concrete",
+      "gold": [
+        "can opener",
+        "tin opener"
+      ],
+      "candidates": [
+        {
+          "word": "can opener",
+          "confidence": 1.0
+        },
+        {
+          "word": "opener",
+          "confidence": 0.85
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true,
+      "latency_ms": 721.2
+    },
+    {
+      "id": "concrete_15",
+      "category": "concrete",
+      "gold": [
+        "mailbox"
+      ],
+      "candidates": [
+        {
+          "word": "mailbox",
+          "confidence": 1.0
+        },
+        {
+          "word": "mail slot",
+          "confidence": 0.6
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true,
+      "latency_ms": 603.6
+    },
+    {
+      "id": "concrete_16",
+      "category": "concrete",
+      "gold": [
+        "calendar"
+      ],
+      "candidates": [
+        {
+          "word": "calendar",
+          "confidence": 1.0
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true,
+      "latency_ms": 766.4
+    },
+    {
+      "id": "concrete_17",
+      "category": "concrete",
+      "gold": [
+        "blender"
+      ],
+      "candidates": [
+        {
+          "word": "blender",
+          "confidence": 1.0
+        },
+        {
+          "word": "mixer",
+          "confidence": 0.6
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true,
+      "latency_ms": 630.8
+    },
+    {
+      "id": "concrete_18",
+      "category": "concrete",
+      "gold": [
+        "ladder"
+      ],
+      "candidates": [
+        {
+          "word": "ladder",
+          "confidence": 1.0
+        },
+        {
+          "word": "stepladder",
+          "confidence": 0.8
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true,
+      "latency_ms": 565.5
+    },
+    {
+      "id": "concrete_19",
+      "category": "concrete",
+      "gold": [
+        "wheelchair"
+      ],
+      "candidates": [
+        {
+          "word": "wheelchair",
+          "confidence": 1.0
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true,
+      "latency_ms": 600.6
+    },
+    {
+      "id": "concrete_20",
+      "category": "concrete",
+      "gold": [
+        "thermometer"
+      ],
+      "candidates": [
+        {
+          "word": "thermometer",
+          "confidence": 1.0
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true,
+      "latency_ms": 655.7
+    },
+    {
+      "id": "context_01",
+      "category": "proper_context",
+      "gold": [
+        "Frank"
+      ],
+      "candidates": [
+        {
+          "word": "Frank",
+          "confidence": 1.0
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true,
+      "latency_ms": 667.5
+    },
+    {
+      "id": "context_02",
+      "category": "proper_context",
+      "gold": [
+        "Pete's Diner",
+        "Pete's"
+      ],
+      "candidates": [
+        {
+          "word": "Pete's Diner",
+          "confidence": 1.0
+        },
+        {
+          "word": "Pete's",
+          "confidence": 0.9
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true,
+      "latency_ms": 791.0
+    },
+    {
+      "id": "context_03",
+      "category": "proper_context",
+      "gold": [
+        "Biscuit"
+      ],
+      "candidates": [
+        {
+          "word": "Biscuit",
+          "confidence": 1.0
+        },
+        {
+          "word": "dog",
+          "confidence": 0.6
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true,
+      "latency_ms": 674.0
+    },
+    {
+      "id": "context_04",
+      "category": "proper_context",
+      "gold": [
+        "Elena"
+      ],
+      "candidates": [
+        {
+          "word": "Elena",
+          "confidence": 1.0
+        },
+        {
+          "word": "the wedding",
+          "confidence": 0.7
+        },
+        {
+          "word": "her",
+          "confidence": 0.6
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true,
+      "latency_ms": 1049.0
+    },
+    {
+      "id": "context_05",
+      "category": "proper_context",
+      "gold": [
+        "Brew Haven"
+      ],
+      "candidates": [
+        {
+          "word": "Brew Haven",
+          "confidence": 1.0
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true,
+      "latency_ms": 777.6
+    },
+    {
+      "id": "context_06",
+      "category": "proper_context",
+      "gold": [
+        "Lake Winnipesaukee",
+        "Winnipesaukee"
+      ],
+      "candidates": [
+        {
+          "word": "Winnipesaukee",
+          "confidence": 1.0
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true,
+      "latency_ms": 662.9
+    },
+    {
+      "id": "context_07",
+      "category": "proper_context",
+      "gold": [
+        "Osei",
+        "Dr. Osei"
+      ],
+      "candidates": [
+        {
+          "word": "Osei",
+          "confidence": 1.0
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true,
+      "latency_ms": 629.8
+    },
+    {
+      "id": "context_08",
+      "category": "proper_context",
+      "gold": [
+        "Priya"
+      ],
+      "candidates": [
+        {
+          "word": "Priya",
+          "confidence": 1.0
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true,
+      "latency_ms": 656.0
+    },
+    {
+      "id": "context_09",
+      "category": "proper_context",
+      "gold": [
+        "Waffles"
+      ],
+      "candidates": [
+        {
+          "word": "Waffles",
+          "confidence": 1.0
+        },
+        {
+          "word": "cat",
+          "confidence": 0.6
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true,
+      "latency_ms": 860.7
+    },
+    {
+      "id": "context_10",
+      "category": "proper_context",
+      "gold": [
+        "Nexlink"
+      ],
+      "candidates": [
+        {
+          "word": "Nexlink",
+          "confidence": 1.0
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true,
+      "latency_ms": 577.2
+    },
+    {
+      "id": "context_11",
+      "category": "proper_context",
+      "gold": [
+        "The Salt Path",
+        "Salt Path"
+      ],
+      "candidates": [
+        {
+          "word": "The Salt Path",
+          "confidence": 1.0
+        },
+        {
+          "word": "memoir",
+          "confidence": 0.6
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true,
+      "latency_ms": 805.3
+    },
+    {
+      "id": "context_12",
+      "category": "proper_context",
+      "gold": [
+        "Alvarez",
+        "Mrs. Alvarez"
+      ],
+      "candidates": [
+        {
+          "word": "Alvarez",
+          "confidence": 1.0
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true,
+      "latency_ms": 709.4
+    },
+    {
+      "id": "context_13",
+      "category": "proper_context",
+      "gold": [
+        "Logan Airport",
+        "Logan"
+      ],
+      "candidates": [
+        {
+          "word": "Logan",
+          "confidence": 1.0
+        },
+        {
+          "word": "Logan Airport",
+          "confidence": 0.9
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true,
+      "latency_ms": 684.8
+    },
+    {
+      "id": "context_14",
+      "category": "proper_context",
+      "gold": [
+        "Big Sal",
+        "Sal"
+      ],
+      "candidates": [
+        {
+          "word": "Big Sal",
+          "confidence": 1.0
+        },
+        {
+          "word": "Sal",
+          "confidence": 0.9
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true,
+      "latency_ms": 737.0
+    },
+    {
+      "id": "context_15",
+      "category": "proper_context",
+      "gold": [
+        "Marino's Pizzeria",
+        "Marino's"
+      ],
+      "candidates": [
+        {
+          "word": "Marino's",
+          "confidence": 1.0
+        },
+        {
+          "word": "Marino's Pizzeria",
+          "confidence": 0.9
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true,
+      "latency_ms": 1006.9
+    },
+    {
+      "id": "context_16",
+      "category": "proper_context",
+      "gold": [
+        "Yusuf"
+      ],
+      "candidates": [
+        {
+          "word": "Yusuf",
+          "confidence": 1.0
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true,
+      "latency_ms": 752.4
+    },
+    {
+      "id": "context_17",
+      "category": "proper_context",
+      "gold": [
+        "St. Bridget's Church",
+        "St. Bridget's"
+      ],
+      "candidates": [
+        {
+          "word": "St. Bridget's",
+          "confidence": 1.0
+        },
+        {
+          "word": "Bridget",
+          "confidence": 0.7
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true,
+      "latency_ms": 583.8
+    },
+    {
+      "id": "context_18",
+      "category": "proper_context",
+      "gold": [
+        "MoveWell"
+      ],
+      "candidates": [
+        {
+          "word": "MoveWell",
+          "confidence": 1.0
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true,
+      "latency_ms": 605.3
+    },
+    {
+      "id": "context_19",
+      "category": "proper_context",
+      "gold": [
+        "Deb"
+      ],
+      "candidates": [
+        {
+          "word": "Deb",
+          "confidence": 1.0
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true,
+      "latency_ms": 781.4
+    },
+    {
+      "id": "context_20",
+      "category": "proper_context",
+      "gold": [
+        "Chatham"
+      ],
+      "candidates": [
+        {
+          "word": "Chatham",
+          "confidence": 1.0
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true,
+      "latency_ms": 1033.3
+    },
+    {
+      "id": "abstract_01",
+      "category": "abstract_verb",
+      "gold": [
+        "apologize"
+      ],
+      "candidates": [
+        {
+          "word": "apologize",
+          "confidence": 1.0
+        },
+        {
+          "word": "reconcile",
+          "confidence": 0.85
+        },
+        {
+          "word": "reach out",
+          "confidence": 0.7
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true,
+      "latency_ms": 794.5
+    },
+    {
+      "id": "abstract_02",
+      "category": "abstract_verb",
+      "gold": [
+        "postpone",
+        "reschedule"
+      ],
+      "candidates": [
+        {
+          "word": "reschedule",
+          "confidence": 1.0
+        },
+        {
+          "word": "postpone",
+          "confidence": 0.9
+        },
+        {
+          "word": "delay",
+          "confidence": 0.7
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true,
+      "latency_ms": 1022.6
+    },
+    {
+      "id": "abstract_03",
+      "category": "abstract_verb",
+      "gold": [
+        "retire"
+      ],
+      "candidates": [
+        {
+          "word": "retire",
+          "confidence": 1.0
+        },
+        {
+          "word": "retiring",
+          "confidence": 0.9
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true,
+      "latency_ms": 621.0
+    },
+    {
+      "id": "abstract_04",
+      "category": "abstract_verb",
+      "gold": [
+        "propose"
+      ],
+      "candidates": [
+        {
+          "word": "propose",
+          "confidence": 1.0
+        },
+        {
+          "word": "pop the question",
+          "confidence": 0.85
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true,
+      "latency_ms": 861.0
+    },
+    {
+      "id": "abstract_05",
+      "category": "abstract_verb",
+      "gold": [
+        "resign",
+        "quit"
+      ],
+      "candidates": [
+        {
+          "word": "quit",
+          "confidence": 1.0
+        },
+        {
+          "word": "resign",
+          "confidence": 0.85
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true,
+      "latency_ms": 980.8
+    },
+    {
+      "id": "abstract_06",
+      "category": "abstract_verb",
+      "gold": [
+        "negotiate"
+      ],
+      "candidates": [
+        {
+          "word": "negotiate",
+          "confidence": 1.0
+        },
+        {
+          "word": "compromise",
+          "confidence": 0.85
+        },
+        {
+          "word": "mediate",
+          "confidence": 0.7
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true,
+      "latency_ms": 855.8
+    },
+    {
+      "id": "abstract_07",
+      "category": "abstract_verb",
+      "gold": [
+        "admit",
+        "confess"
+      ],
+      "candidates": [
+        {
+          "word": "confess",
+          "confidence": 1.0
+        },
+        {
+          "word": "admit",
+          "confidence": 0.9
+        },
+        {
+          "word": "apologize",
+          "confidence": 0.6
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true,
+      "latency_ms": 647.4
+    },
+    {
+      "id": "abstract_08",
+      "category": "abstract_verb",
+      "gold": [
+        "divorce"
+      ],
+      "candidates": [
+        {
+          "word": "divorce",
+          "confidence": 1.0
+        },
+        {
+          "word": "finalize",
+          "confidence": 0.6
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true,
+      "latency_ms": 833.1
+    },
+    {
+      "id": "abstract_09",
+      "category": "abstract_verb",
+      "gold": [
+        "enroll",
+        "register",
+        "sign up"
+      ],
+      "candidates": [
+        {
+          "word": "register",
+          "confidence": 1.0
+        },
+        {
+          "word": "enroll",
+          "confidence": 0.9
+        },
+        {
+          "word": "sign up",
+          "confidence": 0.85
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true,
+      "latency_ms": 692.1
+    },
+    {
+      "id": "abstract_10",
+      "category": "abstract_verb",
+      "gold": [
+        "donate"
+      ],
+      "candidates": [
+        {
+          "word": "donate",
+          "confidence": 1.0
+        },
+        {
+          "word": "give",
+          "confidence": 0.6
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true,
+      "latency_ms": 802.7
+    },
+    {
+      "id": "abstract_11",
+      "category": "abstract_verb",
+      "gold": [
+        "volunteer"
+      ],
+      "candidates": [
+        {
+          "word": "volunteer",
+          "confidence": 1.0
+        },
+        {
+          "word": "help",
+          "confidence": 0.6
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true,
+      "latency_ms": 774.8
+    },
+    {
+      "id": "abstract_12",
+      "category": "abstract_verb",
+      "gold": [
+        "compromise",
+        "meet in the middle",
+        "meet halfway"
+      ],
+      "candidates": [
+        {
+          "word": "compromise",
+          "confidence": 1.0
+        },
+        {
+          "word": "negotiate",
+          "confidence": 0.85
+        },
+        {
+          "word": "meet halfway",
+          "confidence": 0.7
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true,
+      "latency_ms": 720.4
+    },
+    {
+      "id": "abstract_13",
+      "category": "abstract_verb",
+      "gold": [
+        "reconsider",
+        "rethink"
+      ],
+      "candidates": [
+        {
+          "word": "decide",
+          "confidence": 0.6
+        },
+        {
+          "word": "commit",
+          "confidence": 0.5
+        },
+        {
+          "word": "accept",
+          "confidence": 0.4
+        }
+      ],
+      "top1_hit": false,
+      "top3_hit": false,
+      "latency_ms": 634.8
+    },
+    {
+      "id": "abstract_14",
+      "category": "abstract_verb",
+      "gold": [
+        "forgive"
+      ],
+      "candidates": [
+        {
+          "word": "forgive",
+          "confidence": 1.0
+        },
+        {
+          "word": "forgiveness",
+          "confidence": 0.85
+        },
+        {
+          "word": "move on",
+          "confidence": 0.7
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true,
+      "latency_ms": 889.2
+    },
+    {
+      "id": "abstract_15",
+      "category": "abstract_verb",
+      "gold": [
+        "surrender"
+      ],
+      "candidates": [
+        {
+          "word": "surrender",
+          "confidence": 1.0
+        },
+        {
+          "word": "capitulate",
+          "confidence": 0.85
+        },
+        {
+          "word": "yield",
+          "confidence": 0.7
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true,
+      "latency_ms": 754.5
+    },
+    {
+      "id": "abstract_16",
+      "category": "abstract_verb",
+      "gold": [
+        "graduate"
+      ],
+      "candidates": [
+        {
+          "word": "graduate",
+          "confidence": 1.0
+        },
+        {
+          "word": "graduation",
+          "confidence": 0.85
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true,
+      "latency_ms": 627.4
+    },
+    {
+      "id": "abstract_17",
+      "category": "abstract_verb",
+      "gold": [
+        "immigrate",
+        "emigrate"
+      ],
+      "candidates": [
+        {
+          "word": "emigrate",
+          "confidence": 0.9
+        },
+        {
+          "word": "flee",
+          "confidence": 0.85
+        },
+        {
+          "word": "immigrate",
+          "confidence": 0.8
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true,
+      "latency_ms": 809.7
+    },
+    {
+      "id": "abstract_18",
+      "category": "abstract_verb",
+      "gold": [
+        "sacrifice"
+      ],
+      "candidates": [
+        {
+          "word": "sacrifice",
+          "confidence": 0.9
+        },
+        {
+          "word": "job",
+          "confidence": 0.6
+        },
+        {
+          "word": "career",
+          "confidence": 0.5
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true,
+      "latency_ms": 631.2
+    },
+    {
+      "id": "abstract_19",
+      "category": "abstract_verb",
+      "gold": [
+        "celebrate"
+      ],
+      "candidates": [
+        {
+          "word": "celebrate",
+          "confidence": 1.0
+        },
+        {
+          "word": "commemorate",
+          "confidence": 0.85
+        },
+        {
+          "word": "honor",
+          "confidence": 0.7
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true,
+      "latency_ms": 732.3
+    },
+    {
+      "id": "abstract_20",
+      "category": "abstract_verb",
+      "gold": [
+        "promise"
+      ],
+      "candidates": [
+        {
+          "word": "promise",
+          "confidence": 1.0
+        },
+        {
+          "word": "assure",
+          "confidence": 0.7
+        },
+        {
+          "word": "guarantee",
+          "confidence": 0.6
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true,
+      "latency_ms": 679.3
+    }
+  ]
+}

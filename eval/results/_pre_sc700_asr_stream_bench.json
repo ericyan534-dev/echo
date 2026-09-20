@@ -1,0 +1,48 @@
+{
+  "status": "OK",
+  "audio": "APROCSA -- real aphasic connected speech",
+  "note": "RTF here is the STREAM's, not a single transcribe's: the wrapper re-transcribes a growing window every step, so cost is calls-per-second times cost-per-call, and window length sets the second term.",
+  "stall_budget_ms": 1300,
+  "summary": {
+    "before (step 500ms, window 12s, reset 6s)": {
+      "rtf_mean": 0.536,
+      "rtf_max": 0.536,
+      "commit_lag_ms_median": 300,
+      "words": 74,
+      "per_participant": [
+        {
+          "audio_s": 60.0,
+          "wall_s": 32.2,
+          "rtf": 0.536,
+          "words": 74,
+          "turns": 2,
+          "max_window_s": 8.2,
+          "commit_lag_ms_median": 300,
+          "commit_lag_ms_p90": 300,
+          "n_commit_lag_samples": 41,
+          "participant": "1554"
+        }
+      ]
+    },
+    "shipped (step 700ms, window 8s, reset 3.5s)": {
+      "rtf_mean": 0.409,
+      "rtf_max": 0.409,
+      "commit_lag_ms_median": 200,
+      "words": 75,
+      "per_participant": [
+        {
+          "audio_s": 60.0,
+          "wall_s": 24.5,
+          "rtf": 0.409,
+          "words": 75,
+          "turns": 2,
+          "max_window_s": 8.4,
+          "commit_lag_ms_median": 200,
+          "commit_lag_ms_p90": 300,
+          "n_commit_lag_samples": 57,
+          "participant": "1554"
+        }
+      ]
+    }
+  }
+}

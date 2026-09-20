@@ -1,0 +1,1103 @@
+{
+  "status": "OK",
+  "corpus": "APROCSA -- 6 speakers with chronic post-stroke aphasia",
+  "model": "turbo",
+  "mode": "verbatim",
+  "region_s": 300,
+  "skip_s": 120,
+  "note": "wer is per-utterance (the shipped metric). wer_concat scores the same words with utterance boundaries removed; the gap between them is the cost of assigning hypothesis words to reference utterances by timestamp, not recognition error. RTF is null for any arm served from cache.",
+  "results": {
+    "offline_oracle": {
+      "wer": 0.336,
+      "wer_concat": 0.3215,
+      "n_ref_words": 1655,
+      "n_hyp_words": 1682,
+      "n_utterances": 267,
+      "rtf": 0.258,
+      "per_participant": {
+        "1554": {
+          "errors": 38,
+          "n_ref": 83,
+          "n_hyp": 67,
+          "wer": 0.4578,
+          "cat_errors": 37,
+          "wer_concat": 0.4458,
+          "median_utt_wer": 0.4737,
+          "n_utt": 17
+        },
+        "1713": {
+          "errors": 139,
+          "n_ref": 395,
+          "n_hyp": 425,
+          "wer": 0.3519,
+          "cat_errors": 137,
+          "wer_concat": 0.3468,
+          "median_utt_wer": 0.3846,
+          "n_utt": 49
+        },
+        "1731": {
+          "errors": 127,
+          "n_ref": 237,
+          "n_hyp": 243,
+          "wer": 0.5359,
+          "cat_errors": 110,
+          "wer_concat": 0.4641,
+          "median_utt_wer": 0.5,
+          "n_utt": 74
+        },
+        "1738": {
+          "errors": 89,
+          "n_ref": 286,
+          "n_hyp": 289,
+          "wer": 0.3112,
+          "cat_errors": 86,
+          "wer_concat": 0.3007,
+          "median_utt_wer": 0.25,
+          "n_utt": 43
+        },
+        "1833": {
+          "errors": 66,
+          "n_ref": 278,
+          "n_hyp": 278,
+          "wer": 0.2374,
+          "cat_errors": 65,
+          "wer_concat": 0.2338,
+          "median_utt_wer": 0.1667,
+          "n_utt": 37
+        },
+        "1944": {
+          "errors": 97,
+          "n_ref": 376,
+          "n_hyp": 380,
+          "wer": 0.258,
+          "cat_errors": 97,
+          "wer_concat": 0.258,
+          "median_utt_wer": 0.2143,
+          "n_utt": 47
+        }
+      }
+    },
+    "offline@longform_strategy=chunked_lcs": {
+      "wer": 0.3347,
+      "wer_concat": 0.3184,
+      "n_ref_words": 1655,
+      "n_hyp_words": 1491,
+      "n_utterances": 267,
+      "commit_lag_ms_median": null,
+      "commit_lag_ms_p90": null,
+      "n_commit_lag_samples": null,
+      "rtf_contended": 0.058,
+      "per_participant": {
+        "1554": {
+          "errors": 53,
+          "n_ref": 83,
+          "n_hyp": 43,
+          "wer": 0.6386,
+          "cat_errors": 53,
+          "wer_concat": 0.6386,
+          "median_utt_wer": 0.5,
+          "n_utt": 17
+        },
+        "1713": {
+          "errors": 117,
+          "n_ref": 395,
+          "n_hyp": 384,
+          "wer": 0.2962,
+          "cat_errors": 115,
+          "wer_concat": 0.2911,
+          "median_utt_wer": 0.3,
+          "n_utt": 49
+        },
+        "1731": {
+          "errors": 112,
+          "n_ref": 237,
+          "n_hyp": 213,
+          "wer": 0.4726,
+          "cat_errors": 99,
+          "wer_concat": 0.4177,
+          "median_utt_wer": 0.5,
+          "n_utt": 74
+        },
+        "1738": {
+          "errors": 96,
+          "n_ref": 286,
+          "n_hyp": 248,
+          "wer": 0.3357,
+          "cat_errors": 93,
+          "wer_concat": 0.3252,
+          "median_utt_wer": 0.1818,
+          "n_utt": 43
+        },
+        "1833": {
+          "errors": 57,
+          "n_ref": 278,
+          "n_hyp": 272,
+          "wer": 0.205,
+          "cat_errors": 57,
+          "wer_concat": 0.205,
+          "median_utt_wer": 0.1429,
+          "n_utt": 37
+        },
+        "1944": {
+          "errors": 119,
+          "n_ref": 376,
+          "n_hyp": 331,
+          "wer": 0.3165,
+          "cat_errors": 110,
+          "wer_concat": 0.2926,
+          "median_utt_wer": 0.25,
+          "n_utt": 47
+        }
+      }
+    },
+    "offline@chunk_duration=10@stride=8": {
+      "wer": 0.319,
+      "wer_concat": 0.2997,
+      "n_ref_words": 1655,
+      "n_hyp_words": 1576,
+      "n_utterances": 267,
+      "commit_lag_ms_median": null,
+      "commit_lag_ms_p90": null,
+      "n_commit_lag_samples": null,
+      "rtf_contended": 0.218,
+      "per_participant": {
+        "1554": {
+          "errors": 40,
+          "n_ref": 83,
+          "n_hyp": 61,
+          "wer": 0.4819,
+          "cat_errors": 38,
+          "wer_concat": 0.4578,
+          "median_utt_wer": 0.5,
+          "n_utt": 17
+        },
+        "1713": {
+          "errors": 114,
+          "n_ref": 395,
+          "n_hyp": 392,
+          "wer": 0.2886,
+          "cat_errors": 111,
+          "wer_concat": 0.281,
+          "median_utt_wer": 0.3,
+          "n_utt": 49
+        },
+        "1731": {
+          "errors": 115,
+          "n_ref": 237,
+          "n_hyp": 221,
+          "wer": 0.4852,
+          "cat_errors": 100,
+          "wer_concat": 0.4219,
+          "median_utt_wer": 0.5,
+          "n_utt": 74
+        },
+        "1738": {
+          "errors": 79,
+          "n_ref": 286,
+          "n_hyp": 276,
+          "wer": 0.2762,
+          "cat_errors": 74,
+          "wer_concat": 0.2587,
+          "median_utt_wer": 0.2,
+          "n_utt": 43
+        },
+        "1833": {
+          "errors": 69,
+          "n_ref": 278,
+          "n_hyp": 269,
+          "wer": 0.2482,
+          "cat_errors": 66,
+          "wer_concat": 0.2374,
+          "median_utt_wer": 0.2308,
+          "n_utt": 37
+        },
+        "1944": {
+          "errors": 111,
+          "n_ref": 376,
+          "n_hyp": 357,
+          "wer": 0.2952,
+          "cat_errors": 107,
+          "wer_concat": 0.2846,
+          "median_utt_wer": 0.25,
+          "n_utt": 47
+        }
+      }
+    },
+    "stream@silence_commit_ms=280": {
+      "wer": 0.4024,
+      "wer_concat": 0.3474,
+      "n_ref_words": 1655,
+      "n_hyp_words": 1518,
+      "n_utterances": 267,
+      "commit_lag_ms_median": 200,
+      "commit_lag_ms_p90": 300,
+      "n_commit_lag_samples": 1498,
+      "rtf_contended": 0.727,
+      "per_participant": {
+        "1554": {
+          "errors": 45,
+          "n_ref": 83,
+          "n_hyp": 66,
+          "wer": 0.5422,
+          "cat_errors": 40,
+          "wer_concat": 0.4819,
+          "median_utt_wer": 0.5,
+          "n_utt": 17
+        },
+        "1713": {
+          "errors": 131,
+          "n_ref": 395,
+          "n_hyp": 370,
+          "wer": 0.3316,
+          "cat_errors": 118,
+          "wer_concat": 0.2987,
+          "median_utt_wer": 0.4,
+          "n_utt": 49
+        },
+        "1731": {
+          "errors": 129,
+          "n_ref": 237,
+          "n_hyp": 205,
+          "wer": 0.5443,
+          "cat_errors": 105,
+          "wer_concat": 0.443,
+          "median_utt_wer": 0.6667,
+          "n_utt": 74
+        },
+        "1738": {
+          "errors": 120,
+          "n_ref": 286,
+          "n_hyp": 265,
+          "wer": 0.4196,
+          "cat_errors": 105,
+          "wer_concat": 0.3671,
+          "median_utt_wer": 0.3636,
+          "n_utt": 43
+        },
+        "1833": {
+          "errors": 101,
+          "n_ref": 278,
+          "n_hyp": 260,
+          "wer": 0.3633,
+          "cat_errors": 89,
+          "wer_concat": 0.3201,
+          "median_utt_wer": 0.3333,
+          "n_utt": 37
+        },
+        "1944": {
+          "errors": 140,
+          "n_ref": 376,
+          "n_hyp": 352,
+          "wer": 0.3723,
+          "cat_errors": 118,
+          "wer_concat": 0.3138,
+          "median_utt_wer": 0.4,
+          "n_utt": 47
+        }
+      }
+    },
+    "stream@reset_window_s=12@max_window_s=20": {
+      "wer": 0.4127,
+      "wer_concat": 0.3547,
+      "n_ref_words": 1655,
+      "n_hyp_words": 1527,
+      "n_utterances": 267,
+      "commit_lag_ms_median": 200,
+      "commit_lag_ms_p90": 300,
+      "n_commit_lag_samples": 1558,
+      "rtf_contended": 0.557,
+      "per_participant": {
+        "1554": {
+          "errors": 46,
+          "n_ref": 83,
+          "n_hyp": 69,
+          "wer": 0.5542,
+          "cat_errors": 41,
+          "wer_concat": 0.494,
+          "median_utt_wer": 0.5263,
+          "n_utt": 17
+        },
+        "1713": {
+          "errors": 150,
+          "n_ref": 395,
+          "n_hyp": 368,
+          "wer": 0.3797,
+          "cat_errors": 130,
+          "wer_concat": 0.3291,
+          "median_utt_wer": 0.4444,
+          "n_utt": 49
+        },
+        "1731": {
+          "errors": 132,
+          "n_ref": 237,
+          "n_hyp": 198,
+          "wer": 0.557,
+          "cat_errors": 115,
+          "wer_concat": 0.4852,
+          "median_utt_wer": 0.6333,
+          "n_utt": 74
+        },
+        "1738": {
+          "errors": 114,
+          "n_ref": 286,
+          "n_hyp": 270,
+          "wer": 0.3986,
+          "cat_errors": 99,
+          "wer_concat": 0.3462,
+          "median_utt_wer": 0.4375,
+          "n_utt": 43
+        },
+        "1833": {
+          "errors": 95,
+          "n_ref": 278,
+          "n_hyp": 270,
+          "wer": 0.3417,
+          "cat_errors": 80,
+          "wer_concat": 0.2878,
+          "median_utt_wer": 0.3333,
+          "n_utt": 37
+        },
+        "1944": {
+          "errors": 146,
+          "n_ref": 376,
+          "n_hyp": 352,
+          "wer": 0.3883,
+          "cat_errors": 122,
+          "wer_concat": 0.3245,
+          "median_utt_wer": 0.4286,
+          "n_utt": 47
+        }
+      }
+    },
+    "stream@silence_commit_ms=900": {
+      "wer": 0.426,
+      "wer_concat": 0.3565,
+      "n_ref_words": 1655,
+      "n_hyp_words": 1484,
+      "n_utterances": 267,
+      "commit_lag_ms_median": 400,
+      "commit_lag_ms_p90": 900,
+      "n_commit_lag_samples": 1048,
+      "rtf_contended": 0.391,
+      "per_participant": {
+        "1554": {
+          "errors": 53,
+          "n_ref": 83,
+          "n_hyp": 62,
+          "wer": 0.6386,
+          "cat_errors": 46,
+          "wer_concat": 0.5542,
+          "median_utt_wer": 0.6667,
+          "n_utt": 17
+        },
+        "1713": {
+          "errors": 160,
+          "n_ref": 395,
+          "n_hyp": 360,
+          "wer": 0.4051,
+          "cat_errors": 141,
+          "wer_concat": 0.357,
+          "median_utt_wer": 0.3846,
+          "n_utt": 49
+        },
+        "1731": {
+          "errors": 136,
+          "n_ref": 237,
+          "n_hyp": 198,
+          "wer": 0.5738,
+          "cat_errors": 113,
+          "wer_concat": 0.4768,
+          "median_utt_wer": 0.6667,
+          "n_utt": 74
+        },
+        "1738": {
+          "errors": 108,
+          "n_ref": 286,
+          "n_hyp": 270,
+          "wer": 0.3776,
+          "cat_errors": 93,
+          "wer_concat": 0.3252,
+          "median_utt_wer": 0.5,
+          "n_utt": 43
+        },
+        "1833": {
+          "errors": 86,
+          "n_ref": 278,
+          "n_hyp": 257,
+          "wer": 0.3094,
+          "cat_errors": 74,
+          "wer_concat": 0.2662,
+          "median_utt_wer": 0.2941,
+          "n_utt": 37
+        },
+        "1944": {
+          "errors": 162,
+          "n_ref": 376,
+          "n_hyp": 337,
+          "wer": 0.4309,
+          "cat_errors": 123,
+          "wer_concat": 0.3271,
+          "median_utt_wer": 0.4,
+          "n_utt": 47
+        }
+      }
+    },
+    "offline": {
+      "wer": 0.2876,
+      "wer_concat": 0.2707,
+      "n_ref_words": 1655,
+      "n_hyp_words": 1605,
+      "n_utterances": 267,
+      "commit_lag_ms_median": null,
+      "commit_lag_ms_p90": null,
+      "n_commit_lag_samples": null,
+      "rtf_contended": null,
+      "per_participant": {
+        "1554": {
+          "errors": 36,
+          "n_ref": 83,
+          "n_hyp": 67,
+          "wer": 0.4337,
+          "cat_errors": 35,
+          "wer_concat": 0.4217,
+          "median_utt_wer": 0.3333,
+          "n_utt": 17
+        },
+        "1713": {
+          "errors": 111,
+          "n_ref": 395,
+          "n_hyp": 397,
+          "wer": 0.281,
+          "cat_errors": 109,
+          "wer_concat": 0.2759,
+          "median_utt_wer": 0.25,
+          "n_utt": 49
+        },
+        "1731": {
+          "errors": 112,
+          "n_ref": 237,
+          "n_hyp": 222,
+          "wer": 0.4726,
+          "cat_errors": 97,
+          "wer_concat": 0.4093,
+          "median_utt_wer": 0.5,
+          "n_utt": 74
+        },
+        "1738": {
+          "errors": 71,
+          "n_ref": 286,
+          "n_hyp": 276,
+          "wer": 0.2483,
+          "cat_errors": 68,
+          "wer_concat": 0.2378,
+          "median_utt_wer": 0.1818,
+          "n_utt": 43
+        },
+        "1833": {
+          "errors": 58,
+          "n_ref": 278,
+          "n_hyp": 274,
+          "wer": 0.2086,
+          "cat_errors": 58,
+          "wer_concat": 0.2086,
+          "median_utt_wer": 0.1429,
+          "n_utt": 37
+        },
+        "1944": {
+          "errors": 88,
+          "n_ref": 376,
+          "n_hyp": 369,
+          "wer": 0.234,
+          "cat_errors": 81,
+          "wer_concat": 0.2154,
+          "median_utt_wer": 0.2,
+          "n_utt": 47
+        }
+      }
+    },
+    "stream@silence_commit_ms=280@word_time_policy=incremental": {
+      "wer": 0.3831,
+      "wer_concat": 0.339,
+      "n_ref_words": 1655,
+      "n_hyp_words": 1563,
+      "n_utterances": 267,
+      "commit_lag_ms_median": 200,
+      "commit_lag_ms_p90": 300,
+      "n_commit_lag_samples": 1498,
+      "rtf_contended": 0.852,
+      "per_participant": {
+        "1554": {
+          "errors": 44,
+          "n_ref": 83,
+          "n_hyp": 64,
+          "wer": 0.5301,
+          "cat_errors": 41,
+          "wer_concat": 0.494,
+          "median_utt_wer": 0.5,
+          "n_utt": 17
+        },
+        "1713": {
+          "errors": 126,
+          "n_ref": 395,
+          "n_hyp": 380,
+          "wer": 0.319,
+          "cat_errors": 116,
+          "wer_concat": 0.2937,
+          "median_utt_wer": 0.3333,
+          "n_utt": 49
+        },
+        "1731": {
+          "errors": 130,
+          "n_ref": 237,
+          "n_hyp": 213,
+          "wer": 0.5485,
+          "cat_errors": 100,
+          "wer_concat": 0.4219,
+          "median_utt_wer": 0.6667,
+          "n_utt": 74
+        },
+        "1738": {
+          "errors": 112,
+          "n_ref": 286,
+          "n_hyp": 271,
+          "wer": 0.3916,
+          "cat_errors": 103,
+          "wer_concat": 0.3601,
+          "median_utt_wer": 0.2857,
+          "n_utt": 43
+        },
+        "1833": {
+          "errors": 98,
+          "n_ref": 278,
+          "n_hyp": 264,
+          "wer": 0.3525,
+          "cat_errors": 92,
+          "wer_concat": 0.3309,
+          "median_utt_wer": 0.3333,
+          "n_utt": 37
+        },
+        "1944": {
+          "errors": 124,
+          "n_ref": 376,
+          "n_hyp": 371,
+          "wer": 0.3298,
+          "cat_errors": 109,
+          "wer_concat": 0.2899,
+          "median_utt_wer": 0.3333,
+          "n_utt": 47
+        }
+      }
+    },
+    "stream@reset_window_s=6.0@word_time_policy=linear": {
+      "wer": 0.4012,
+      "wer_concat": 0.348,
+      "n_ref_words": 1655,
+      "n_hyp_words": 1512,
+      "n_utterances": 267,
+      "commit_lag_ms_median": 200,
+      "commit_lag_ms_p90": 300,
+      "n_commit_lag_samples": 1518,
+      "rtf_contended": 0.928,
+      "per_participant": {
+        "1554": {
+          "errors": 45,
+          "n_ref": 83,
+          "n_hyp": 64,
+          "wer": 0.5422,
+          "cat_errors": 42,
+          "wer_concat": 0.506,
+          "median_utt_wer": 0.5,
+          "n_utt": 17
+        },
+        "1713": {
+          "errors": 129,
+          "n_ref": 395,
+          "n_hyp": 364,
+          "wer": 0.3266,
+          "cat_errors": 113,
+          "wer_concat": 0.2861,
+          "median_utt_wer": 0.4,
+          "n_utt": 49
+        },
+        "1731": {
+          "errors": 137,
+          "n_ref": 237,
+          "n_hyp": 208,
+          "wer": 0.5781,
+          "cat_errors": 114,
+          "wer_concat": 0.481,
+          "median_utt_wer": 0.55,
+          "n_utt": 74
+        },
+        "1738": {
+          "errors": 116,
+          "n_ref": 286,
+          "n_hyp": 262,
+          "wer": 0.4056,
+          "cat_errors": 107,
+          "wer_concat": 0.3741,
+          "median_utt_wer": 0.3,
+          "n_utt": 43
+        },
+        "1833": {
+          "errors": 91,
+          "n_ref": 278,
+          "n_hyp": 263,
+          "wer": 0.3273,
+          "cat_errors": 79,
+          "wer_concat": 0.2842,
+          "median_utt_wer": 0.3333,
+          "n_utt": 37
+        },
+        "1944": {
+          "errors": 146,
+          "n_ref": 376,
+          "n_hyp": 351,
+          "wer": 0.3883,
+          "cat_errors": 121,
+          "wer_concat": 0.3218,
+          "median_utt_wer": 0.4,
+          "n_utt": 47
+        }
+      }
+    },
+    "stream@reset_window_s=10.0@max_window_s=16@word_time_policy=linear": {
+      "wer": 0.4121,
+      "wer_concat": 0.3529,
+      "n_ref_words": 1655,
+      "n_hyp_words": 1497,
+      "n_utterances": 267,
+      "commit_lag_ms_median": 200,
+      "commit_lag_ms_p90": 300,
+      "n_commit_lag_samples": 1532,
+      "rtf_contended": 1.081,
+      "per_participant": {
+        "1554": {
+          "errors": 46,
+          "n_ref": 83,
+          "n_hyp": 68,
+          "wer": 0.5542,
+          "cat_errors": 42,
+          "wer_concat": 0.506,
+          "median_utt_wer": 0.5,
+          "n_utt": 17
+        },
+        "1713": {
+          "errors": 134,
+          "n_ref": 395,
+          "n_hyp": 366,
+          "wer": 0.3392,
+          "cat_errors": 122,
+          "wer_concat": 0.3089,
+          "median_utt_wer": 0.4,
+          "n_utt": 49
+        },
+        "1731": {
+          "errors": 126,
+          "n_ref": 237,
+          "n_hyp": 202,
+          "wer": 0.5316,
+          "cat_errors": 106,
+          "wer_concat": 0.4473,
+          "median_utt_wer": 0.6,
+          "n_utt": 74
+        },
+        "1738": {
+          "errors": 115,
+          "n_ref": 286,
+          "n_hyp": 260,
+          "wer": 0.4021,
+          "cat_errors": 99,
+          "wer_concat": 0.3462,
+          "median_utt_wer": 0.4375,
+          "n_utt": 43
+        },
+        "1833": {
+          "errors": 108,
+          "n_ref": 278,
+          "n_hyp": 254,
+          "wer": 0.3885,
+          "cat_errors": 93,
+          "wer_concat": 0.3345,
+          "median_utt_wer": 0.3333,
+          "n_utt": 37
+        },
+        "1944": {
+          "errors": 153,
+          "n_ref": 376,
+          "n_hyp": 347,
+          "wer": 0.4069,
+          "cat_errors": 122,
+          "wer_concat": 0.3245,
+          "median_utt_wer": 0.4286,
+          "n_utt": 47
+        }
+      }
+    },
+    "stream@silence_commit_ms=1500@word_time_policy=linear": {
+      "wer": 0.4562,
+      "wer_concat": 0.3734,
+      "n_ref_words": 1655,
+      "n_hyp_words": 1498,
+      "n_utterances": 267,
+      "commit_lag_ms_median": 400,
+      "commit_lag_ms_p90": 900,
+      "n_commit_lag_samples": 978,
+      "rtf_contended": 0.684,
+      "per_participant": {
+        "1554": {
+          "errors": 58,
+          "n_ref": 83,
+          "n_hyp": 70,
+          "wer": 0.6988,
+          "cat_errors": 48,
+          "wer_concat": 0.5783,
+          "median_utt_wer": 0.6667,
+          "n_utt": 17
+        },
+        "1713": {
+          "errors": 180,
+          "n_ref": 395,
+          "n_hyp": 367,
+          "wer": 0.4557,
+          "cat_errors": 138,
+          "wer_concat": 0.3494,
+          "median_utt_wer": 0.5,
+          "n_utt": 49
+        },
+        "1731": {
+          "errors": 156,
+          "n_ref": 237,
+          "n_hyp": 203,
+          "wer": 0.6582,
+          "cat_errors": 127,
+          "wer_concat": 0.5359,
+          "median_utt_wer": 0.6667,
+          "n_utt": 74
+        },
+        "1738": {
+          "errors": 109,
+          "n_ref": 286,
+          "n_hyp": 260,
+          "wer": 0.3811,
+          "cat_errors": 94,
+          "wer_concat": 0.3287,
+          "median_utt_wer": 0.4286,
+          "n_utt": 43
+        },
+        "1833": {
+          "errors": 91,
+          "n_ref": 278,
+          "n_hyp": 260,
+          "wer": 0.3273,
+          "cat_errors": 81,
+          "wer_concat": 0.2914,
+          "median_utt_wer": 0.3333,
+          "n_utt": 37
+        },
+        "1944": {
+          "errors": 161,
+          "n_ref": 376,
+          "n_hyp": 338,
+          "wer": 0.4282,
+          "cat_errors": 130,
+          "wer_concat": 0.3457,
+          "median_utt_wer": 0.4211,
+          "n_utt": 47
+        }
+      }
+    },
+    "stream@silence_commit_ms=2500@word_time_policy=linear": {
+      "wer": 0.4435,
+      "wer_concat": 0.3656,
+      "n_ref_words": 1655,
+      "n_hyp_words": 1482,
+      "n_utterances": 267,
+      "commit_lag_ms_median": 300,
+      "commit_lag_ms_p90": 900,
+      "n_commit_lag_samples": 1021,
+      "rtf_contended": 0.431,
+      "per_participant": {
+        "1554": {
+          "errors": 57,
+          "n_ref": 83,
+          "n_hyp": 67,
+          "wer": 0.6867,
+          "cat_errors": 49,
+          "wer_concat": 0.5904,
+          "median_utt_wer": 0.75,
+          "n_utt": 17
+        },
+        "1713": {
+          "errors": 159,
+          "n_ref": 395,
+          "n_hyp": 369,
+          "wer": 0.4025,
+          "cat_errors": 128,
+          "wer_concat": 0.3241,
+          "median_utt_wer": 0.5,
+          "n_utt": 49
+        },
+        "1731": {
+          "errors": 145,
+          "n_ref": 237,
+          "n_hyp": 196,
+          "wer": 0.6118,
+          "cat_errors": 121,
+          "wer_concat": 0.5105,
+          "median_utt_wer": 0.6667,
+          "n_utt": 74
+        },
+        "1738": {
+          "errors": 123,
+          "n_ref": 286,
+          "n_hyp": 258,
+          "wer": 0.4301,
+          "cat_errors": 99,
+          "wer_concat": 0.3462,
+          "median_utt_wer": 0.5,
+          "n_utt": 43
+        },
+        "1833": {
+          "errors": 90,
+          "n_ref": 278,
+          "n_hyp": 255,
+          "wer": 0.3237,
+          "cat_errors": 79,
+          "wer_concat": 0.2842,
+          "median_utt_wer": 0.3333,
+          "n_utt": 37
+        },
+        "1944": {
+          "errors": 160,
+          "n_ref": 376,
+          "n_hyp": 337,
+          "wer": 0.4255,
+          "cat_errors": 129,
+          "wer_concat": 0.3431,
+          "median_utt_wer": 0.4,
+          "n_utt": 47
+        }
+      }
+    },
+    "stream@silence_commit_ms=700@word_time_policy=voiced": {
+      "wer": 0.3976,
+      "wer_concat": 0.3311,
+      "n_ref_words": 1655,
+      "n_hyp_words": 1548,
+      "n_utterances": 267,
+      "commit_lag_ms_median": 400,
+      "commit_lag_ms_p90": 700,
+      "n_commit_lag_samples": 1086,
+      "rtf_contended": 0.371,
+      "per_participant": {
+        "1554": {
+          "errors": 51,
+          "n_ref": 83,
+          "n_hyp": 63,
+          "wer": 0.6145,
+          "cat_errors": 45,
+          "wer_concat": 0.5422,
+          "median_utt_wer": 0.5263,
+          "n_utt": 17
+        },
+        "1713": {
+          "errors": 137,
+          "n_ref": 395,
+          "n_hyp": 384,
+          "wer": 0.3468,
+          "cat_errors": 121,
+          "wer_concat": 0.3063,
+          "median_utt_wer": 0.3333,
+          "n_utt": 49
+        },
+        "1731": {
+          "errors": 146,
+          "n_ref": 237,
+          "n_hyp": 219,
+          "wer": 0.616,
+          "cat_errors": 113,
+          "wer_concat": 0.4768,
+          "median_utt_wer": 0.75,
+          "n_utt": 74
+        },
+        "1738": {
+          "errors": 97,
+          "n_ref": 286,
+          "n_hyp": 265,
+          "wer": 0.3392,
+          "cat_errors": 85,
+          "wer_concat": 0.2972,
+          "median_utt_wer": 0.3,
+          "n_utt": 43
+        },
+        "1833": {
+          "errors": 84,
+          "n_ref": 278,
+          "n_hyp": 260,
+          "wer": 0.3022,
+          "cat_errors": 75,
+          "wer_concat": 0.2698,
+          "median_utt_wer": 0.3077,
+          "n_utt": 37
+        },
+        "1944": {
+          "errors": 143,
+          "n_ref": 376,
+          "n_hyp": 357,
+          "wer": 0.3803,
+          "cat_errors": 109,
+          "wer_concat": 0.2899,
+          "median_utt_wer": 0.3333,
+          "n_utt": 47
+        }
+      }
+    },
+    "stream@silence_commit_ms=700@word_time_policy=incremental": {
+      "wer": 0.3752,
+      "wer_concat": 0.3215,
+      "n_ref_words": 1655,
+      "n_hyp_words": 1532,
+      "n_utterances": 267,
+      "commit_lag_ms_median": 400,
+      "commit_lag_ms_p90": 700,
+      "n_commit_lag_samples": 1086,
+      "rtf_contended": 0.373,
+      "per_participant": {
+        "1554": {
+          "errors": 50,
+          "n_ref": 83,
+          "n_hyp": 61,
+          "wer": 0.6024,
+          "cat_errors": 46,
+          "wer_concat": 0.5542,
+          "median_utt_wer": 0.6667,
+          "n_utt": 17
+        },
+        "1713": {
+          "errors": 121,
+          "n_ref": 395,
+          "n_hyp": 376,
+          "wer": 0.3063,
+          "cat_errors": 113,
+          "wer_concat": 0.2861,
+          "median_utt_wer": 0.3333,
+          "n_utt": 49
+        },
+        "1731": {
+          "errors": 139,
+          "n_ref": 237,
+          "n_hyp": 211,
+          "wer": 0.5865,
+          "cat_errors": 109,
+          "wer_concat": 0.4599,
+          "median_utt_wer": 0.6667,
+          "n_utt": 74
+        },
+        "1738": {
+          "errors": 102,
+          "n_ref": 286,
+          "n_hyp": 265,
+          "wer": 0.3566,
+          "cat_errors": 84,
+          "wer_concat": 0.2937,
+          "median_utt_wer": 0.4286,
+          "n_utt": 43
+        },
+        "1833": {
+          "errors": 81,
+          "n_ref": 278,
+          "n_hyp": 259,
+          "wer": 0.2914,
+          "cat_errors": 72,
+          "wer_concat": 0.259,
+          "median_utt_wer": 0.2857,
+          "n_utt": 37
+        },
+        "1944": {
+          "errors": 128,
+          "n_ref": 376,
+          "n_hyp": 360,
+          "wer": 0.3404,
+          "cat_errors": 108,
+          "wer_concat": 0.2872,
+          "median_utt_wer": 0.2857,
+          "n_utt": 47
+        }
+      }
+    },
+    "stream@silence_commit_ms=500@word_time_policy=incremental": {
+      "wer": 0.3752,
+      "wer_concat": 0.3293,
+      "n_ref_words": 1655,
+      "n_hyp_words": 1569,
+      "n_utterances": 267,
+      "commit_lag_ms_median": 400,
+      "commit_lag_ms_p90": 500,
+      "n_commit_lag_samples": 1200,
+      "rtf_contended": 0.369,
+      "per_participant": {
+        "1554": {
+          "errors": 48,
+          "n_ref": 83,
+          "n_hyp": 60,
+          "wer": 0.5783,
+          "cat_errors": 44,
+          "wer_concat": 0.5301,
+          "median_utt_wer": 0.75,
+          "n_utt": 17
+        },
+        "1713": {
+          "errors": 121,
+          "n_ref": 395,
+          "n_hyp": 379,
+          "wer": 0.3063,
+          "cat_errors": 113,
+          "wer_concat": 0.2861,
+          "median_utt_wer": 0.3333,
+          "n_utt": 49
+        },
+        "1731": {
+          "errors": 138,
+          "n_ref": 237,
+          "n_hyp": 216,
+          "wer": 0.5823,
+          "cat_errors": 114,
+          "wer_concat": 0.481,
+          "median_utt_wer": 0.6667,
+          "n_utt": 74
+        },
+        "1738": {
+          "errors": 104,
+          "n_ref": 286,
+          "n_hyp": 278,
+          "wer": 0.3636,
+          "cat_errors": 87,
+          "wer_concat": 0.3042,
+          "median_utt_wer": 0.3333,
+          "n_utt": 43
+        },
+        "1833": {
+          "errors": 86,
+          "n_ref": 278,
+          "n_hyp": 265,
+          "wer": 0.3094,
+          "cat_errors": 81,
+          "wer_concat": 0.2914,
+          "median_utt_wer": 0.3077,
+          "n_utt": 37
+        },
+        "1944": {
+          "errors": 124,
+          "n_ref": 376,
+          "n_hyp": 371,
+          "wer": 0.3298,
+          "cat_errors": 106,
+          "wer_concat": 0.2819,
+          "median_utt_wer": 0.3333,
+          "n_utt": 47
+        }
+      }
+    }
+  }
+}

@@ -1,0 +1,740 @@
+{
+  "status": "OK",
+  "corpus": "APROCSA -- 6 speakers with chronic post-stroke aphasia",
+  "model": "turbo",
+  "mode": "verbatim",
+  "region_s": 300,
+  "skip_s": 120,
+  "shipped_streaming_defaults": {
+    "silence_commit_ms": 700,
+    "reset_window_s": 3.5,
+    "max_window_s": 8.0,
+    "word_time_policy": "incremental",
+    "context_words": 12,
+    "context_prompt": false
+  },
+  "note": "wer is per-utterance (the shipped metric); wer_concat removes the utterance boundaries. Degeneracy is counted per decode call against the context that call was given: echo = the hypothesis starts with >=3 words that are the tail of its own context, loop = an n-gram (n<=4) repeated >=3 times back to back (n_loop_content repeats that count with fillers removed, since '[UM] [UM] [UM]' is a real hesitation here and not a decoder loop), empty = nothing decoded. Offline arms at stride 26 overlap by 4 s, so an echo there is partly legitimate; the nooverlap arms and the streaming arms have no such excuse.",
+  "results": {
+    "offline_ctx": {
+      "wer": 0.2876,
+      "wer_concat": 0.2707,
+      "n_ref_words": 1655,
+      "n_hyp_words": 1605,
+      "n_utterances": 267,
+      "degenerate": {
+        "n_calls": 72,
+        "n_echo": 0,
+        "n_loop": 11,
+        "n_loop_content": 9,
+        "n_empty": 1,
+        "max_echo_words": 2,
+        "max_loop_repeats": 4,
+        "examples": [
+          {
+            "why": "loop3,cloop3",
+            "context": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]",
+            "hyp": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "why": "loop3,cloop3",
+            "context": null,
+            "hyp": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "why": "loop3,cloop3",
+            "context": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]",
+            "hyp": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "why": "cloop3",
+            "context": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]",
+            "hyp": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "why": "empty",
+            "context": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]",
+            "hyp": ""
+          },
+          {
+            "why": "loop3,cloop3",
+            "context": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]",
+            "hyp": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "why": "loop3",
+            "context": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]",
+            "hyp": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "why": "loop3",
+            "context": null,
+            "hyp": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          }
+        ]
+      },
+      "per_participant": {
+        "1554": {
+          "errors": 36,
+          "n_ref": 83,
+          "n_hyp": 67,
+          "wer": 0.4337,
+          "cat_errors": 35,
+          "wer_concat": 0.4217,
+          "median_utt_wer": 0.3333,
+          "n_utt": 17
+        },
+        "1713": {
+          "errors": 111,
+          "n_ref": 395,
+          "n_hyp": 397,
+          "wer": 0.281,
+          "cat_errors": 109,
+          "wer_concat": 0.2759,
+          "median_utt_wer": 0.25,
+          "n_utt": 49
+        },
+        "1731": {
+          "errors": 112,
+          "n_ref": 237,
+          "n_hyp": 222,
+          "wer": 0.4726,
+          "cat_errors": 97,
+          "wer_concat": 0.4093,
+          "median_utt_wer": 0.5,
+          "n_utt": 74
+        },
+        "1738": {
+          "errors": 71,
+          "n_ref": 286,
+          "n_hyp": 276,
+          "wer": 0.2483,
+          "cat_errors": 68,
+          "wer_concat": 0.2378,
+          "median_utt_wer": 0.1818,
+          "n_utt": 43
+        },
+        "1833": {
+          "errors": 58,
+          "n_ref": 278,
+          "n_hyp": 274,
+          "wer": 0.2086,
+          "cat_errors": 58,
+          "wer_concat": 0.2086,
+          "median_utt_wer": 0.1429,
+          "n_utt": 37
+        },
+        "1944": {
+          "errors": 88,
+          "n_ref": 376,
+          "n_hyp": 369,
+          "wer": 0.234,
+          "cat_errors": 81,
+          "wer_concat": 0.2154,
+          "median_utt_wer": 0.2,
+          "n_utt": 47
+        }
+      }
+    },
+    "offline_noctx": {
+      "wer": 0.3909,
+      "wer_concat": 0.3698,
+      "n_ref_words": 1655,
+      "n_hyp_words": 1809,
+      "n_utterances": 267,
+      "degenerate": {
+        "n_calls": 72,
+        "n_echo": 32,
+        "n_loop": 13,
+        "n_loop_content": 9,
+        "n_empty": 0,
+        "max_echo_words": 12,
+        "max_loop_repeats": 5,
+        "examples": [
+          {
+            "why": "loop3,cloop3",
+            "context": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]",
+            "hyp": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "why": "echo3",
+            "context": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]",
+            "hyp": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "why": "echo6",
+            "context": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]",
+            "hyp": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "why": "echo3",
+            "context": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]",
+            "hyp": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "why": "echo4",
+            "context": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]",
+            "hyp": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "why": "loop3,cloop3",
+            "context": null,
+            "hyp": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "why": "echo6",
+            "context": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]",
+            "hyp": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "why": "echo8",
+            "context": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]",
+            "hyp": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          }
+        ]
+      },
+      "per_participant": {
+        "1554": {
+          "errors": 39,
+          "n_ref": 83,
+          "n_hyp": 67,
+          "wer": 0.4699,
+          "cat_errors": 38,
+          "wer_concat": 0.4578,
+          "median_utt_wer": 0.5,
+          "n_utt": 17
+        },
+        "1713": {
+          "errors": 138,
+          "n_ref": 395,
+          "n_hyp": 424,
+          "wer": 0.3494,
+          "cat_errors": 136,
+          "wer_concat": 0.3443,
+          "median_utt_wer": 0.3333,
+          "n_utt": 49
+        },
+        "1731": {
+          "errors": 124,
+          "n_ref": 237,
+          "n_hyp": 255,
+          "wer": 0.5232,
+          "cat_errors": 107,
+          "wer_concat": 0.4515,
+          "median_utt_wer": 0.4143,
+          "n_utt": 74
+        },
+        "1738": {
+          "errors": 108,
+          "n_ref": 286,
+          "n_hyp": 323,
+          "wer": 0.3776,
+          "cat_errors": 103,
+          "wer_concat": 0.3601,
+          "median_utt_wer": 0.25,
+          "n_utt": 43
+        },
+        "1833": {
+          "errors": 96,
+          "n_ref": 278,
+          "n_hyp": 312,
+          "wer": 0.3453,
+          "cat_errors": 96,
+          "wer_concat": 0.3453,
+          "median_utt_wer": 0.25,
+          "n_utt": 37
+        },
+        "1944": {
+          "errors": 142,
+          "n_ref": 376,
+          "n_hyp": 428,
+          "wer": 0.3777,
+          "cat_errors": 132,
+          "wer_concat": 0.3511,
+          "median_utt_wer": 0.25,
+          "n_utt": 47
+        }
+      }
+    },
+    "offline_nooverlap_ctx": {
+      "wer": 0.2918,
+      "wer_concat": 0.2779,
+      "n_ref_words": 1655,
+      "n_hyp_words": 1588,
+      "n_utterances": 267,
+      "degenerate": {
+        "n_calls": 60,
+        "n_echo": 0,
+        "n_loop": 13,
+        "n_loop_content": 10,
+        "n_empty": 0,
+        "max_echo_words": 0,
+        "max_loop_repeats": 4,
+        "examples": [
+          {
+            "why": "loop3,cloop3",
+            "context": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]",
+            "hyp": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "why": "loop3,cloop3",
+            "context": null,
+            "hyp": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "why": "loop3,cloop3",
+            "context": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]",
+            "hyp": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "why": "loop4,cloop3",
+            "context": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]",
+            "hyp": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "why": "loop4",
+            "context": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]",
+            "hyp": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "why": "loop3,cloop3",
+            "context": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]",
+            "hyp": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "why": "loop3",
+            "context": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]",
+            "hyp": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "why": "loop3,cloop3",
+            "context": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]",
+            "hyp": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          }
+        ]
+      },
+      "per_participant": {
+        "1554": {
+          "errors": 35,
+          "n_ref": 83,
+          "n_hyp": 66,
+          "wer": 0.4217,
+          "cat_errors": 35,
+          "wer_concat": 0.4217,
+          "median_utt_wer": 0.3333,
+          "n_utt": 17
+        },
+        "1713": {
+          "errors": 118,
+          "n_ref": 395,
+          "n_hyp": 386,
+          "wer": 0.2987,
+          "cat_errors": 116,
+          "wer_concat": 0.2937,
+          "median_utt_wer": 0.3125,
+          "n_utt": 49
+        },
+        "1731": {
+          "errors": 100,
+          "n_ref": 237,
+          "n_hyp": 221,
+          "wer": 0.4219,
+          "cat_errors": 87,
+          "wer_concat": 0.3671,
+          "median_utt_wer": 0.3333,
+          "n_utt": 74
+        },
+        "1738": {
+          "errors": 70,
+          "n_ref": 286,
+          "n_hyp": 273,
+          "wer": 0.2448,
+          "cat_errors": 68,
+          "wer_concat": 0.2378,
+          "median_utt_wer": 0.1818,
+          "n_utt": 43
+        },
+        "1833": {
+          "errors": 60,
+          "n_ref": 278,
+          "n_hyp": 272,
+          "wer": 0.2158,
+          "cat_errors": 60,
+          "wer_concat": 0.2158,
+          "median_utt_wer": 0.1429,
+          "n_utt": 37
+        },
+        "1944": {
+          "errors": 100,
+          "n_ref": 376,
+          "n_hyp": 370,
+          "wer": 0.266,
+          "cat_errors": 94,
+          "wer_concat": 0.25,
+          "median_utt_wer": 0.25,
+          "n_utt": 47
+        }
+      }
+    },
+    "offline_nooverlap_noctx": {
+      "wer": 0.2792,
+      "wer_concat": 0.2677,
+      "n_ref_words": 1655,
+      "n_hyp_words": 1604,
+      "n_utterances": 267,
+      "degenerate": {
+        "n_calls": 60,
+        "n_echo": 0,
+        "n_loop": 12,
+        "n_loop_content": 10,
+        "n_empty": 0,
+        "max_echo_words": 1,
+        "max_loop_repeats": 6,
+        "examples": [
+          {
+            "why": "loop3,cloop3",
+            "context": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]",
+            "hyp": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "why": "loop3,cloop3",
+            "context": null,
+            "hyp": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "why": "loop3,cloop3",
+            "context": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]",
+            "hyp": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "why": "loop3,cloop3",
+            "context": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]",
+            "hyp": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "why": "cloop3",
+            "context": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]",
+            "hyp": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "why": "loop6",
+            "context": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]",
+            "hyp": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "why": "loop3",
+            "context": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]",
+            "hyp": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "why": "loop3,cloop3",
+            "context": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]",
+            "hyp": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          }
+        ]
+      },
+      "per_participant": {
+        "1554": {
+          "errors": 35,
+          "n_ref": 83,
+          "n_hyp": 64,
+          "wer": 0.4217,
+          "cat_errors": 35,
+          "wer_concat": 0.4217,
+          "median_utt_wer": 0.3333,
+          "n_utt": 17
+        },
+        "1713": {
+          "errors": 112,
+          "n_ref": 395,
+          "n_hyp": 394,
+          "wer": 0.2835,
+          "cat_errors": 110,
+          "wer_concat": 0.2785,
+          "median_utt_wer": 0.3333,
+          "n_utt": 49
+        },
+        "1731": {
+          "errors": 95,
+          "n_ref": 237,
+          "n_hyp": 223,
+          "wer": 0.4008,
+          "cat_errors": 86,
+          "wer_concat": 0.3629,
+          "median_utt_wer": 0.3333,
+          "n_utt": 74
+        },
+        "1738": {
+          "errors": 70,
+          "n_ref": 286,
+          "n_hyp": 274,
+          "wer": 0.2448,
+          "cat_errors": 68,
+          "wer_concat": 0.2378,
+          "median_utt_wer": 0.1818,
+          "n_utt": 43
+        },
+        "1833": {
+          "errors": 57,
+          "n_ref": 278,
+          "n_hyp": 274,
+          "wer": 0.205,
+          "cat_errors": 57,
+          "wer_concat": 0.205,
+          "median_utt_wer": 0.1429,
+          "n_utt": 37
+        },
+        "1944": {
+          "errors": 93,
+          "n_ref": 376,
+          "n_hyp": 375,
+          "wer": 0.2473,
+          "cat_errors": 87,
+          "wer_concat": 0.2314,
+          "median_utt_wer": 0.2143,
+          "n_utt": 47
+        }
+      }
+    },
+    "stream_noctx": {
+      "wer": 0.3752,
+      "wer_concat": 0.3215,
+      "n_ref_words": 1655,
+      "n_hyp_words": 1532,
+      "n_utterances": 267,
+      "degenerate": {
+        "n_calls": 2554,
+        "n_echo": 0,
+        "n_loop": 57,
+        "n_loop_content": 63,
+        "n_empty": 0,
+        "max_echo_words": 0,
+        "max_loop_repeats": 5,
+        "examples": [
+          {
+            "why": "loop3,cloop3",
+            "context": null,
+            "hyp": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "why": "loop3,cloop3",
+            "context": null,
+            "hyp": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "why": "loop3,cloop3",
+            "context": null,
+            "hyp": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "why": "loop3,cloop3",
+            "context": null,
+            "hyp": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "why": "loop3,cloop3",
+            "context": null,
+            "hyp": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "why": "loop3,cloop3",
+            "context": null,
+            "hyp": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "why": "loop3,cloop3",
+            "context": null,
+            "hyp": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "why": "loop3,cloop3",
+            "context": null,
+            "hyp": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          }
+        ]
+      },
+      "per_participant": {
+        "1554": {
+          "errors": 50,
+          "n_ref": 83,
+          "n_hyp": 61,
+          "wer": 0.6024,
+          "cat_errors": 46,
+          "wer_concat": 0.5542,
+          "median_utt_wer": 0.6667,
+          "n_utt": 17
+        },
+        "1713": {
+          "errors": 121,
+          "n_ref": 395,
+          "n_hyp": 376,
+          "wer": 0.3063,
+          "cat_errors": 113,
+          "wer_concat": 0.2861,
+          "median_utt_wer": 0.3333,
+          "n_utt": 49
+        },
+        "1731": {
+          "errors": 139,
+          "n_ref": 237,
+          "n_hyp": 211,
+          "wer": 0.5865,
+          "cat_errors": 109,
+          "wer_concat": 0.4599,
+          "median_utt_wer": 0.6667,
+          "n_utt": 74
+        },
+        "1738": {
+          "errors": 102,
+          "n_ref": 286,
+          "n_hyp": 265,
+          "wer": 0.3566,
+          "cat_errors": 84,
+          "wer_concat": 0.2937,
+          "median_utt_wer": 0.4286,
+          "n_utt": 43
+        },
+        "1833": {
+          "errors": 81,
+          "n_ref": 278,
+          "n_hyp": 259,
+          "wer": 0.2914,
+          "cat_errors": 72,
+          "wer_concat": 0.259,
+          "median_utt_wer": 0.2857,
+          "n_utt": 37
+        },
+        "1944": {
+          "errors": 128,
+          "n_ref": 376,
+          "n_hyp": 360,
+          "wer": 0.3404,
+          "cat_errors": 108,
+          "wer_concat": 0.2872,
+          "median_utt_wer": 0.2857,
+          "n_utt": 47
+        }
+      }
+    },
+    "stream_ctx": {
+      "wer": 0.435,
+      "wer_concat": 0.3758,
+      "n_ref_words": 1655,
+      "n_hyp_words": 1458,
+      "n_utterances": 267,
+      "degenerate": {
+        "n_calls": 2556,
+        "n_echo": 0,
+        "n_loop": 43,
+        "n_loop_content": 47,
+        "n_empty": 0,
+        "max_echo_words": 2,
+        "max_loop_repeats": 85,
+        "examples": [
+          {
+            "why": "loop3,cloop3",
+            "context": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]",
+            "hyp": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "why": "loop3,cloop3",
+            "context": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]",
+            "hyp": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "why": "loop3,cloop3",
+            "context": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]",
+            "hyp": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "why": "loop3,cloop3",
+            "context": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]",
+            "hyp": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "why": "loop3,cloop3",
+            "context": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]",
+            "hyp": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "why": "loop3,cloop3",
+            "context": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]",
+            "hyp": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "why": "loop3,cloop3",
+            "context": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]",
+            "hyp": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "why": "loop3,cloop3",
+            "context": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]",
+            "hyp": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          }
+        ]
+      },
+      "per_participant": {
+        "1554": {
+          "errors": 45,
+          "n_ref": 83,
+          "n_hyp": 61,
+          "wer": 0.5422,
+          "cat_errors": 40,
+          "wer_concat": 0.4819,
+          "median_utt_wer": 0.5,
+          "n_utt": 17
+        },
+        "1713": {
+          "errors": 141,
+          "n_ref": 395,
+          "n_hyp": 368,
+          "wer": 0.357,
+          "cat_errors": 132,
+          "wer_concat": 0.3342,
+          "median_utt_wer": 0.3333,
+          "n_utt": 49
+        },
+        "1731": {
+          "errors": 148,
+          "n_ref": 237,
+          "n_hyp": 194,
+          "wer": 0.6245,
+          "cat_errors": 125,
+          "wer_concat": 0.5274,
+          "median_utt_wer": 0.8,
+          "n_utt": 74
+        },
+        "1738": {
+          "errors": 132,
+          "n_ref": 286,
+          "n_hyp": 247,
+          "wer": 0.4615,
+          "cat_errors": 112,
+          "wer_concat": 0.3916,
+          "median_utt_wer": 0.5,
+          "n_utt": 43
+        },
+        "1833": {
+          "errors": 94,
+          "n_ref": 278,
+          "n_hyp": 250,
+          "wer": 0.3381,
+          "cat_errors": 86,
+          "wer_concat": 0.3094,
+          "median_utt_wer": 0.3333,
+          "n_utt": 37
+        },
+        "1944": {
+          "errors": 160,
+          "n_ref": 376,
+          "n_hyp": 338,
+          "wer": 0.4255,
+          "cat_errors": 127,
+          "wer_concat": 0.3378,
+          "median_utt_wer": 0.3571,
+          "n_utt": 47
+        }
+      }
+    }
+  },
+  "_redaction": "Verbatim APROCSA participant speech has been removed from this file. Metrics, counts, spans and participant IDs are unchanged. Regenerate the full record locally from eval/results/cache/aprocsa/ (gitignored)."
+}

@@ -1,0 +1,183 @@
+{
+  "baseline": {
+    "ckpt": "stutternet_ssl_frozen.pt",
+    "obvious_recall": {
+      "Prolongation": {
+        "recall": 0.525,
+        "fired": 21,
+        "n": 40,
+        "thr": 0.8808
+      },
+      "Block": {
+        "recall": 0.375,
+        "fired": 15,
+        "n": 40,
+        "thr": 0.8808
+      },
+      "SoundRep": {
+        "recall": 0.725,
+        "fired": 29,
+        "n": 40,
+        "thr": 0.8808
+      },
+      "WordRep": {
+        "recall": 0.7,
+        "fired": 28,
+        "n": 40,
+        "thr": 0.8808
+      },
+      "Interjection": {
+        "recall": 0.725,
+        "fired": 29,
+        "n": 40,
+        "thr": 0.8808
+      }
+    },
+    "aggregate_recall": {
+      "Block": {
+        "frame_thresh": 0.8808,
+        "recall": 0.1727,
+        "n_pos": 440,
+        "clean_fire_rate": 0.0215
+      },
+      "Prolongation": {
+        "frame_thresh": 0.8808,
+        "recall": 0.3651,
+        "n_pos": 315,
+        "clean_fire_rate": 0.0201
+      },
+      "SoundRep": {
+        "frame_thresh": 0.8808,
+        "recall": 0.4152,
+        "n_pos": 277,
+        "clean_fire_rate": 0.0132
+      },
+      "WordRep": {
+        "frame_thresh": 0.8808,
+        "recall": 0.5699,
+        "n_pos": 386,
+        "clean_fire_rate": 0.0174
+      },
+      "Interjection": {
+        "frame_thresh": 0.8808,
+        "recall": 0.6371,
+        "n_pos": 744,
+        "clean_fire_rate": 0.0264
+      },
+      "ANY": {
+        "recall": 0.5834,
+        "n_pos": 1769,
+        "clean_fire_rate": 0.0924
+      }
+    },
+    "fluent_firing": {
+      "n_clips": 120,
+      "duration_s": 360.0,
+      "clips_firing_any": 5,
+      "clip_fire_rate": 0.0417,
+      "events_any": 5,
+      "per_min_clip_fires": 0.833,
+      "by_type_fires": {
+        "Block": 1,
+        "Prolongation": 1,
+        "SoundRep": 1,
+        "WordRep": 2,
+        "Interjection": 0
+      }
+    },
+    "latency": {
+      "cuda_batch1_ms_per_3s_window": 29.02
+    }
+  },
+  "temporal": {
+    "ckpt": "stutternet_temporal_v1.pt",
+    "obvious_recall": {
+      "Prolongation": {
+        "recall": 0.525,
+        "fired": 21,
+        "n": 40,
+        "thr": 0.8808
+      },
+      "Block": {
+        "recall": 0.475,
+        "fired": 19,
+        "n": 40,
+        "thr": 0.8808
+      },
+      "SoundRep": {
+        "recall": 0.9,
+        "fired": 36,
+        "n": 40,
+        "thr": 0.8808
+      },
+      "WordRep": {
+        "recall": 0.9,
+        "fired": 36,
+        "n": 40,
+        "thr": 0.8808
+      },
+      "Interjection": {
+        "recall": 0.75,
+        "fired": 30,
+        "n": 40,
+        "thr": 0.8808
+      }
+    },
+    "aggregate_recall": {
+      "Block": {
+        "frame_thresh": 0.8808,
+        "recall": 0.1841,
+        "n_pos": 440,
+        "clean_fire_rate": 0.034
+      },
+      "Prolongation": {
+        "frame_thresh": 0.8808,
+        "recall": 0.3968,
+        "n_pos": 315,
+        "clean_fire_rate": 0.0181
+      },
+      "SoundRep": {
+        "frame_thresh": 0.8808,
+        "recall": 0.5235,
+        "n_pos": 277,
+        "clean_fire_rate": 0.0264
+      },
+      "WordRep": {
+        "frame_thresh": 0.8808,
+        "recall": 0.6399,
+        "n_pos": 386,
+        "clean_fire_rate": 0.0139
+      },
+      "Interjection": {
+        "frame_thresh": 0.8808,
+        "recall": 0.621,
+        "n_pos": 744,
+        "clean_fire_rate": 0.0215
+      },
+      "ANY": {
+        "recall": 0.6439,
+        "n_pos": 1769,
+        "clean_fire_rate": 0.1083
+      }
+    },
+    "fluent_firing": {
+      "n_clips": 120,
+      "duration_s": 360.0,
+      "clips_firing_any": 1,
+      "clip_fire_rate": 0.0083,
+      "events_any": 1,
+      "per_min_clip_fires": 0.167,
+      "by_type_fires": {
+        "Block": 0,
+        "Prolongation": 1,
+        "SoundRep": 0,
+        "WordRep": 0,
+        "Interjection": 0
+      }
+    },
+    "latency": {
+      "cuda_batch1_ms_per_3s_window": 28.43
+    }
+  },
+  "notes": "Both at each checkpoint's own target_fpr=0.02 frame operating point; equal clean-fire budget by construction. Baseline = frozen WavLM + per-frame conv head; temporal = frozen WavLM + BiLSTM head. Operating-point (peak-prob vs frame threshold) comparison, not through AcousticStream."
+}

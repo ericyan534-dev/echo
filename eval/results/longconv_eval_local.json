@@ -1,0 +1,1089 @@
+{
+  "status": "OK",
+  "n": 72,
+  "verbatim_turns": 6,
+  "baseline_by_depth": {
+    "early(<=10)": {
+      "n": 12,
+      "top1": 1.0
+    },
+    "late(>25)": {
+      "n": 12,
+      "top1": 0.0833
+    },
+    "mid(11-25)": {
+      "n": 12,
+      "top1": 0.0833
+    }
+  },
+  "builder_by_depth": {
+    "early(<=10)": {
+      "n": 12,
+      "top1": 1.0
+    },
+    "late(>25)": {
+      "n": 12,
+      "top1": 0.75
+    },
+    "mid(11-25)": {
+      "n": 12,
+      "top1": 0.75
+    }
+  },
+  "rows": [
+    {
+      "conv": "conv-01",
+      "depth": 3,
+      "bucket": "early(<=10)",
+      "arm": "baseline",
+      "expected": [
+        "Maria"
+      ],
+      "got": [
+        "Maria",
+        "sister"
+      ],
+      "correct": true
+    },
+    {
+      "conv": "conv-01",
+      "depth": 20,
+      "bucket": "mid(11-25)",
+      "arm": "baseline",
+      "expected": [
+        "Maria"
+      ],
+      "got": [
+        "the plumber",
+        "the electrician",
+        "the doctor"
+      ],
+      "correct": false
+    },
+    {
+      "conv": "conv-01",
+      "depth": 41,
+      "bucket": "late(>25)",
+      "arm": "baseline",
+      "expected": [
+        "Maria"
+      ],
+      "got": [
+        "doctor",
+        "plumber",
+        "electrician"
+      ],
+      "correct": false
+    },
+    {
+      "conv": "conv-02",
+      "depth": 3,
+      "bucket": "early(<=10)",
+      "arm": "baseline",
+      "expected": [
+        "Tokyo"
+      ],
+      "got": [
+        "Tokyo"
+      ],
+      "correct": true
+    },
+    {
+      "conv": "conv-02",
+      "depth": 20,
+      "bucket": "mid(11-25)",
+      "arm": "baseline",
+      "expected": [
+        "Tokyo"
+      ],
+      "got": [
+        "the",
+        "our",
+        "trip"
+      ],
+      "correct": false
+    },
+    {
+      "conv": "conv-02",
+      "depth": 41,
+      "bucket": "late(>25)",
+      "arm": "baseline",
+      "expected": [
+        "Tokyo"
+      ],
+      "got": [
+        "Paris",
+        "London",
+        "New York"
+      ],
+      "correct": false
+    },
+    {
+      "conv": "conv-03",
+      "depth": 3,
+      "bucket": "early(<=10)",
+      "arm": "baseline",
+      "expected": [
+        "medication",
+        "medicine",
+        "pills"
+      ],
+      "got": [
+        "medication",
+        "pills",
+        "blood pressure medication"
+      ],
+      "correct": true
+    },
+    {
+      "conv": "conv-03",
+      "depth": 20,
+      "bucket": "mid(11-25)",
+      "arm": "baseline",
+      "expected": [
+        "medication",
+        "medicine",
+        "pills"
+      ],
+      "got": [
+        "medication",
+        "pills",
+        "medicine"
+      ],
+      "correct": true
+    },
+    {
+      "conv": "conv-03",
+      "depth": 41,
+      "bucket": "late(>25)",
+      "arm": "baseline",
+      "expected": [
+        "medication",
+        "medicine",
+        "pills"
+      ],
+      "got": [
+        "medication",
+        "pills",
+        "medicine"
+      ],
+      "correct": true
+    },
+    {
+      "conv": "conv-04",
+      "depth": 3,
+      "bucket": "early(<=10)",
+      "arm": "baseline",
+      "expected": [
+        "Frank"
+      ],
+      "got": [
+        "Frank",
+        "him",
+        "my neighbor"
+      ],
+      "correct": true
+    },
+    {
+      "conv": "conv-04",
+      "depth": 20,
+      "bucket": "mid(11-25)",
+      "arm": "baseline",
+      "expected": [
+        "Frank"
+      ],
+      "got": [
+        "neighbor",
+        "gardener",
+        "plumber"
+      ],
+      "correct": false
+    },
+    {
+      "conv": "conv-04",
+      "depth": 41,
+      "bucket": "late(>25)",
+      "arm": "baseline",
+      "expected": [
+        "Frank"
+      ],
+      "got": [
+        "you",
+        "them",
+        "the neighbours"
+      ],
+      "correct": false
+    },
+    {
+      "conv": "conv-05",
+      "depth": 3,
+      "bucket": "early(<=10)",
+      "arm": "baseline",
+      "expected": [
+        "piano"
+      ],
+      "got": [
+        "piano"
+      ],
+      "correct": true
+    },
+    {
+      "conv": "conv-05",
+      "depth": 20,
+      "bucket": "mid(11-25)",
+      "arm": "baseline",
+      "expected": [
+        "piano"
+      ],
+      "got": [
+        "guitar",
+        "piano",
+        "violin"
+      ],
+      "correct": false
+    },
+    {
+      "conv": "conv-05",
+      "depth": 41,
+      "bucket": "late(>25)",
+      "arm": "baseline",
+      "expected": [
+        "piano"
+      ],
+      "got": [
+        "guitar",
+        "piano",
+        "violin"
+      ],
+      "correct": false
+    },
+    {
+      "conv": "conv-06",
+      "depth": 3,
+      "bucket": "early(<=10)",
+      "arm": "baseline",
+      "expected": [
+        "Rufus"
+      ],
+      "got": [
+        "Rufus",
+        "the dog",
+        "the greyhound"
+      ],
+      "correct": true
+    },
+    {
+      "conv": "conv-06",
+      "depth": 20,
+      "bucket": "mid(11-25)",
+      "arm": "baseline",
+      "expected": [
+        "Rufus"
+      ],
+      "got": [
+        "the dog",
+        "the cat",
+        "the kids"
+      ],
+      "correct": false
+    },
+    {
+      "conv": "conv-06",
+      "depth": 41,
+      "bucket": "late(>25)",
+      "arm": "baseline",
+      "expected": [
+        "Rufus"
+      ],
+      "got": [
+        "the dog",
+        "the cat",
+        "myself"
+      ],
+      "correct": false
+    },
+    {
+      "conv": "conv-07",
+      "depth": 3,
+      "bucket": "early(<=10)",
+      "arm": "baseline",
+      "expected": [
+        "Sarah"
+      ],
+      "got": [
+        "Sarah",
+        "therapist"
+      ],
+      "correct": true
+    },
+    {
+      "conv": "conv-07",
+      "depth": 20,
+      "bucket": "mid(11-25)",
+      "arm": "baseline",
+      "expected": [
+        "Sarah"
+      ],
+      "got": [
+        "doctor",
+        "dentist",
+        "physiotherapist"
+      ],
+      "correct": false
+    },
+    {
+      "conv": "conv-07",
+      "depth": 41,
+      "bucket": "late(>25)",
+      "arm": "baseline",
+      "expected": [
+        "Sarah"
+      ],
+      "got": [
+        "doctor",
+        "dentist",
+        "therapist"
+      ],
+      "correct": false
+    },
+    {
+      "conv": "conv-08",
+      "depth": 3,
+      "bucket": "early(<=10)",
+      "arm": "baseline",
+      "expected": [
+        "Maine"
+      ],
+      "got": [
+        "Maine",
+        "cottage",
+        "summer"
+      ],
+      "correct": true
+    },
+    {
+      "conv": "conv-08",
+      "depth": 20,
+      "bucket": "mid(11-25)",
+      "arm": "baseline",
+      "expected": [
+        "Maine"
+      ],
+      "got": [
+        "the window",
+        "the radio",
+        "the kettle"
+      ],
+      "correct": false
+    },
+    {
+      "conv": "conv-08",
+      "depth": 41,
+      "bucket": "late(>25)",
+      "arm": "baseline",
+      "expected": [
+        "Maine"
+      ],
+      "got": [
+        "the conversation",
+        "the paperwork",
+        "the defrosted dinner"
+      ],
+      "correct": false
+    },
+    {
+      "conv": "conv-09",
+      "depth": 3,
+      "bucket": "early(<=10)",
+      "arm": "baseline",
+      "expected": [
+        "tablet"
+      ],
+      "got": [
+        "tablet",
+        "glasses",
+        "remote"
+      ],
+      "correct": true
+    },
+    {
+      "conv": "conv-09",
+      "depth": 20,
+      "bucket": "mid(11-25)",
+      "arm": "baseline",
+      "expected": [
+        "tablet"
+      ],
+      "got": [
+        "keys",
+        "wallet",
+        "phone"
+      ],
+      "correct": false
+    },
+    {
+      "conv": "conv-09",
+      "depth": 41,
+      "bucket": "late(>25)",
+      "arm": "baseline",
+      "expected": [
+        "tablet"
+      ],
+      "got": [
+        "keys",
+        "phone",
+        "wallet"
+      ],
+      "correct": false
+    },
+    {
+      "conv": "conv-10",
+      "depth": 3,
+      "bucket": "early(<=10)",
+      "arm": "baseline",
+      "expected": [
+        "bakery"
+      ],
+      "got": [
+        "bakery",
+        "store",
+        "shop"
+      ],
+      "correct": true
+    },
+    {
+      "conv": "conv-10",
+      "depth": 20,
+      "bucket": "mid(11-25)",
+      "arm": "baseline",
+      "expected": [
+        "bakery"
+      ],
+      "got": [
+        "shop",
+        "store",
+        "supermarket"
+      ],
+      "correct": false
+    },
+    {
+      "conv": "conv-10",
+      "depth": 41,
+      "bucket": "late(>25)",
+      "arm": "baseline",
+      "expected": [
+        "bakery"
+      ],
+      "got": [
+        "store",
+        "shop",
+        "bank"
+      ],
+      "correct": false
+    },
+    {
+      "conv": "conv-11",
+      "depth": 3,
+      "bucket": "early(<=10)",
+      "arm": "baseline",
+      "expected": [
+        "Eleanor"
+      ],
+      "got": [
+        "Eleanor"
+      ],
+      "correct": true
+    },
+    {
+      "conv": "conv-11",
+      "depth": 20,
+      "bucket": "mid(11-25)",
+      "arm": "baseline",
+      "expected": [
+        "Eleanor"
+      ],
+      "got": [
+        "email",
+        "letter",
+        "text"
+      ],
+      "correct": false
+    },
+    {
+      "conv": "conv-11",
+      "depth": 41,
+      "bucket": "late(>25)",
+      "arm": "baseline",
+      "expected": [
+        "Eleanor"
+      ],
+      "got": [
+        "letter",
+        "email",
+        "phone call"
+      ],
+      "correct": false
+    },
+    {
+      "conv": "conv-12",
+      "depth": 3,
+      "bucket": "early(<=10)",
+      "arm": "baseline",
+      "expected": [
+        "glasses"
+      ],
+      "got": [
+        "glasses",
+        "reading glasses",
+        "spectacles"
+      ],
+      "correct": true
+    },
+    {
+      "conv": "conv-12",
+      "depth": 20,
+      "bucket": "mid(11-25)",
+      "arm": "baseline",
+      "expected": [
+        "glasses"
+      ],
+      "got": [
+        "keys",
+        "wallet",
+        "phone"
+      ],
+      "correct": false
+    },
+    {
+      "conv": "conv-12",
+      "depth": 41,
+      "bucket": "late(>25)",
+      "arm": "baseline",
+      "expected": [
+        "glasses"
+      ],
+      "got": [
+        "keys",
+        "wallet",
+        "phone"
+      ],
+      "correct": false
+    },
+    {
+      "conv": "conv-01",
+      "depth": 3,
+      "bucket": "early(<=10)",
+      "arm": "builder",
+      "expected": [
+        "Maria"
+      ],
+      "got": [
+        "Maria",
+        "sister"
+      ],
+      "correct": true
+    },
+    {
+      "conv": "conv-01",
+      "depth": 20,
+      "bucket": "mid(11-25)",
+      "arm": "builder",
+      "expected": [
+        "Maria"
+      ],
+      "got": [
+        "Maria",
+        "doctor",
+        "plumber"
+      ],
+      "correct": true
+    },
+    {
+      "conv": "conv-01",
+      "depth": 41,
+      "bucket": "late(>25)",
+      "arm": "builder",
+      "expected": [
+        "Maria"
+      ],
+      "got": [
+        "Maria",
+        "sister"
+      ],
+      "correct": true
+    },
+    {
+      "conv": "conv-02",
+      "depth": 3,
+      "bucket": "early(<=10)",
+      "arm": "builder",
+      "expected": [
+        "Tokyo"
+      ],
+      "got": [
+        "Tokyo"
+      ],
+      "correct": true
+    },
+    {
+      "conv": "conv-02",
+      "depth": 20,
+      "bucket": "mid(11-25)",
+      "arm": "builder",
+      "expected": [
+        "Tokyo"
+      ],
+      "got": [
+        "Tokyo"
+      ],
+      "correct": true
+    },
+    {
+      "conv": "conv-02",
+      "depth": 41,
+      "bucket": "late(>25)",
+      "arm": "builder",
+      "expected": [
+        "Tokyo"
+      ],
+      "got": [
+        "Tokyo"
+      ],
+      "correct": true
+    },
+    {
+      "conv": "conv-03",
+      "depth": 3,
+      "bucket": "early(<=10)",
+      "arm": "builder",
+      "expected": [
+        "medication",
+        "medicine",
+        "pills"
+      ],
+      "got": [
+        "medication",
+        "pills",
+        "blood pressure medication"
+      ],
+      "correct": true
+    },
+    {
+      "conv": "conv-03",
+      "depth": 20,
+      "bucket": "mid(11-25)",
+      "arm": "builder",
+      "expected": [
+        "medication",
+        "medicine",
+        "pills"
+      ],
+      "got": [
+        "medication",
+        "pills",
+        "vitamins"
+      ],
+      "correct": true
+    },
+    {
+      "conv": "conv-03",
+      "depth": 41,
+      "bucket": "late(>25)",
+      "arm": "builder",
+      "expected": [
+        "medication",
+        "medicine",
+        "pills"
+      ],
+      "got": [
+        "medication",
+        "pills",
+        "prescription"
+      ],
+      "correct": true
+    },
+    {
+      "conv": "conv-04",
+      "depth": 3,
+      "bucket": "early(<=10)",
+      "arm": "builder",
+      "expected": [
+        "Frank"
+      ],
+      "got": [
+        "Frank"
+      ],
+      "correct": true
+    },
+    {
+      "conv": "conv-04",
+      "depth": 20,
+      "bucket": "mid(11-25)",
+      "arm": "builder",
+      "expected": [
+        "Frank"
+      ],
+      "got": [
+        "Frank"
+      ],
+      "correct": true
+    },
+    {
+      "conv": "conv-04",
+      "depth": 41,
+      "bucket": "late(>25)",
+      "arm": "builder",
+      "expected": [
+        "Frank"
+      ],
+      "got": [
+        "Frank"
+      ],
+      "correct": true
+    },
+    {
+      "conv": "conv-05",
+      "depth": 3,
+      "bucket": "early(<=10)",
+      "arm": "builder",
+      "expected": [
+        "piano"
+      ],
+      "got": [
+        "piano",
+        "instrument",
+        "keys"
+      ],
+      "correct": true
+    },
+    {
+      "conv": "conv-05",
+      "depth": 20,
+      "bucket": "mid(11-25)",
+      "arm": "builder",
+      "expected": [
+        "piano"
+      ],
+      "got": [
+        "guitar",
+        "piano",
+        "violin"
+      ],
+      "correct": false
+    },
+    {
+      "conv": "conv-05",
+      "depth": 41,
+      "bucket": "late(>25)",
+      "arm": "builder",
+      "expected": [
+        "piano"
+      ],
+      "got": [
+        "guitar",
+        "piano",
+        "violin"
+      ],
+      "correct": false
+    },
+    {
+      "conv": "conv-06",
+      "depth": 3,
+      "bucket": "early(<=10)",
+      "arm": "builder",
+      "expected": [
+        "Rufus"
+      ],
+      "got": [
+        "Rufus"
+      ],
+      "correct": true
+    },
+    {
+      "conv": "conv-06",
+      "depth": 20,
+      "bucket": "mid(11-25)",
+      "arm": "builder",
+      "expected": [
+        "Rufus"
+      ],
+      "got": [
+        "Rufus"
+      ],
+      "correct": true
+    },
+    {
+      "conv": "conv-06",
+      "depth": 41,
+      "bucket": "late(>25)",
+      "arm": "builder",
+      "expected": [
+        "Rufus"
+      ],
+      "got": [
+        "Rufus"
+      ],
+      "correct": true
+    },
+    {
+      "conv": "conv-07",
+      "depth": 3,
+      "bucket": "early(<=10)",
+      "arm": "builder",
+      "expected": [
+        "Sarah"
+      ],
+      "got": [
+        "Sarah",
+        "therapist"
+      ],
+      "correct": true
+    },
+    {
+      "conv": "conv-07",
+      "depth": 20,
+      "bucket": "mid(11-25)",
+      "arm": "builder",
+      "expected": [
+        "Sarah"
+      ],
+      "got": [
+        "Sarah",
+        "doctor",
+        "therapist"
+      ],
+      "correct": true
+    },
+    {
+      "conv": "conv-07",
+      "depth": 41,
+      "bucket": "late(>25)",
+      "arm": "builder",
+      "expected": [
+        "Sarah"
+      ],
+      "got": [
+        "Sarah"
+      ],
+      "correct": true
+    },
+    {
+      "conv": "conv-08",
+      "depth": 3,
+      "bucket": "early(<=10)",
+      "arm": "builder",
+      "expected": [
+        "Maine"
+      ],
+      "got": [
+        "Maine",
+        "cottage",
+        "the cottage"
+      ],
+      "correct": true
+    },
+    {
+      "conv": "conv-08",
+      "depth": 20,
+      "bucket": "mid(11-25)",
+      "arm": "builder",
+      "expected": [
+        "Maine"
+      ],
+      "got": [
+        "Maine",
+        "cottage"
+      ],
+      "correct": true
+    },
+    {
+      "conv": "conv-08",
+      "depth": 41,
+      "bucket": "late(>25)",
+      "arm": "builder",
+      "expected": [
+        "Maine"
+      ],
+      "got": [
+        "Maine",
+        "cottage"
+      ],
+      "correct": true
+    },
+    {
+      "conv": "conv-09",
+      "depth": 3,
+      "bucket": "early(<=10)",
+      "arm": "builder",
+      "expected": [
+        "tablet"
+      ],
+      "got": [
+        "tablet",
+        "glasses",
+        "remote"
+      ],
+      "correct": true
+    },
+    {
+      "conv": "conv-09",
+      "depth": 20,
+      "bucket": "mid(11-25)",
+      "arm": "builder",
+      "expected": [
+        "tablet"
+      ],
+      "got": [
+        "keys",
+        "wallet",
+        "phone"
+      ],
+      "correct": false
+    },
+    {
+      "conv": "conv-09",
+      "depth": 41,
+      "bucket": "late(>25)",
+      "arm": "builder",
+      "expected": [
+        "tablet"
+      ],
+      "got": [
+        "keys",
+        "wallet",
+        "phone"
+      ],
+      "correct": false
+    },
+    {
+      "conv": "conv-10",
+      "depth": 3,
+      "bucket": "early(<=10)",
+      "arm": "builder",
+      "expected": [
+        "bakery"
+      ],
+      "got": [
+        "bakery",
+        "store",
+        "shop"
+      ],
+      "correct": true
+    },
+    {
+      "conv": "conv-10",
+      "depth": 20,
+      "bucket": "mid(11-25)",
+      "arm": "builder",
+      "expected": [
+        "bakery"
+      ],
+      "got": [
+        "bakery",
+        "store",
+        "shop"
+      ],
+      "correct": true
+    },
+    {
+      "conv": "conv-10",
+      "depth": 41,
+      "bucket": "late(>25)",
+      "arm": "builder",
+      "expected": [
+        "bakery"
+      ],
+      "got": [
+        "bakery",
+        "store",
+        "shop"
+      ],
+      "correct": true
+    },
+    {
+      "conv": "conv-11",
+      "depth": 3,
+      "bucket": "early(<=10)",
+      "arm": "builder",
+      "expected": [
+        "Eleanor"
+      ],
+      "got": [
+        "Eleanor"
+      ],
+      "correct": true
+    },
+    {
+      "conv": "conv-11",
+      "depth": 20,
+      "bucket": "mid(11-25)",
+      "arm": "builder",
+      "expected": [
+        "Eleanor"
+      ],
+      "got": [
+        "Eleanor"
+      ],
+      "correct": true
+    },
+    {
+      "conv": "conv-11",
+      "depth": 41,
+      "bucket": "late(>25)",
+      "arm": "builder",
+      "expected": [
+        "Eleanor"
+      ],
+      "got": [
+        "Eleanor"
+      ],
+      "correct": true
+    },
+    {
+      "conv": "conv-12",
+      "depth": 3,
+      "bucket": "early(<=10)",
+      "arm": "builder",
+      "expected": [
+        "glasses"
+      ],
+      "got": [
+        "glasses",
+        "reading glasses"
+      ],
+      "correct": true
+    },
+    {
+      "conv": "conv-12",
+      "depth": 20,
+      "bucket": "mid(11-25)",
+      "arm": "builder",
+      "expected": [
+        "glasses"
+      ],
+      "got": [
+        "keys",
+        "wallet",
+        "phone"
+      ],
+      "correct": false
+    },
+    {
+      "conv": "conv-12",
+      "depth": 41,
+      "bucket": "late(>25)",
+      "arm": "builder",
+      "expected": [
+        "glasses"
+      ],
+      "got": [
+        "keys",
+        "wallet",
+        "phone"
+      ],
+      "correct": false
+    }
+  ],
+  "provider": "local",
+  "model": "Qwen3.8-27B-Q4_K_M"
+}

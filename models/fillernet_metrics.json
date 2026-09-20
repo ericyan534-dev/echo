@@ -1,0 +1,34 @@
+{
+  "accuracy": 0.8523603081703186,
+  "per_class": {
+    "uh": {
+      "f1": 0.8267,
+      "precision": 0.8756,
+      "recall": 0.7829,
+      "n": 2598
+    },
+    "um": {
+      "f1": 0.9023,
+      "precision": 0.8827,
+      "recall": 0.9227,
+      "n": 2446
+    },
+    "speech": {
+      "f1": 0.788,
+      "precision": 0.8021,
+      "recall": 0.7744,
+      "n": 2292
+    },
+    "other": {
+      "f1": 0.8893,
+      "precision": 0.8439,
+      "recall": 0.94,
+      "n": 2133
+    }
+  },
+  "filler_binary": {
+    "f1": 0.9331,
+    "precision": 0.9488,
+    "recall": 0.9179
+  }
+}

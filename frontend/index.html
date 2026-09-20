@@ -1,0 +1,395 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Echo Console</title>
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<!--
+DIRECTION CONTRACT (Echo Console v6 shell)
+THESIS: Echo's screen is the clinician/operator console for one speaker's
+  session: one server, one microphone (the DJI Mic 2S lav on the speaker,
+  or the laptop mic), one browser. It refuses the one-page demo harness
+  with a tab strip; it is a console with a navigation rail, an inputs
+  tree, a workspace, and an inspector.
+OWN-WORLD: the committed Echo Console tokens, unchanged: cold near-black
+  tonal stack, 1px hairlines, mint #38d39f as state only, humanist sans for
+  speech, monospace for measurement. Atoms: a 248px rail, input rows with
+  a state word, an event log, a read-only config sheet.
+STORY: a judge reads the input first (which mic is live), then the
+  mechanism (word, transcript, two lanes), then the ledger and the log.
+FIRST VIEWPORT: rail left (brand, pages, inputs tree, server link). Session
+  bar top (page, session clock, status chips). Deck: source tabs, transport
+  button, meter, mic picker. Stage: suggested word, then transcript over the
+  dual-channel timeline. Inspector: audio source, history, tally, event log.
+FORM: grounded candidate 4 of 7 (rail app), seed b0a3969b; no dealt staging
+  taken, own composition.
+-->
+<body data-mode="live" data-page="console">
+
+<!-- Icon set: one stroke weight, one grid, currentColor. -->
+<svg class="sprite" aria-hidden="true" focusable="false">
+  <defs>
+    <g id="g-mark"><circle cx="12" cy="12" r="2.1" fill="currentColor" stroke="none"/><path d="M16.4 7.9a5.9 5.9 0 0 1 0 8.2M19.7 4.9a10.4 10.4 0 0 1 0 14.2M7.6 7.9a5.9 5.9 0 0 0 0 8.2M4.3 4.9a10.4 10.4 0 0 0 0 14.2"/></g>
+    <g id="g-link"><path d="M10.6 13.4a4.4 4.4 0 0 0 6.2 0l2.6-2.6a4.4 4.4 0 0 0-6.2-6.2l-1.3 1.3"/><path d="M13.4 10.6a4.4 4.4 0 0 0-6.2 0l-2.6 2.6a4.4 4.4 0 0 0 6.2 6.2l1.3-1.3"/></g>
+    <g id="g-cpu"><rect x="7.5" y="7.5" width="9" height="9" rx="2"/><path d="M10 3.2v2.4M14 3.2v2.4M10 18.4v2.4M14 18.4v2.4M3.2 10h2.3M3.2 14h2.3M18.5 10h2.3M18.5 14h2.3"/></g>
+    <g id="g-wave"><path d="M2.5 12h2.6l2-5.4 3 12.2 2.9-8.4 1.8 3.6h6.7"/></g>
+    <g id="g-mic"><path d="M12 3.2a2.9 2.9 0 0 1 2.9 2.9v5.8a2.9 2.9 0 1 1-5.8 0V6.1A2.9 2.9 0 0 1 12 3.2z"/><path d="M5.4 11.3a6.6 6.6 0 0 0 13.2 0M12 17.9v2.9"/></g>
+    <g id="g-text"><path d="M4 6.5h16M4 12h12.5M4 17.5h8.5"/></g>
+    <g id="g-play"><path d="M8.2 5.1l10.4 6.9-10.4 6.9z"/></g>
+    <g id="g-stop"><rect x="6.5" y="6.5" width="11" height="11" rx="1.8"/></g>
+    <g id="g-x"><path d="M6.6 6.6l10.8 10.8M17.4 6.6L6.6 17.4"/></g>
+    <g id="g-check"><path d="M4.5 12.4l5 5.1L19.5 6.5"/></g>
+    <g id="g-keyboard"><rect x="2.2" y="6" width="19.6" height="12" rx="2.2"/><path d="M6.2 10h.02M10 10h.02M13.9 10h.02M17.8 10h.02M8.2 14.2h7.6"/></g>
+    <g id="g-speaker"><path d="M4.2 9.2h3.4L12.4 5v14l-4.8-4.2H4.2z"/><path d="M16 9.6a3.6 3.6 0 0 1 0 4.8M18.7 7.2a7.2 7.2 0 0 1 0 9.6"/></g>
+    <g id="g-reset"><path d="M3.4 12a8.6 8.6 0 1 1 2.7 6.3"/><path d="M3.4 19.4v-5.2h5.2"/></g>
+    <g id="g-pause"><path d="M5.5 12h.02M12 12h.02M18.5 12h.02" stroke-width="2.8"/></g>
+    <g id="g-console"><rect x="3" y="4" width="18" height="16" rx="2.2"/><path d="M7 9.5l3 2.5-3 2.5M12.5 14.5h4.5"/></g>
+    <g id="g-list"><path d="M8.5 6.5h12M8.5 12h12M8.5 17.5h12M4 6.5h.02M4 12h.02M4 17.5h.02" stroke-width="2.2"/></g>
+    <g id="g-sliders"><path d="M4 7h9M17 7h3M4 17h3M11 17h9"/><circle cx="15" cy="7" r="2.2"/><circle cx="9" cy="17" r="2.2"/></g>
+    <g id="g-radio"><circle cx="12" cy="12" r="2"/><path d="M8.2 15.8a5.4 5.4 0 0 1 0-7.6M15.8 8.2a5.4 5.4 0 0 1 0 7.6M5.4 18.6a9.4 9.4 0 0 1 0-13.2M18.6 5.4a9.4 9.4 0 0 1 0 13.2"/></g>
+    <g id="g-download"><path d="M12 3.5v11M7.5 10l4.5 4.5 4.5-4.5M4 17.5v2a1 1 0 0 0 1 1h14a1 1 0 0 0 1-1v-2"/></g>
+    <g id="g-trash"><path d="M4 7h16M9.5 7V4.5h5V7M6.5 7l1 13h9l1-13M10 11v6M14 11v6"/></g>
+    <g id="g-server"><rect x="3" y="4" width="18" height="6.5" rx="1.6"/><rect x="3" y="13.5" width="18" height="6.5" rx="1.6"/><path d="M7 7.25h.02M7 16.75h.02" stroke-width="2.4"/></g>
+    <g id="g-dot"><circle cx="12" cy="12" r="4" fill="currentColor" stroke="none"/></g>
+  </defs>
+  <symbol id="i-mark" viewBox="0 0 24 24"><use href="#g-mark"/></symbol>
+  <symbol id="i-link" viewBox="0 0 24 24"><use href="#g-link"/></symbol>
+  <symbol id="i-cpu" viewBox="0 0 24 24"><use href="#g-cpu"/></symbol>
+  <symbol id="i-wave" viewBox="0 0 24 24"><use href="#g-wave"/></symbol>
+  <symbol id="i-mic" viewBox="0 0 24 24"><use href="#g-mic"/></symbol>
+  <symbol id="i-text" viewBox="0 0 24 24"><use href="#g-text"/></symbol>
+  <symbol id="i-play" viewBox="0 0 24 24"><use href="#g-play"/></symbol>
+  <symbol id="i-stop" viewBox="0 0 24 24"><use href="#g-stop"/></symbol>
+  <symbol id="i-x" viewBox="0 0 24 24"><use href="#g-x"/></symbol>
+  <symbol id="i-check" viewBox="0 0 24 24"><use href="#g-check"/></symbol>
+  <symbol id="i-keyboard" viewBox="0 0 24 24"><use href="#g-keyboard"/></symbol>
+  <symbol id="i-speaker" viewBox="0 0 24 24"><use href="#g-speaker"/></symbol>
+  <symbol id="i-reset" viewBox="0 0 24 24"><use href="#g-reset"/></symbol>
+  <symbol id="i-pause" viewBox="0 0 24 24"><use href="#g-pause"/></symbol>
+  <symbol id="i-console" viewBox="0 0 24 24"><use href="#g-console"/></symbol>
+  <symbol id="i-list" viewBox="0 0 24 24"><use href="#g-list"/></symbol>
+  <symbol id="i-sliders" viewBox="0 0 24 24"><use href="#g-sliders"/></symbol>
+  <symbol id="i-radio" viewBox="0 0 24 24"><use href="#g-radio"/></symbol>
+  <symbol id="i-download" viewBox="0 0 24 24"><use href="#g-download"/></symbol>
+  <symbol id="i-trash" viewBox="0 0 24 24"><use href="#g-trash"/></symbol>
+  <symbol id="i-server" viewBox="0 0 24 24"><use href="#g-server"/></symbol>
+  <symbol id="i-dot" viewBox="0 0 24 24"><use href="#g-dot"/></symbol>
+</svg>
+
+<div class="app">
+
+<!-- ===================== navigation rail ===================== -->
+<nav class="rail" aria-label="Console navigation">
+  <div class="brand">
+    <svg class="ic ic--mark" aria-hidden="true"><use href="#i-mark"/></svg>
+    <span class="brand-name">Echo</span>
+    <span class="brand-sub">Console</span>
+  </div>
+
+  <div class="nav" role="group" aria-label="Pages">
+    <a class="nav-item" href="#console" data-nav="console" aria-current="page">
+      <svg class="ic" aria-hidden="true"><use href="#i-console"/></svg>Console<kbd class="nav-key" aria-hidden="true">alt 1</kbd></a>
+    <a class="nav-item" href="#sessions" data-nav="sessions">
+      <svg class="ic" aria-hidden="true"><use href="#i-list"/></svg>Sessions<kbd class="nav-key" aria-hidden="true">alt 2</kbd></a>
+    <a class="nav-item" href="#settings" data-nav="settings">
+      <svg class="ic" aria-hidden="true"><use href="#i-sliders"/></svg>Settings<kbd class="nav-key" aria-hidden="true">alt 3</kbd></a>
+  </div>
+
+  <!-- The inputs tree: the host audio inputs the browser can capture
+       (enumerateDevices), with the one in use marked live and recognised
+       hardware (the DJI Mic 2S receiver) carrying its profile name. -->
+  <section class="tree" aria-labelledby="lbl-tree">
+    <div class="tree-head">
+      <h2 id="lbl-tree">Inputs</h2>
+      <span id="tree-summary" class="tree-summary">0 inputs</span>
+    </div>
+    <div class="tree-group">
+      <div class="tree-group-label"><svg class="ic" aria-hidden="true"><use href="#i-mic"/></svg>Host audio</div>
+      <ul id="tree-inputs" class="tree-list" aria-label="Host audio inputs"></ul>
+    </div>
+  </section>
+
+  <div class="rail-foot">
+    <div class="server-row">
+      <svg class="ic" aria-hidden="true"><use href="#i-server"/></svg>
+      <span id="server-host" class="server-host">localhost:8000</span>
+      <span id="server-rtt" class="server-rtt" title="WebSocket ping round trip, measured every 5 s">-- ms</span>
+    </div>
+  </div>
+</nav>
+
+<!-- ===================== main column ===================== -->
+<div class="main">
+
+  <header class="sessionbar">
+    <div class="sessionbar-title">
+      <h1 id="page-title">Console</h1>
+      <span id="session-clock" class="session-clock" title="Time since this console was opened">00:00</span>
+    </div>
+    <div class="chips" role="group" aria-label="System status">
+      <span id="ws-chip" class="chip"><svg class="ic" aria-hidden="true"><use href="#i-link"/></svg><span class="chip-label">connecting…</span></span>
+      <span id="model-chip" class="chip"><svg class="ic" aria-hidden="true"><use href="#i-cpu"/></svg><span class="chip-label">…</span></span>
+      <span id="acoustic-chip" class="chip"><svg class="ic" aria-hidden="true"><use href="#i-wave"/></svg><span class="chip-label">…</span></span>
+      <span id="mic-chip" class="chip"><svg class="ic" aria-hidden="true"><use href="#i-mic"/></svg><span class="chip-label">idle</span></span>
+    </div>
+  </header>
+
+  <!-- ===================== CONSOLE page ===================== -->
+  <main class="page" data-page-when="console">
+
+    <div class="deck">
+      <!-- Deliberately NOT a tablist: each mode owns content in two regions
+           (this deck and the stage below). Two pressed-state toggles. -->
+      <div class="tabs" role="group" aria-label="Input source">
+        <button id="tab-live" class="tab active" aria-pressed="true">
+          <svg class="ic" aria-hidden="true"><use href="#i-mic"/></svg>Live
+        </button>
+        <button id="tab-sim" class="tab" aria-pressed="false">
+          <svg class="ic" aria-hidden="true"><use href="#i-keyboard"/></svg>Simulate
+        </button>
+      </div>
+
+      <div class="ctl" id="ctl-live" data-when="live">
+        <div class="ctl-controls">
+          <div class="ctl-main">
+            <button id="mic-btn" class="mic-btn" aria-pressed="false">
+              <svg class="ic" aria-hidden="true"><use href="#i-mic"/></svg><span id="mic-btn-label">Start listening</span>
+            </button>
+            <div class="vu-wrap">
+              <div class="vu" role="img" aria-label="Input level"><div id="vu-bar" class="vu-bar"></div></div>
+              <span id="vu-db" class="vu-db" title="Level of the last 100 ms block reaching /ws/audio">-- dBFS</span>
+            </div>
+          </div>
+          <div class="ctl-opts">
+            <label class="inline" for="mic-select">Input
+              <select id="mic-select"><option value="">System default</option></select>
+            </label>
+            <span id="source-badge" class="source-badge" hidden></span>
+            <!-- default OFF: confirm-to-speak (tap the word) is the clinical default -->
+            <label class="inline check" for="autospeak">
+              <input type="checkbox" id="autospeak" />
+              <svg class="ic" aria-hidden="true"><use href="#i-speaker"/></svg>Speak top suggestion
+            </label>
+          </div>
+        </div>
+        <p class="hint">Recognition follows the <b>OS-default input</b>; the picker drives the level meter and the
+          acoustic channel, and prefers the DJI Mic 2S on its own when its receiver is plugged in. Echo stays
+          silent until you genuinely stall.</p>
+      </div>
+
+      <div class="ctl" id="ctl-sim" data-when="sim">
+        <div class="ctl-controls">
+          <div class="ctl-fields">
+            <div class="field">
+              <label for="context">Recent context <span class="field-note">one line per turn</span></label>
+              <textarea id="context" rows="2">So what did you have for breakfast?</textarea>
+            </div>
+            <div class="field">
+              <label for="utterance">Utterance <span class="field-note">Echo stays silent until you stall</span></label>
+              <input id="utterance" type="text" value="I made some toast in the"
+                     placeholder="type what the speaker says…" />
+            </div>
+          </div>
+          <div class="ctl-main">
+            <button id="speak"><svg class="ic" aria-hidden="true"><use href="#i-play"/></svg>Speak it word by word</button>
+            <button id="stall" class="secondary"><svg class="ic" aria-hidden="true"><use href="#i-pause"/></svg>Stall (pause)</button>
+            <button id="reset" class="ghost"><svg class="ic" aria-hidden="true"><use href="#i-reset"/></svg>Reset turn</button>
+          </div>
+        </div>
+        <p class="hint">End with "um" or "the thing" for a filler or hedge stall; <b>Stall (pause)</b> fires the
+          1300 ms pause trigger. Same pipeline as Live.</p>
+      </div>
+    </div>
+
+    <div class="workspace">
+      <div class="stage">
+
+        <section class="panel panel--stage" aria-labelledby="lbl-suggestion">
+          <div class="panel-head">
+            <h2 id="lbl-suggestion">Suggested word</h2>
+            <span id="latency-counter" class="readout" hidden role="img"
+                  aria-label="Perceived latency from acoustic detection to card render"
+                  title="Wall-clock time from acoustic detection arriving in the UI to the card rendering (real instrumentation)">0 ms</span>
+          </div>
+          <div id="candidates" class="candidates" tabindex="-1" aria-live="polite">
+            <p class="placeholder">Silent while speech is fluent.<span>A word appears only when Echo detects a stall.</span></p>
+          </div>
+          <p id="meta" class="meta"></p>
+        </section>
+
+        <section id="panel-live" class="panel panel--stage" data-when="live" aria-labelledby="lbl-signal">
+          <div class="panel-head">
+            <h2 id="lbl-signal">What the transcript sees vs. what the mic hears</h2>
+          </div>
+
+          <p id="live-transcript" class="transcript"><span class="muted">Press Start listening.</span></p>
+
+          <div class="timeline">
+            <div class="timeline-row">
+              <div class="lane-label lane-label--transcript">
+                <svg class="ic" aria-hidden="true"><use href="#i-text"/></svg>transcript</div>
+              <div id="lane-text" class="lane" role="group" tabindex="0" aria-label="Transcript channel"></div>
+            </div>
+            <div class="timeline-row">
+              <div class="lane-label lane-label--acoustic">
+                <svg class="ic" aria-hidden="true"><use href="#i-wave"/></svg>acoustic</div>
+              <div id="lane-acoustic" class="lane" role="group" tabindex="0" aria-label="Acoustic channel"></div>
+            </div>
+          </div>
+
+          <p class="hint">Chrome's recognizer deletes "um" and "uh" and normalizes "theeee…" to "the". The acoustic
+            channel is how Echo still hears them.</p>
+        </section>
+
+        <section id="panel-sim" class="panel panel--stage" data-when="sim" aria-labelledby="lbl-sim">
+          <div class="panel-head"><h2 id="lbl-sim">Simulated transcript</h2></div>
+          <p id="sim-transcript" class="transcript"><span class="muted">Press Speak it word by word.</span></p>
+        </section>
+      </div>
+
+      <!-- ===================== inspector ===================== -->
+      <aside class="rail-right">
+
+        <section class="panel" aria-labelledby="lbl-source">
+          <div class="panel-head">
+            <h2 id="lbl-source">Audio source</h2>
+            <span id="source-floor" class="readout readout--quiet" title="Room-tone floor measured from the live stream (10th percentile of 100 ms blocks)">floor <b>--</b> dBFS</span>
+          </div>
+          <dl id="source-sheet" class="sheet">
+            <div><dt>Device</dt><dd id="src-name">none (not listening)</dd></div>
+            <div><dt>Profile</dt><dd id="src-profile">--</dd></div>
+            <div><dt>Format</dt><dd id="src-format">--</dd></div>
+            <div><dt>Constraints</dt><dd id="src-constraints">--</dd></div>
+            <div><dt>Speaker gate</dt><dd id="src-gate">--</dd></div>
+          </dl>
+        </section>
+
+        <section class="panel" aria-labelledby="lbl-history">
+          <div class="panel-head"><h2 id="lbl-history">Session history</h2></div>
+          <ul id="history" class="history"><li class="placeholder-row">No stalls yet.</li></ul>
+        </section>
+
+        <section class="panel" aria-labelledby="lbl-stats">
+          <div class="panel-head">
+            <h2 id="lbl-stats">Interaction tally</h2>
+            <span id="tally-badge" class="readout readout--quiet"
+                  title="Session-local behavioral tally, not an efficacy claim">
+              <b id="tally-count">0</b> stalls recovered <small>this session</small></span>
+          </div>
+          <p id="card-stats" class="meta"></p>
+          <p class="hint">Tap the word to accept, <b>not it</b> to reject and re-predict. An unaccepted card clears
+            after four more words.</p>
+        </section>
+
+        <section class="panel" aria-labelledby="lbl-log">
+          <div class="panel-head">
+            <h2 id="lbl-log">Event log</h2>
+            <button id="log-clear" class="ghost btn-sm" type="button">Clear</button>
+          </div>
+          <ol id="event-log" class="log" aria-live="off"><li class="placeholder-row">Waiting for the server.</li></ol>
+        </section>
+      </aside>
+    </div>
+
+    <p class="disclaimer">Research prototype for demonstration. Not a medical device, and not a substitute for
+      speech-language therapy.</p>
+  </main>
+
+  <!-- ===================== SESSIONS page ===================== -->
+  <main class="page" data-page-when="sessions" hidden>
+    <div class="workspace">
+      <div class="stage">
+        <section class="panel panel--stage" aria-labelledby="lbl-session-full">
+          <div class="panel-head">
+            <h2 id="lbl-session-full">This session</h2>
+            <div class="head-actions">
+              <button id="session-export" class="ghost btn-sm" type="button">
+                <svg class="ic" aria-hidden="true"><use href="#i-download"/></svg>Export JSON</button>
+              <button id="session-clear" class="ghost btn-sm" type="button">
+                <svg class="ic" aria-hidden="true"><use href="#i-trash"/></svg>Clear console</button>
+            </div>
+          </div>
+          <div class="table-wrap">
+            <table id="session-table" class="table">
+              <thead><tr><th>Time</th><th>Fragment</th><th>Word</th><th>Trigger</th><th>Served</th><th>Latency</th><th>Outcome</th></tr></thead>
+              <tbody><tr class="placeholder-tr"><td colspan="7">No stalls yet.</td></tr></tbody>
+            </table>
+          </div>
+          <p class="hint">Every row is a prediction the server actually returned. Outcome is what the operator did with
+            it. Export writes this table and the event log as one JSON file; Clear resets the console's counters only,
+            never the server's context.</p>
+        </section>
+      </div>
+      <aside class="rail-right">
+        <section class="panel" aria-labelledby="lbl-session-stats">
+          <div class="panel-head"><h2 id="lbl-session-stats">Counts</h2></div>
+          <dl id="session-sheet" class="sheet">
+            <div><dt>Stalls recovered</dt><dd id="ss-recovered">0</dd></div>
+            <div><dt>Predictions</dt><dd id="ss-predictions">0</dd></div>
+            <div><dt>Prefetch hits</dt><dd id="ss-prefetch">0</dd></div>
+            <div><dt>Accepted</dt><dd id="ss-taps">0</dd></div>
+            <div><dt>Rejected</dt><dd id="ss-rejects">0</dd></div>
+            <div><dt>Median latency</dt><dd id="ss-latency">--</dd></div>
+          </dl>
+          <p class="hint">Session-local behavioral counts, not an efficacy claim.</p>
+        </section>
+      </aside>
+    </div>
+  </main>
+
+  <!-- ===================== SETTINGS page ===================== -->
+  <main class="page" data-page-when="settings" hidden>
+    <div class="workspace">
+      <div class="stage">
+        <section class="panel panel--stage" aria-labelledby="lbl-runtime">
+          <div class="panel-head">
+            <h2 id="lbl-runtime">Server runtime</h2>
+            <span class="readout readout--quiet">read from <b>/healthz</b> and <b>/api/config</b></span>
+          </div>
+          <dl id="runtime-sheet" class="sheet sheet--wide"><div><dt>Loading</dt><dd>…</dd></div></dl>
+          <p class="hint">These values are set by the server's environment and change only on restart; the console
+            shows them so nobody has to guess what is running.</p>
+        </section>
+        <section class="panel panel--stage" aria-labelledby="lbl-profiles">
+          <div class="panel-head"><h2 id="lbl-profiles">Known input hardware</h2></div>
+          <div class="table-wrap">
+            <table id="profile-table" class="table">
+              <thead><tr><th>Profile</th><th>Kind</th><th>Match</th><th>Capture constraints</th></tr></thead>
+              <tbody></tbody>
+            </table>
+          </div>
+          <p class="hint">A host input whose label matches a profile is captured with that profile's constraints
+            (the DJI lav on the speaker wants no echo cancellation; a laptop array wants it). Anything else is a
+            generic input with the default constraints.</p>
+        </section>
+      </div>
+      <aside class="rail-right">
+        <section class="panel" aria-labelledby="lbl-prefs">
+          <div class="panel-head"><h2 id="lbl-prefs">Console</h2></div>
+          <label class="inline check" for="pref-autospeak">
+            <input type="checkbox" id="pref-autospeak" />
+            <svg class="ic" aria-hidden="true"><use href="#i-speaker"/></svg>Speak top suggestion
+          </label>
+          <label for="pref-reveal">Reveal window <span class="field-note">delay before the acoustic token lands</span></label>
+          <div class="range-row">
+            <input id="pref-reveal" type="range" min="0" max="1200" step="50" value="500" />
+            <span id="pref-reveal-val" class="readout readout--quiet">500 ms</span>
+          </div>
+          <label class="inline check" for="pref-log-verbose">
+            <input type="checkbox" id="pref-log-verbose" />
+            <svg class="ic" aria-hidden="true"><use href="#i-list"/></svg>Log interim transcript
+          </label>
+        </section>
+      </aside>
+    </div>
+  </main>
+
+</div><!-- /main -->
+</div><!-- /app -->
+
+<script src="/console.js"></script>
+<script src="/app.js"></script>
+</body>
+</html>

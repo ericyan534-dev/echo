@@ -1,0 +1,34 @@
+[
+  {
+    "name": "toaster_pause",
+    "context": ["So what did you have for breakfast?"],
+    "words": ["I", "made", "some", "toast", "in", "the"],
+    "stall_after": 5,
+    "expected_trigger": "pause",
+    "expected_word": "toaster"
+  },
+  {
+    "name": "tokyo_filler",
+    "context": ["Where are you traveling next month?"],
+    "words": ["we're", "flying", "to", "the", "big", "city", "in", "um"],
+    "stall_after": null,
+    "expected_trigger": "filler",
+    "expected_word": "Tokyo"
+  },
+  {
+    "name": "medication_hedge",
+    "context": ["Did the doctor say anything?"],
+    "words": ["take", "the", "pills", "for", "the", "thing"],
+    "stall_after": null,
+    "expected_trigger": "hedge",
+    "expected_word": "medication"
+  },
+  {
+    "name": "fluent_no_stall",
+    "context": ["How are you today?"],
+    "words": ["I", "feel", "really", "good", "thanks."],
+    "stall_after": null,
+    "expected_trigger": null,
+    "expected_word": null
+  }
+]

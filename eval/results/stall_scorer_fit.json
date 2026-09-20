@@ -1,0 +1,140 @@
+{
+  "status": "OK",
+  "tune": [
+    "1554",
+    "1731",
+    "1833"
+  ],
+  "heldout_speakers": [
+    "1713",
+    "1738",
+    "1944"
+  ],
+  "n_tune_instants": 1106,
+  "positive_rate": 0.7505,
+  "weights": {
+    "pause_log": 0.0,
+    "fillers_recent": 3.1199,
+    "hedge": 0.8365,
+    "fragments": 3.4733,
+    "repetition": -0.7031,
+    "acou_block": 0.0,
+    "acou_prolong": 0.9686,
+    "acou_rep": 0.1465,
+    "acou_filler": 2.8048,
+    "content_count": -0.9399
+  },
+  "bias": -0.3343,
+  "conf_min": 0.35,
+  "min_gap_ms": 2500,
+  "threshold_sweep_tune": [
+    {
+      "recall": 0.8986,
+      "false_alarm_rate": 0.5932,
+      "partner_fire_rate": 0.1443,
+      "fires_per_min": 14.6,
+      "n_pos": 69,
+      "n_neg": 59,
+      "n_par": 97,
+      "threshold": 0.3,
+      "utility": 0.3391
+    },
+    {
+      "recall": 0.8551,
+      "false_alarm_rate": 0.4746,
+      "partner_fire_rate": 0.1031,
+      "fires_per_min": 12.4,
+      "n_pos": 69,
+      "n_neg": 59,
+      "n_par": 97,
+      "threshold": 0.4,
+      "utility": 0.4198
+    },
+    {
+      "recall": 0.7391,
+      "false_alarm_rate": 0.3559,
+      "partner_fire_rate": 0.0412,
+      "fires_per_min": 9.67,
+      "n_pos": 69,
+      "n_neg": 59,
+      "n_par": 97,
+      "threshold": 0.5,
+      "utility": 0.4488
+    },
+    {
+      "recall": 0.6667,
+      "false_alarm_rate": 0.2203,
+      "partner_fire_rate": 0.0206,
+      "fires_per_min": 7.73,
+      "n_pos": 69,
+      "n_neg": 59,
+      "n_par": 97,
+      "threshold": 0.55,
+      "utility": 0.4919
+    },
+    {
+      "recall": 0.5652,
+      "false_alarm_rate": 0.1695,
+      "partner_fire_rate": 0.0206,
+      "fires_per_min": 6.8,
+      "n_pos": 69,
+      "n_neg": 59,
+      "n_par": 97,
+      "threshold": 0.6,
+      "utility": 0.4259
+    },
+    {
+      "recall": 0.5362,
+      "false_alarm_rate": 0.1525,
+      "partner_fire_rate": 0.0206,
+      "fires_per_min": 6.2,
+      "n_pos": 69,
+      "n_neg": 59,
+      "n_par": 97,
+      "threshold": 0.65,
+      "utility": 0.4088
+    },
+    {
+      "recall": 0.4348,
+      "false_alarm_rate": 0.1186,
+      "partner_fire_rate": 0.0206,
+      "fires_per_min": 5.13,
+      "n_pos": 69,
+      "n_neg": 59,
+      "n_par": 97,
+      "threshold": 0.7,
+      "utility": 0.3312
+    },
+    {
+      "recall": 0.3478,
+      "false_alarm_rate": 0.0339,
+      "partner_fire_rate": 0.0103,
+      "fires_per_min": 3.67,
+      "n_pos": 69,
+      "n_neg": 59,
+      "n_par": 97,
+      "threshold": 0.8,
+      "utility": 0.3138
+    }
+  ],
+  "best_on_tune": {
+    "recall": 0.6667,
+    "false_alarm_rate": 0.2203,
+    "partner_fire_rate": 0.0206,
+    "fires_per_min": 7.73,
+    "n_pos": 69,
+    "n_neg": 59,
+    "n_par": 97,
+    "threshold": 0.55,
+    "utility": 0.4919
+  },
+  "heldout": {
+    "recall": 0.5333,
+    "false_alarm_rate": 0.2857,
+    "partner_fire_rate": 0.0137,
+    "fires_per_min": 6.53,
+    "n_pos": 90,
+    "n_neg": 49,
+    "n_par": 73
+  }
+}

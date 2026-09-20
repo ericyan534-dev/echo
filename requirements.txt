@@ -1,0 +1,15 @@
+# Runtime dependencies. The core detector/pipeline logic itself needs none of
+# these (pure stdlib); everything below is imported by the acoustic channel,
+# the live providers, or the web layer.
+fastapi>=0.110
+uvicorn[standard]>=0.29    # [standard] pulls in the `websockets` package used
+                            # directly by scripts/e2e_live.py
+google-genai>=1.0          # default predictor (Gemini)
+anthropic>=0.40            # swap-back predictor (Claude)
+deepgram-sdk>=3.0          # real STT (skeleton; needs live wiring)
+python-dotenv>=1.0
+torch>=2.0                 # acoustic channel: FillerNet CNN + tensor ops (backend/acoustic/)
+torchaudio>=2.0            # acoustic channel: log-mel frontend (backend/acoustic/features.py)
+numpy>=1.24                # PCM16 <-> float conversion (backend/acoustic/features.py)
+silero-vad>=5.0            # acoustic channel: voice-activity gating (backend/acoustic/stream.py);
+                            # required even in prolongation-only mode (no FillerNet checkpoint)

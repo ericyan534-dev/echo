@@ -1,0 +1,510 @@
+{
+  "provenance": {
+    "script": "eval/run_prediction_eval.py",
+    "dataset": "eval\\data\\prediction_eval_longctx_v1.jsonl",
+    "dataset_sha256": "2c8bd5d5193ef5cbbed5547ff5fa8ad1772f9b7958dc82061f0db5e31be8a232",
+    "n_items": 20,
+    "provider": "gemini",
+    "model": "gemini-3.5-flash",
+    "ablate_context": false,
+    "entity_memory": false,
+    "context_turns": 6,
+    "sleep_s": 1.0,
+    "timestamp_utc": "2026-07-08T06:15:03+00:00",
+    "normalization": "lowercase; strip one trailing \"'s\"; strip punctuation; collapse whitespace; strip one trailing plural \"s\"",
+    "freeze_protocol": "The dataset eval/data/prediction_eval_set.jsonl is frozen at its first commit. After the first live run, items may never be edited, added, or removed in response to results. One headline live run per condition (full and context-ablated). Any future change to the set requires a new versioned filename and both old and new results files must be kept."
+  },
+  "overall": {
+    "top1": {
+      "hits": 0,
+      "n": 20,
+      "rate": 0.0
+    },
+    "top3": {
+      "hits": 0,
+      "n": 20,
+      "rate": 0.0
+    }
+  },
+  "per_category": {
+    "proper_context": {
+      "top1": {
+        "hits": 0,
+        "n": 20,
+        "rate": 0.0
+      },
+      "top3": {
+        "hits": 0,
+        "n": 20,
+        "rate": 0.0
+      }
+    }
+  },
+  "confidence": {
+    "definition": "confidence of the top-ranked candidate, split by top-1 hit/miss; items with zero candidates excluded",
+    "mean_when_correct": null,
+    "mean_when_wrong": 0.903,
+    "n_correct": 0,
+    "n_wrong": 20
+  },
+  "items": [
+    {
+      "id": "longctx_01_marcus",
+      "category": "proper_context",
+      "gold": [
+        "Marcus"
+      ],
+      "candidates": [
+        {
+          "word": "name",
+          "confidence": 1.0
+        },
+        {
+          "word": "number",
+          "confidence": 0.85
+        }
+      ],
+      "top1_hit": false,
+      "top3_hit": false
+    },
+    {
+      "id": "longctx_02_copper_kettle",
+      "category": "proper_context",
+      "gold": [
+        "Copper Kettle Cafe",
+        "Copper Kettle"
+      ],
+      "candidates": [
+        {
+          "word": "cafe",
+          "confidence": 0.95
+        },
+        {
+          "word": "coffeehouse",
+          "confidence": 0.85
+        },
+        {
+          "word": "bakery",
+          "confidence": 0.6
+        }
+      ],
+      "top1_hit": false,
+      "top3_hit": false
+    },
+    {
+      "id": "longctx_03_nora",
+      "category": "proper_context",
+      "gold": [
+        "Nora"
+      ],
+      "candidates": [
+        {
+          "word": "name",
+          "confidence": 1.0
+        },
+        {
+          "word": "number",
+          "confidence": 0.85
+        }
+      ],
+      "top1_hit": false,
+      "top3_hit": false
+    },
+    {
+      "id": "longctx_04_vireo",
+      "category": "proper_context",
+      "gold": [
+        "Vireo Robotics",
+        "Vireo"
+      ],
+      "candidates": [
+        {
+          "word": "Boston Dynamics",
+          "confidence": 0.9
+        },
+        {
+          "word": "Tesla",
+          "confidence": 0.75
+        },
+        {
+          "word": "iRobot",
+          "confidence": 0.6
+        }
+      ],
+      "top1_hit": false,
+      "top3_hit": false
+    },
+    {
+      "id": "longctx_05_gus",
+      "category": "proper_context",
+      "gold": [
+        "Gus"
+      ],
+      "candidates": [
+        {
+          "word": "dog",
+          "confidence": 0.95
+        },
+        {
+          "word": "puppy",
+          "confidence": 0.8
+        },
+        {
+          "word": "pet",
+          "confidence": 0.6
+        }
+      ],
+      "top1_hit": false,
+      "top3_hit": false
+    },
+    {
+      "id": "longctx_06_hollis_bridge",
+      "category": "proper_context",
+      "gold": [
+        "Hollis Bridge",
+        "Hollis"
+      ],
+      "candidates": [
+        {
+          "word": "bridge",
+          "confidence": 0.95
+        },
+        {
+          "word": "road",
+          "confidence": 0.8
+        },
+        {
+          "word": "highway",
+          "confidence": 0.75
+        }
+      ],
+      "top1_hit": false,
+      "top3_hit": false
+    },
+    {
+      "id": "longctx_07_dr_patel",
+      "category": "proper_context",
+      "gold": [
+        "Patel",
+        "Dr. Patel"
+      ],
+      "candidates": [
+        {
+          "word": "therapist",
+          "confidence": 0.95
+        },
+        {
+          "word": "doctor",
+          "confidence": 0.8
+        },
+        {
+          "word": "psychologist",
+          "confidence": 0.75
+        }
+      ],
+      "top1_hit": false,
+      "top3_hit": false
+    },
+    {
+      "id": "longctx_08_wrenfield",
+      "category": "proper_context",
+      "gold": [
+        "Wrenfield Books",
+        "Wrenfield"
+      ],
+      "candidates": [
+        {
+          "word": "bookstore",
+          "confidence": 1.0
+        },
+        {
+          "word": "library",
+          "confidence": 0.75
+        },
+        {
+          "word": "shop",
+          "confidence": 0.6
+        }
+      ],
+      "top1_hit": false,
+      "top3_hit": false
+    },
+    {
+      "id": "longctx_09_tabitha",
+      "category": "proper_context",
+      "gold": [
+        "Tabitha"
+      ],
+      "candidates": [
+        {
+          "word": "stylist",
+          "confidence": 0.95
+        },
+        {
+          "word": "hairdresser",
+          "confidence": 0.85
+        },
+        {
+          "word": "colorist",
+          "confidence": 0.75
+        }
+      ],
+      "top1_hit": false,
+      "top3_hit": false
+    },
+    {
+      "id": "longctx_10_blackthorn",
+      "category": "proper_context",
+      "gold": [
+        "Blackthorn Trail",
+        "Blackthorn"
+      ],
+      "candidates": [
+        {
+          "word": "trail",
+          "confidence": 1.0
+        },
+        {
+          "word": "lookout",
+          "confidence": 0.85
+        },
+        {
+          "word": "mountain",
+          "confidence": 0.75
+        }
+      ],
+      "top1_hit": false,
+      "top3_hit": false
+    },
+    {
+      "id": "longctx_11_sanjay",
+      "category": "proper_context",
+      "gold": [
+        "Sanjay"
+      ],
+      "candidates": [
+        {
+          "word": "colleague",
+          "confidence": 0.9
+        },
+        {
+          "word": "coworker",
+          "confidence": 0.8
+        },
+        {
+          "word": "teammate",
+          "confidence": 0.75
+        }
+      ],
+      "top1_hit": false,
+      "top3_hit": false
+    },
+    {
+      "id": "longctx_12_gilded_spoon",
+      "category": "proper_context",
+      "gold": [
+        "Gilded Spoon"
+      ],
+      "candidates": [
+        {
+          "word": "bistro",
+          "confidence": 0.85
+        },
+        {
+          "word": "restaurant",
+          "confidence": 0.75
+        },
+        {
+          "word": "reservation",
+          "confidence": 0.6
+        }
+      ],
+      "top1_hit": false,
+      "top3_hit": false
+    },
+    {
+      "id": "longctx_13_mabel",
+      "category": "proper_context",
+      "gold": [
+        "Mabel"
+      ],
+      "candidates": [
+        {
+          "word": "birthday",
+          "confidence": 1.0
+        },
+        {
+          "word": "party",
+          "confidence": 0.85
+        },
+        {
+          "word": "celebration",
+          "confidence": 0.7
+        }
+      ],
+      "top1_hit": false,
+      "top3_hit": false
+    },
+    {
+      "id": "longctx_14_ostergaard",
+      "category": "proper_context",
+      "gold": [
+        "Ostergaard Studio",
+        "Ostergaard"
+      ],
+      "candidates": [
+        {
+          "word": "studio",
+          "confidence": 0.9
+        },
+        {
+          "word": "pottery",
+          "confidence": 0.8
+        },
+        {
+          "word": "clay",
+          "confidence": 0.7
+        }
+      ],
+      "top1_hit": false,
+      "top3_hit": false
+    },
+    {
+      "id": "longctx_15_felix",
+      "category": "proper_context",
+      "gold": [
+        "Felix"
+      ],
+      "candidates": [
+        {
+          "word": "cat",
+          "confidence": 0.95
+        },
+        {
+          "word": "kitten",
+          "confidence": 0.7
+        }
+      ],
+      "top1_hit": false,
+      "top3_hit": false
+    },
+    {
+      "id": "longctx_16_cinderpost",
+      "category": "proper_context",
+      "gold": [
+        "Cinderpost Farm",
+        "Cinderpost"
+      ],
+      "candidates": [
+        {
+          "word": "orchard",
+          "confidence": 1.0
+        },
+        {
+          "word": "farm",
+          "confidence": 0.85
+        },
+        {
+          "word": "apple orchard",
+          "confidence": 0.75
+        }
+      ],
+      "top1_hit": false,
+      "top3_hit": false
+    },
+    {
+      "id": "longctx_17_rosalind",
+      "category": "proper_context",
+      "gold": [
+        "Rosalind"
+      ],
+      "candidates": [
+        {
+          "word": "Sarah",
+          "confidence": 0.5
+        },
+        {
+          "word": "Emily",
+          "confidence": 0.5
+        },
+        {
+          "word": "Jessica",
+          "confidence": 0.5
+        }
+      ],
+      "top1_hit": false,
+      "top3_hit": false
+    },
+    {
+      "id": "longctx_18_larkspur",
+      "category": "proper_context",
+      "gold": [
+        "Larkspur Clinic",
+        "Larkspur"
+      ],
+      "candidates": [
+        {
+          "word": "allergy clinic",
+          "confidence": 0.9
+        },
+        {
+          "word": "immunology",
+          "confidence": 0.75
+        },
+        {
+          "word": "doctor",
+          "confidence": 0.65
+        }
+      ],
+      "top1_hit": false,
+      "top3_hit": false
+    },
+    {
+      "id": "longctx_19_theo",
+      "category": "proper_context",
+      "gold": [
+        "Theo"
+      ],
+      "candidates": [
+        {
+          "word": "Leo",
+          "confidence": 0.5
+        },
+        {
+          "word": "Liam",
+          "confidence": 0.5
+        },
+        {
+          "word": "Noah",
+          "confidence": 0.5
+        }
+      ],
+      "top1_hit": false,
+      "top3_hit": false
+    },
+    {
+      "id": "longctx_20_whitmore",
+      "category": "proper_context",
+      "gold": [
+        "Whitmore Hardware",
+        "Whitmore"
+      ],
+      "candidates": [
+        {
+          "word": "Home Depot",
+          "confidence": 0.9
+        },
+        {
+          "word": "Lowe's",
+          "confidence": 0.8
+        },
+        {
+          "word": "Ace Hardware",
+          "confidence": 0.75
+        }
+      ],
+      "top1_hit": false,
+      "top3_hit": false
+    }
+  ]
+}

@@ -1,0 +1,224 @@
+{
+  "policy": {
+    "prolongation": "max detection rate s.t. speech false fires == 0",
+    "filler": "min stream false alarms with clip recall within a few points of the 0.70 baseline",
+    "filler_v2_checkpoint": "min stream false alarms s.t. clip recall >= previously shipped 0.8374; chosen conf=0.75"
+  },
+  "prolongation": [
+    {
+      "sim_thresh": 0.9,
+      "min_ms": 500,
+      "detection_rate": 0.45,
+      "detected": "18/40",
+      "speech_ff": 7,
+      "speech_seconds": 120.0,
+      "music_ff": 22,
+      "music_seconds": 120.0
+    },
+    {
+      "sim_thresh": 0.9,
+      "min_ms": 600,
+      "detection_rate": 0.325,
+      "detected": "13/40",
+      "speech_ff": 3,
+      "speech_seconds": 120.0,
+      "music_ff": 20,
+      "music_seconds": 120.0
+    },
+    {
+      "sim_thresh": 0.9,
+      "min_ms": 700,
+      "detection_rate": 0.25,
+      "detected": "10/40",
+      "speech_ff": 2,
+      "speech_seconds": 120.0,
+      "music_ff": 19,
+      "music_seconds": 120.0
+    },
+    {
+      "sim_thresh": 0.92,
+      "min_ms": 500,
+      "detection_rate": 0.375,
+      "detected": "15/40",
+      "speech_ff": 4,
+      "speech_seconds": 120.0,
+      "music_ff": 16,
+      "music_seconds": 120.0
+    },
+    {
+      "sim_thresh": 0.92,
+      "min_ms": 600,
+      "detection_rate": 0.275,
+      "detected": "11/40",
+      "speech_ff": 2,
+      "speech_seconds": 120.0,
+      "music_ff": 14,
+      "music_seconds": 120.0
+    },
+    {
+      "sim_thresh": 0.92,
+      "min_ms": 700,
+      "detection_rate": 0.175,
+      "detected": "7/40",
+      "speech_ff": 2,
+      "speech_seconds": 120.0,
+      "music_ff": 12,
+      "music_seconds": 120.0
+    },
+    {
+      "sim_thresh": 0.94,
+      "min_ms": 500,
+      "detection_rate": 0.175,
+      "detected": "7/40",
+      "speech_ff": 1,
+      "speech_seconds": 120.0,
+      "music_ff": 15,
+      "music_seconds": 120.0
+    },
+    {
+      "sim_thresh": 0.94,
+      "min_ms": 600,
+      "detection_rate": 0.125,
+      "detected": "5/40",
+      "speech_ff": 0,
+      "speech_seconds": 120.0,
+      "music_ff": 11,
+      "music_seconds": 120.0
+    },
+    {
+      "sim_thresh": 0.94,
+      "min_ms": 700,
+      "detection_rate": 0.1,
+      "detected": "4/40",
+      "speech_ff": 0,
+      "speech_seconds": 120.0,
+      "music_ff": 8,
+      "music_seconds": 120.0
+    },
+    {
+      "sim_thresh": 0.95,
+      "min_ms": 500,
+      "detection_rate": 0.125,
+      "detected": "5/40",
+      "speech_ff": 1,
+      "speech_seconds": 120.0,
+      "music_ff": 11,
+      "music_seconds": 120.0
+    },
+    {
+      "sim_thresh": 0.95,
+      "min_ms": 600,
+      "detection_rate": 0.075,
+      "detected": "3/40",
+      "speech_ff": 0,
+      "speech_seconds": 120.0,
+      "music_ff": 7,
+      "music_seconds": 120.0
+    },
+    {
+      "sim_thresh": 0.95,
+      "min_ms": 700,
+      "detection_rate": 0.075,
+      "detected": "3/40",
+      "speech_ff": 0,
+      "speech_seconds": 120.0,
+      "music_ff": 5,
+      "music_seconds": 120.0
+    }
+  ],
+  "filler_conf": [
+    {
+      "conf_thresh": 0.7,
+      "clip_recall": 0.8374,
+      "words_fp_rate": 0.041,
+      "stream_ff_per_min": 4.4,
+      "stream_ff": 22,
+      "stream_seconds": 300.0
+    },
+    {
+      "conf_thresh": 0.75,
+      "clip_recall": 0.8192,
+      "words_fp_rate": 0.0345,
+      "stream_ff_per_min": 3.8,
+      "stream_ff": 19,
+      "stream_seconds": 300.0
+    },
+    {
+      "conf_thresh": 0.8,
+      "clip_recall": 0.7966,
+      "words_fp_rate": 0.0266,
+      "stream_ff_per_min": 3.2,
+      "stream_ff": 16,
+      "stream_seconds": 300.0
+    },
+    {
+      "conf_thresh": 0.85,
+      "clip_recall": 0.773,
+      "words_fp_rate": 0.0183,
+      "stream_ff_per_min": 2.6,
+      "stream_ff": 13,
+      "stream_seconds": 300.0
+    }
+  ],
+  "filler_conf_v2_checkpoint": [
+    {
+      "conf_thresh": 0.7,
+      "clip_recall": 0.8632,
+      "stream_ff_per_min": 6.4,
+      "hop_ms": 125
+    },
+    {
+      "conf_thresh": 0.75,
+      "clip_recall": 0.8438,
+      "stream_ff_per_min": 5.8,
+      "hop_ms": 125
+    },
+    {
+      "conf_thresh": 0.8,
+      "clip_recall": 0.8251,
+      "stream_ff_per_min": 4.8,
+      "hop_ms": 125
+    },
+    {
+      "conf_thresh": 0.7,
+      "clip_recall": 0.8632,
+      "stream_ff_per_min": 6.0,
+      "hop_ms": 250,
+      "note": "isolation run: checkpoint (not hop) drives the false-alarm rise"
+    }
+  ],
+  "training_grid": {
+    "protocol": "select on validation binary F1, test touched once for the winner",
+    "variants": {
+      "v0 baseline": {
+        "val_f1": 0.9336,
+        "val_p": 0.963,
+        "val_r": 0.9059,
+        "val_uh_recall": 0.8038
+      },
+      "v1 aux0.5": {
+        "val_f1": 0.9343,
+        "val_p": 0.94,
+        "val_r": 0.9286,
+        "val_uh_recall": 0.8567
+      },
+      "v2 aux1.0 (WINNER)": {
+        "val_f1": 0.9351,
+        "val_p": 0.9622,
+        "val_r": 0.9094,
+        "val_uh_recall": 0.8191
+      },
+      "v3 boost1.75": {
+        "val_f1": 0.9321
+      },
+      "v4 aux0.5+boost1.5": {
+        "val_f1": 0.9331
+      }
+    },
+    "winner_test_once": {
+      "binary_f1": 0.9331,
+      "precision": 0.9488,
+      "recall": 0.9179
+    }
+  }
+}

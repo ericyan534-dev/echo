@@ -1,0 +1,495 @@
+{
+  "status": "OK",
+  "model": "nyralabs/CrisperWhisper2.0_turbo",
+  "device": "cuda",
+  "n_filler_clips": 300,
+  "n_words_clips": 150,
+  "filler_recall": 0.2167,
+  "false_positive_rate_on_words": 0.0133,
+  "precision": 0.9701,
+  "latency_ms_median": 128.4,
+  "chrome_baseline_recall": 0.0,
+  "chrome_baseline_source": "eval/results/stall_eval.json transcript_baseline (n=5044)",
+  "rows": [
+    {
+      "cls": "Uh",
+      "is_filler": true,
+      "text": "[UH]",
+      "detected": true
+    },
+    {
+      "cls": "Uh",
+      "is_filler": true,
+      "text": "I mean,",
+      "detected": false
+    },
+    {
+      "cls": "Uh",
+      "is_filler": true,
+      "text": "about",
+      "detected": false
+    },
+    {
+      "cls": "Uh",
+      "is_filler": true,
+      "text": "[UH]",
+      "detected": true
+    },
+    {
+      "cls": "Uh",
+      "is_filler": true,
+      "text": "daddy party",
+      "detected": false
+    },
+    {
+      "cls": "Uh",
+      "is_filler": true,
+      "text": "to",
+      "detected": false
+    },
+    {
+      "cls": "Uh",
+      "is_filler": true,
+      "text": "topic",
+      "detected": false
+    },
+    {
+      "cls": "Uh",
+      "is_filler": true,
+      "text": "to train",
+      "detected": false
+    },
+    {
+      "cls": "Uh",
+      "is_filler": true,
+      "text": "work",
+      "detected": false
+    },
+    {
+      "cls": "Uh",
+      "is_filler": true,
+      "text": "[UH]",
+      "detected": true
+    },
+    {
+      "cls": "Uh",
+      "is_filler": true,
+      "text": "We have.",
+      "detected": false
+    },
+    {
+      "cls": "Uh",
+      "is_filler": true,
+      "text": "Or county.",
+      "detected": false
+    },
+    {
+      "cls": "Uh",
+      "is_filler": true,
+      "text": "that's something",
+      "detected": false
+    },
+    {
+      "cls": "Uh",
+      "is_filler": true,
+      "text": "I'll watch.",
+      "detected": false
+    },
+    {
+      "cls": "Uh",
+      "is_filler": true,
+      "text": "Okay.",
+      "detected": false
+    },
+    {
+      "cls": "Uh",
+      "is_filler": true,
+      "text": "not just",
+      "detected": false
+    },
+    {
+      "cls": "Uh",
+      "is_filler": true,
+      "text": "there",
+      "detected": false
+    },
+    {
+      "cls": "Uh",
+      "is_filler": true,
+      "text": "[UH]",
+      "detected": true
+    },
+    {
+      "cls": "Uh",
+      "is_filler": true,
+      "text": "during the",
+      "detected": false
+    },
+    {
+      "cls": "Uh",
+      "is_filler": true,
+      "text": "[UH]",
+      "detected": true
+    },
+    {
+      "cls": "Uh",
+      "is_filler": true,
+      "text": "from Premier",
+      "detected": false
+    },
+    {
+      "cls": "Uh",
+      "is_filler": true,
+      "text": "Alright.",
+      "detected": false
+    },
+    {
+      "cls": "Uh",
+      "is_filler": true,
+      "text": "are also",
+      "detected": false
+    },
+    {
+      "cls": "Uh",
+      "is_filler": true,
+      "text": "Yeah.",
+      "detected": false
+    },
+    {
+      "cls": "Uh",
+      "is_filler": true,
+      "text": "a",
+      "detected": false
+    },
+    {
+      "cls": "Uh",
+      "is_filler": true,
+      "text": "Yeah.",
+      "detected": false
+    },
+    {
+      "cls": "Uh",
+      "is_filler": true,
+      "text": "we were able to",
+      "detected": false
+    },
+    {
+      "cls": "Uh",
+      "is_filler": true,
+      "text": "I believe.",
+      "detected": false
+    },
+    {
+      "cls": "Uh",
+      "is_filler": true,
+      "text": "or how",
+      "detected": false
+    },
+    {
+      "cls": "Uh",
+      "is_filler": true,
+      "text": "Hopefully",
+      "detected": false
+    },
+    {
+      "cls": "Uh",
+      "is_filler": true,
+      "text": "which is",
+      "detected": false
+    },
+    {
+      "cls": "Uh",
+      "is_filler": true,
+      "text": "us to be doing",
+      "detected": false
+    },
+    {
+      "cls": "Uh",
+      "is_filler": true,
+      "text": "whether",
+      "detected": false
+    },
+    {
+      "cls": "Uh",
+      "is_filler": true,
+      "text": "time",
+      "detected": false
+    },
+    {
+      "cls": "Uh",
+      "is_filler": true,
+      "text": "and",
+      "detected": false
+    },
+    {
+      "cls": "Uh",
+      "is_filler": true,
+      "text": "the",
+      "detected": false
+    },
+    {
+      "cls": "Uh",
+      "is_filler": true,
+      "text": "a",
+      "detected": false
+    },
+    {
+      "cls": "Uh",
+      "is_filler": true,
+      "text": "and not",
+      "detected": false
+    },
+    {
+      "cls": "Uh",
+      "is_filler": true,
+      "text": "[UH]",
+      "detected": true
+    },
+    {
+      "cls": "Uh",
+      "is_filler": true,
+      "text": "And that's.",
+      "detected": false
+    },
+    {
+      "cls": "Uh",
+      "is_filler": true,
+      "text": "on a",
+      "detected": false
+    },
+    {
+      "cls": "Uh",
+      "is_filler": true,
+      "text": "[UH]",
+      "detected": true
+    },
+    {
+      "cls": "Uh",
+      "is_filler": true,
+      "text": "[UH]",
+      "detected": true
+    },
+    {
+      "cls": "Uh",
+      "is_filler": true,
+      "text": "I think.",
+      "detected": false
+    },
+    {
+      "cls": "Uh",
+      "is_filler": true,
+      "text": "Oh.",
+      "detected": false
+    },
+    {
+      "cls": "Uh",
+      "is_filler": true,
+      "text": "of a soft podcast.",
+      "detected": false
+    },
+    {
+      "cls": "Uh",
+      "is_filler": true,
+      "text": "do they",
+      "detected": false
+    },
+    {
+      "cls": "Uh",
+      "is_filler": true,
+      "text": "tout",
+      "detected": false
+    },
+    {
+      "cls": "Uh",
+      "is_filler": true,
+      "text": "There's a lot of people.",
+      "detected": false
+    },
+    {
+      "cls": "Uh",
+      "is_filler": true,
+      "text": "Yeah.",
+      "detected": false
+    },
+    {
+      "cls": "Uh",
+      "is_filler": true,
+      "text": "environment",
+      "detected": false
+    },
+    {
+      "cls": "Uh",
+      "is_filler": true,
+      "text": "then",
+      "detected": false
+    },
+    {
+      "cls": "Uh",
+      "is_filler": true,
+      "text": "And",
+      "detected": false
+    },
+    {
+      "cls": "Uh",
+      "is_filler": true,
+      "text": "[UH]",
+      "detected": true
+    },
+    {
+      "cls": "Uh",
+      "is_filler": true,
+      "text": "but we've more",
+      "detected": false
+    },
+    {
+      "cls": "Uh",
+      "is_filler": true,
+      "text": "i ljus.",
+      "detected": false
+    },
+    {
+      "cls": "Uh",
+      "is_filler": true,
+      "text": "[UH]",
+      "detected": true
+    },
+    {
+      "cls": "Uh",
+      "is_filler": true,
+      "text": "le",
+      "detected": false
+    },
+    {
+      "cls": "Uh",
+      "is_filler": true,
+      "text": "another",
+      "detected": false
+    },
+    {
+      "cls": "Uh",
+      "is_filler": true,
+      "text": "a",
+      "detected": false
+    },
+    {
+      "cls": "Uh",
+      "is_filler": true,
+      "text": "to",
+      "detected": false
+    },
+    {
+      "cls": "Uh",
+      "is_filler": true,
+      "text": "[UH]",
+      "detected": true
+    },
+    {
+      "cls": "Uh",
+      "is_filler": true,
+      "text": "in",
+      "detected": false
+    },
+    {
+      "cls": "Uh",
+      "is_filler": true,
+      "text": "to",
+      "detected": false
+    },
+    {
+      "cls": "Uh",
+      "is_filler": true,
+      "text": "so many people",
+      "detected": false
+    },
+    {
+      "cls": "Uh",
+      "is_filler": true,
+      "text": "Okay.",
+      "detected": false
+    },
+    {
+      "cls": "Uh",
+      "is_filler": true,
+      "text": "who's",
+      "detected": false
+    },
+    {
+      "cls": "Uh",
+      "is_filler": true,
+      "text": "just small",
+      "detected": false
+    },
+    {
+      "cls": "Uh",
+      "is_filler": true,
+      "text": "[UH]",
+      "detected": true
+    },
+    {
+      "cls": "Uh",
+      "is_filler": true,
+      "text": "he",
+      "detected": false
+    },
+    {
+      "cls": "Uh",
+      "is_filler": true,
+      "text": "[UH]",
+      "detected": true
+    },
+    {
+      "cls": "Uh",
+      "is_filler": true,
+      "text": "it's like",
+      "detected": false
+    },
+    {
+      "cls": "Uh",
+      "is_filler": true,
+      "text": "[UH]",
+      "detected": true
+    },
+    {
+      "cls": "Uh",
+      "is_filler": true,
+      "text": "you're",
+      "detected": false
+    },
+    {
+      "cls": "Uh",
+      "is_filler": true,
+      "text": "sound",
+      "detected": false
+    },
+    {
+      "cls": "Uh",
+      "is_filler": true,
+      "text": "[UH]",
+      "detected": true
+    },
+    {
+      "cls": "Uh",
+      "is_filler": true,
+      "text": "We make sure that we are going to be able to do that.",
+      "detected": false
+    },
+    {
+      "cls": "Uh",
+      "is_filler": true,
+      "text": "hometown",
+      "detected": false
+    },
+    {
+      "cls": "Uh",
+      "is_filler": true,
+      "text": "of",
+      "detected": false
+    },
+    {
+      "cls": "Uh",
+      "is_filler": true,
+      "text": "z",
+      "detected": false
+    }
+  ]
+}

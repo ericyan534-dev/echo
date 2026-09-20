@@ -1,0 +1,211 @@
+{
+  "status": "OK",
+  "split": "test",
+  "target_fpr": 0.05,
+  "n_clips": 3209,
+  "n_clean": 1440,
+  "clip_thresholds_previously_used": {
+    "Block": 0.4379,
+    "Prolongation": 0.7212,
+    "SoundRep": 0.5755,
+    "WordRep": 0.6657,
+    "Interjection": 0.7543,
+    "ANY": 0.5687
+  },
+  "frame_thresholds": {
+    "Block": 0.992,
+    "Prolongation": 0.9887,
+    "SoundRep": 0.9477,
+    "WordRep": 0.9966,
+    "Interjection": 0.9756
+  },
+  "detail": {
+    "Block": {
+      "threshold": 0.992,
+      "n_clean": 1440,
+      "n_pos": 440,
+      "recall_at_threshold": 0.1136,
+      "clean_fire_rate": 0.05,
+      "pos_peak_median": 0.9114,
+      "clean_peak_median": 0.6927
+    },
+    "Prolongation": {
+      "threshold": 0.9887,
+      "n_clean": 1440,
+      "n_pos": 315,
+      "recall_at_threshold": 0.5619,
+      "clean_fire_rate": 0.05,
+      "pos_peak_median": 0.9956,
+      "clean_peak_median": 0.0762
+    },
+    "SoundRep": {
+      "threshold": 0.9477,
+      "n_clean": 1440,
+      "n_pos": 277,
+      "recall_at_threshold": 0.3755,
+      "clean_fire_rate": 0.05,
+      "pos_peak_median": 0.7629,
+      "clean_peak_median": 0.0468
+    },
+    "WordRep": {
+      "threshold": 0.9966,
+      "n_clean": 1440,
+      "n_pos": 386,
+      "recall_at_threshold": 0.158,
+      "clean_fire_rate": 0.05,
+      "pos_peak_median": 0.9277,
+      "clean_peak_median": 0.7646
+    },
+    "Interjection": {
+      "threshold": 0.9756,
+      "n_clean": 1440,
+      "n_pos": 744,
+      "recall_at_threshold": 0.625,
+      "clean_fire_rate": 0.05,
+      "pos_peak_median": 0.9959,
+      "clean_peak_median": 0.1458
+    }
+  },
+  "sweep": [
+    {
+      "target_fpr": 0.005,
+      "Block": {
+        "threshold": 0.9988,
+        "recall": 0.0295
+      },
+      "Prolongation": {
+        "threshold": 1.0,
+        "recall": 0.0825
+      },
+      "SoundRep": {
+        "threshold": 0.9996,
+        "recall": 0.1155
+      },
+      "WordRep": {
+        "threshold": 0.9998,
+        "recall": 0.0233
+      },
+      "Interjection": {
+        "threshold": 1.0,
+        "recall": 0.1976
+      }
+    },
+    {
+      "target_fpr": 0.01,
+      "Block": {
+        "threshold": 0.9983,
+        "recall": 0.0386
+      },
+      "Prolongation": {
+        "threshold": 0.9999,
+        "recall": 0.1841
+      },
+      "SoundRep": {
+        "threshold": 0.999,
+        "recall": 0.1336
+      },
+      "WordRep": {
+        "threshold": 0.9996,
+        "recall": 0.0389
+      },
+      "Interjection": {
+        "threshold": 0.9994,
+        "recall": 0.3642
+      }
+    },
+    {
+      "target_fpr": 0.02,
+      "Block": {
+        "threshold": 0.9964,
+        "recall": 0.0636
+      },
+      "Prolongation": {
+        "threshold": 0.9992,
+        "recall": 0.3683
+      },
+      "SoundRep": {
+        "threshold": 0.9954,
+        "recall": 0.2058
+      },
+      "WordRep": {
+        "threshold": 0.999,
+        "recall": 0.0803
+      },
+      "Interjection": {
+        "threshold": 0.9972,
+        "recall": 0.4825
+      }
+    },
+    {
+      "target_fpr": 0.05,
+      "Block": {
+        "threshold": 0.992,
+        "recall": 0.1136
+      },
+      "Prolongation": {
+        "threshold": 0.9887,
+        "recall": 0.5619
+      },
+      "SoundRep": {
+        "threshold": 0.9477,
+        "recall": 0.3755
+      },
+      "WordRep": {
+        "threshold": 0.9966,
+        "recall": 0.158
+      },
+      "Interjection": {
+        "threshold": 0.9756,
+        "recall": 0.625
+      }
+    },
+    {
+      "target_fpr": 0.1,
+      "Block": {
+        "threshold": 0.9708,
+        "recall": 0.2977
+      },
+      "Prolongation": {
+        "threshold": 0.9367,
+        "recall": 0.6889
+      },
+      "SoundRep": {
+        "threshold": 0.7687,
+        "recall": 0.491
+      },
+      "WordRep": {
+        "threshold": 0.9899,
+        "recall": 0.2642
+      },
+      "Interjection": {
+        "threshold": 0.8977,
+        "recall": 0.7191
+      }
+    },
+    {
+      "target_fpr": 0.2,
+      "Block": {
+        "threshold": 0.921,
+        "recall": 0.4795
+      },
+      "Prolongation": {
+        "threshold": 0.6219,
+        "recall": 0.8
+      },
+      "SoundRep": {
+        "threshold": 0.3559,
+        "recall": 0.6787
+      },
+      "WordRep": {
+        "threshold": 0.9584,
+        "recall": 0.4171
+      },
+      "Interjection": {
+        "threshold": 0.6501,
+        "recall": 0.8145
+      }
+    }
+  ],
+  "why": "Clip thresholds were fitted on the linear-softmax POOL and were being compared against PER-FRAME probabilities. Pooling averages a short event down, so the clip threshold is systematically lower than the frame probability the same event produces.",
+  "not_fitted_on": "APROCSA. The budget is set against SEP-28k so the aphasia evaluation stays an independent test."
+}

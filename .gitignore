@@ -1,0 +1,73 @@
+__pycache__/
+*.pyc
+.env
+.venv/
+venv/
+node_modules/
+.pytest_cache/
+.DS_Store
+
+# Dataset artifacts (large; fetch with scripts/fetch_pfsd.py).
+# Anchored to the repo root: eval/data/ (small frozen eval sets) IS tracked.
+/data/
+
+# Trained model checkpoints (large binary; train with scripts/train_filler.py)
+# models/fillernet_metrics.json is small JSON and IS tracked -- keep it
+*.pt
+*.pth
+# ...except the shipped FillerNet checkpoint: 555 KB, lets a clean clone
+# reproduce the headline F1 via `python scripts/train_filler.py --eval-only`
+# without the multi-hour PFSD download + retrain
+!models/fillernet.pt
+
+# Local e2e scratch output
+e2e_out.txt
+
+# Any .rar archives in the repo root (user property -- do not delete)
+*.rar
+
+# agent worktrees + training-grid scratch
+.claude/
+models/variants/
+
+# Local LLM bring-up (scripts/setup_local_llm.py recreates both from scratch).
+# models/llama.cpp/ is a ~600 MB unpacked prebuilt CUDA binary release;
+# models/gguf/ holds the 17 GB Qwen3.8-27B-Q4_K_M weights. NEVER commit a GGUF.
+models/llama.cpp/
+models/gguf/
+models/dl/
+# models/crisperwhisper/ is a ~1.6 GB Whisper variant. Never commit weights.
+models/crisperwhisper/
+*.gguf
+
+# Design-tool machine state. DESIGN.md is the human-readable, committed source
+# of truth for the visual system; this sidecar duplicates it in JSON, carries a
+# regenerated timestamp that churns on every run, and has no consumer inside
+# this repo -- committing it would create a second, unvalidated source of truth
+# for the design tokens.
+.impeccable/
+
+# SEP-28k reconstruction: ~10-18 GB of podcast episodes + cut clips.
+# The label CSVs and manifest.json ARE small and worth tracking.
+data/sep28k/episodes/
+data/sep28k/clips/
+
+# Derived ASR/acoustic item streams for the aphasia eval (regenerable, large)
+eval/results/cache/
+
+# Cached LLM responses for the aphasia prediction benchmark (regenerable)
+eval/results/cache/aphasia_prediction/
+
+# ECAPA-TDNN speaker-embedding weights, fetched by
+# backend/acoustic/speaker_id.py on first use (~85 MB). SpeechBrain ships
+# them as .ckpt, which the *.pt/*.pth rules above do not cover -- and a
+# `git add -A` would otherwise stage all five.
+models/ecapa/
+*.ckpt
+
+# Training-run stderr and root-level scratch from eval sweeps.
+logs/
+_*.log
+_probe.wav
+
+echo-submission.zip

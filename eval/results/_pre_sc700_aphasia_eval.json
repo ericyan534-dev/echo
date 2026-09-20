@@ -1,0 +1,1820 @@
+{
+  "status": "OK",
+  "refractory_sweep": [
+    {
+      "arm": "new (verbatim ASR + StutterNet)",
+      "min_gap_ms": 0,
+      "recall": 0.8428,
+      "false_alarm_rate": 0.6111,
+      "partner_fire_rate": 0.2471,
+      "fires_per_min": 19.3
+    },
+    {
+      "arm": "new (verbatim ASR + StutterNet)",
+      "min_gap_ms": 2000,
+      "recall": 0.8239,
+      "false_alarm_rate": 0.6204,
+      "partner_fire_rate": 0.2059,
+      "fires_per_min": 14.57
+    },
+    {
+      "arm": "new (verbatim ASR + StutterNet)",
+      "min_gap_ms": 3000,
+      "recall": 0.7862,
+      "false_alarm_rate": 0.5278,
+      "partner_fire_rate": 0.1647,
+      "fires_per_min": 12.17
+    },
+    {
+      "arm": "new (verbatim ASR + StutterNet)",
+      "min_gap_ms": 4000,
+      "recall": 0.7233,
+      "false_alarm_rate": 0.5278,
+      "partner_fire_rate": 0.1412,
+      "fires_per_min": 10.27
+    },
+    {
+      "arm": "new (verbatim ASR + StutterNet)",
+      "min_gap_ms": 6000,
+      "recall": 0.673,
+      "false_alarm_rate": 0.4259,
+      "partner_fire_rate": 0.1059,
+      "fires_per_min": 8.07
+    },
+    {
+      "arm": "old (intended ASR + FillerNet)",
+      "min_gap_ms": 0,
+      "recall": 0.8428,
+      "false_alarm_rate": 0.7037,
+      "partner_fire_rate": 0.2059,
+      "fires_per_min": 18.53
+    },
+    {
+      "arm": "old (intended ASR + FillerNet)",
+      "min_gap_ms": 2000,
+      "recall": 0.8616,
+      "false_alarm_rate": 0.6944,
+      "partner_fire_rate": 0.1882,
+      "fires_per_min": 15.3
+    },
+    {
+      "arm": "old (intended ASR + FillerNet)",
+      "min_gap_ms": 3000,
+      "recall": 0.8365,
+      "false_alarm_rate": 0.6296,
+      "partner_fire_rate": 0.1059,
+      "fires_per_min": 12.53
+    },
+    {
+      "arm": "old (intended ASR + FillerNet)",
+      "min_gap_ms": 4000,
+      "recall": 0.761,
+      "false_alarm_rate": 0.537,
+      "partner_fire_rate": 0.1059,
+      "fires_per_min": 10.47
+    },
+    {
+      "arm": "old (intended ASR + FillerNet)",
+      "min_gap_ms": 6000,
+      "recall": 0.6792,
+      "false_alarm_rate": 0.4815,
+      "partner_fire_rate": 0.0706,
+      "fires_per_min": 8.1
+    }
+  ],
+  "dataset": "APROCSA (Casilio et al. 2022) -- 6 speakers, chronic post-stroke aphasia",
+  "region_s": 300.0,
+  "skip_s": 120.0,
+  "pause_ms": 1300,
+  "ground_truth": "CHAT word-finding codes; see scripts/aprocsa_chat.py",
+  "proxy_note": "'intended' mode stands in for the browser recognizer. Chrome cannot be scripted offline; intended mode is the same model on the same audio with dysfluency stripped (0.060 preserved vs 0.900 verbatim), and Chrome measured 0.000 on 5,044 clips.",
+  "caveats": [
+    "Six speakers. Not a population estimate.",
+    "A 'false alarm' is an utterance the clinician did not code as a word search. CHAT coding is utterance-level and conservative, so some of these are real word searches that were not coded.",
+    "Threshold fitting on this set would invalidate it; pause_ms is the shipped default."
+  ],
+  "wall_s": 288.1,
+  "summary": {
+    "old (intended ASR + FillerNet)": {
+      "recall": 0.8428,
+      "false_alarm_rate": 0.7037,
+      "partner_fire_rate": 0.2059,
+      "n_word_search": 159,
+      "n_fluent": 108,
+      "n_partner": 170,
+      "fires_per_min": 18.53,
+      "per_participant": [
+        {
+          "n_word_search": 8,
+          "n_fluent": 9,
+          "n_partner": 11,
+          "recall": 0.875,
+          "false_alarm_rate": 0.6667,
+          "partner_fire_rate": 0.5455,
+          "fires": 82,
+          "fires_per_min": 16.4,
+          "triggers": {
+            "filler": 1,
+            "filler_acoustic": 21,
+            "pause": 55,
+            "prolongation": 5
+          },
+          "participant": "1554"
+        },
+        {
+          "n_word_search": 31,
+          "n_fluent": 18,
+          "n_partner": 37,
+          "recall": 0.8387,
+          "false_alarm_rate": 0.6667,
+          "partner_fire_rate": 0.2703,
+          "fires": 78,
+          "fires_per_min": 15.6,
+          "triggers": {
+            "filler_acoustic": 32,
+            "pause": 46
+          },
+          "participant": "1713"
+        },
+        {
+          "n_word_search": 33,
+          "n_fluent": 41,
+          "n_partner": 56,
+          "recall": 0.7273,
+          "false_alarm_rate": 0.6829,
+          "partner_fire_rate": 0.1786,
+          "fires": 86,
+          "fires_per_min": 17.2,
+          "triggers": {
+            "filler": 1,
+            "filler_acoustic": 16,
+            "pause": 68,
+            "prolongation": 1
+          },
+          "participant": "1731"
+        },
+        {
+          "n_word_search": 27,
+          "n_fluent": 16,
+          "n_partner": 23,
+          "recall": 0.8889,
+          "false_alarm_rate": 0.75,
+          "partner_fire_rate": 0.1304,
+          "fires": 111,
+          "fires_per_min": 22.2,
+          "triggers": {
+            "filler_acoustic": 38,
+            "pause": 43,
+            "prolongation": 30
+          },
+          "participant": "1738"
+        },
+        {
+          "n_word_search": 28,
+          "n_fluent": 9,
+          "n_partner": 30,
+          "recall": 0.9286,
+          "false_alarm_rate": 0.6667,
+          "partner_fire_rate": 0.2,
+          "fires": 98,
+          "fires_per_min": 19.6,
+          "triggers": {
+            "filler": 1,
+            "filler_acoustic": 35,
+            "pause": 51,
+            "prolongation": 11
+          },
+          "participant": "1833"
+        },
+        {
+          "n_word_search": 32,
+          "n_fluent": 15,
+          "n_partner": 13,
+          "recall": 0.8438,
+          "false_alarm_rate": 0.8,
+          "partner_fire_rate": 0.0,
+          "fires": 101,
+          "fires_per_min": 20.2,
+          "triggers": {
+            "filler_acoustic": 39,
+            "hedge": 1,
+            "pause": 60,
+            "prolongation": 1
+          },
+          "participant": "1944"
+        }
+      ]
+    },
+    "verbatim ASR + FillerNet": {
+      "recall": 0.8491,
+      "false_alarm_rate": 0.6852,
+      "partner_fire_rate": 0.2529,
+      "n_word_search": 159,
+      "n_fluent": 108,
+      "n_partner": 170,
+      "fires_per_min": 20.93,
+      "per_participant": [
+        {
+          "n_word_search": 8,
+          "n_fluent": 9,
+          "n_partner": 11,
+          "recall": 0.75,
+          "false_alarm_rate": 0.8889,
+          "partner_fire_rate": 0.7273,
+          "fires": 92,
+          "fires_per_min": 18.4,
+          "triggers": {
+            "filler": 18,
+            "filler_acoustic": 16,
+            "pause": 54,
+            "prolongation": 4
+          },
+          "participant": "1554"
+        },
+        {
+          "n_word_search": 31,
+          "n_fluent": 18,
+          "n_partner": 37,
+          "recall": 0.8387,
+          "false_alarm_rate": 0.4444,
+          "partner_fire_rate": 0.2162,
+          "fires": 98,
+          "fires_per_min": 19.6,
+          "triggers": {
+            "filler": 28,
+            "filler_acoustic": 33,
+            "hedge": 2,
+            "pause": 35
+          },
+          "participant": "1713"
+        },
+        {
+          "n_word_search": 33,
+          "n_fluent": 41,
+          "n_partner": 56,
+          "recall": 0.7576,
+          "false_alarm_rate": 0.7073,
+          "partner_fire_rate": 0.2679,
+          "fires": 88,
+          "fires_per_min": 17.6,
+          "triggers": {
+            "filler": 19,
+            "filler_acoustic": 16,
+            "pause": 50,
+            "prolongation": 3
+          },
+          "participant": "1731"
+        },
+        {
+          "n_word_search": 27,
+          "n_fluent": 16,
+          "n_partner": 23,
+          "recall": 0.8889,
+          "false_alarm_rate": 0.75,
+          "partner_fire_rate": 0.1304,
+          "fires": 120,
+          "fires_per_min": 24.0,
+          "triggers": {
+            "filler": 36,
+            "filler_acoustic": 26,
+            "pause": 34,
+            "prolongation": 24
+          },
+          "participant": "1738"
+        },
+        {
+          "n_word_search": 28,
+          "n_fluent": 9,
+          "n_partner": 30,
+          "recall": 0.9286,
+          "false_alarm_rate": 0.6667,
+          "partner_fire_rate": 0.3,
+          "fires": 123,
+          "fires_per_min": 24.6,
+          "triggers": {
+            "filler": 35,
+            "filler_acoustic": 24,
+            "hedge": 1,
+            "pause": 53,
+            "prolongation": 10
+          },
+          "participant": "1833"
+        },
+        {
+          "n_word_search": 32,
+          "n_fluent": 15,
+          "n_partner": 13,
+          "recall": 0.875,
+          "false_alarm_rate": 0.7333,
+          "partner_fire_rate": 0.0,
+          "fires": 107,
+          "fires_per_min": 21.4,
+          "triggers": {
+            "filler": 18,
+            "filler_acoustic": 36,
+            "hedge": 1,
+            "pause": 51,
+            "prolongation": 1
+          },
+          "participant": "1944"
+        }
+      ]
+    },
+    "intended ASR + StutterNet": {
+      "recall": 0.8302,
+      "false_alarm_rate": 0.5926,
+      "partner_fire_rate": 0.1941,
+      "n_word_search": 159,
+      "n_fluent": 108,
+      "n_partner": 170,
+      "fires_per_min": 16.17,
+      "per_participant": [
+        {
+          "n_word_search": 8,
+          "n_fluent": 9,
+          "n_partner": 11,
+          "recall": 0.875,
+          "false_alarm_rate": 0.5556,
+          "partner_fire_rate": 0.5455,
+          "fires": 73,
+          "fires_per_min": 14.6,
+          "triggers": {
+            "filler": 1,
+            "filler_acoustic": 6,
+            "pause": 61,
+            "prolongation": 5
+          },
+          "participant": "1554"
+        },
+        {
+          "n_word_search": 31,
+          "n_fluent": 18,
+          "n_partner": 37,
+          "recall": 0.8387,
+          "false_alarm_rate": 0.6667,
+          "partner_fire_rate": 0.2432,
+          "fires": 67,
+          "fires_per_min": 13.4,
+          "triggers": {
+            "filler_acoustic": 14,
+            "pause": 49,
+            "word_rep": 4
+          },
+          "participant": "1713"
+        },
+        {
+          "n_word_search": 33,
+          "n_fluent": 41,
+          "n_partner": 56,
+          "recall": 0.7273,
+          "false_alarm_rate": 0.5854,
+          "partner_fire_rate": 0.1786,
+          "fires": 82,
+          "fires_per_min": 16.4,
+          "triggers": {
+            "filler": 1,
+            "filler_acoustic": 4,
+            "pause": 75,
+            "prolongation": 2
+          },
+          "participant": "1731"
+        },
+        {
+          "n_word_search": 27,
+          "n_fluent": 16,
+          "n_partner": 23,
+          "recall": 0.8519,
+          "false_alarm_rate": 0.6875,
+          "partner_fire_rate": 0.087,
+          "fires": 91,
+          "fires_per_min": 18.2,
+          "triggers": {
+            "filler_acoustic": 5,
+            "pause": 50,
+            "prolongation": 36
+          },
+          "participant": "1738"
+        },
+        {
+          "n_word_search": 28,
+          "n_fluent": 9,
+          "n_partner": 30,
+          "recall": 0.8929,
+          "false_alarm_rate": 0.6667,
+          "partner_fire_rate": 0.2,
+          "fires": 90,
+          "fires_per_min": 18.0,
+          "triggers": {
+            "filler": 1,
+            "filler_acoustic": 10,
+            "pause": 66,
+            "prolongation": 11,
+            "sound_rep": 2
+          },
+          "participant": "1833"
+        },
+        {
+          "n_word_search": 32,
+          "n_fluent": 15,
+          "n_partner": 13,
+          "recall": 0.8438,
+          "false_alarm_rate": 0.4,
+          "partner_fire_rate": 0.0,
+          "fires": 82,
+          "fires_per_min": 16.4,
+          "triggers": {
+            "filler_acoustic": 4,
+            "hedge": 1,
+            "pause": 76,
+            "prolongation": 1
+          },
+          "participant": "1944"
+        }
+      ]
+    },
+    "new (verbatim ASR + StutterNet)": {
+      "recall": 0.8428,
+      "false_alarm_rate": 0.6111,
+      "partner_fire_rate": 0.2471,
+      "n_word_search": 159,
+      "n_fluent": 108,
+      "n_partner": 170,
+      "fires_per_min": 19.3,
+      "per_participant": [
+        {
+          "n_word_search": 8,
+          "n_fluent": 9,
+          "n_partner": 11,
+          "recall": 0.75,
+          "false_alarm_rate": 0.8889,
+          "partner_fire_rate": 0.7273,
+          "fires": 87,
+          "fires_per_min": 17.4,
+          "triggers": {
+            "filler": 23,
+            "filler_acoustic": 5,
+            "pause": 55,
+            "prolongation": 4
+          },
+          "participant": "1554"
+        },
+        {
+          "n_word_search": 31,
+          "n_fluent": 18,
+          "n_partner": 37,
+          "recall": 0.8065,
+          "false_alarm_rate": 0.5,
+          "partner_fire_rate": 0.2162,
+          "fires": 88,
+          "fires_per_min": 17.6,
+          "triggers": {
+            "filler": 28,
+            "filler_acoustic": 16,
+            "hedge": 2,
+            "pause": 38,
+            "word_rep": 4
+          },
+          "participant": "1713"
+        },
+        {
+          "n_word_search": 33,
+          "n_fluent": 41,
+          "n_partner": 56,
+          "recall": 0.7576,
+          "false_alarm_rate": 0.6098,
+          "partner_fire_rate": 0.2679,
+          "fires": 84,
+          "fires_per_min": 16.8,
+          "triggers": {
+            "filler": 24,
+            "filler_acoustic": 5,
+            "pause": 53,
+            "prolongation": 2
+          },
+          "participant": "1731"
+        },
+        {
+          "n_word_search": 27,
+          "n_fluent": 16,
+          "n_partner": 23,
+          "recall": 0.8889,
+          "false_alarm_rate": 0.75,
+          "partner_fire_rate": 0.1304,
+          "fires": 115,
+          "fires_per_min": 23.0,
+          "triggers": {
+            "filler": 44,
+            "filler_acoustic": 4,
+            "pause": 39,
+            "prolongation": 27,
+            "word_rep": 1
+          },
+          "participant": "1738"
+        },
+        {
+          "n_word_search": 28,
+          "n_fluent": 9,
+          "n_partner": 30,
+          "recall": 0.9286,
+          "false_alarm_rate": 0.6667,
+          "partner_fire_rate": 0.2667,
+          "fires": 114,
+          "fires_per_min": 22.8,
+          "triggers": {
+            "filler": 39,
+            "filler_acoustic": 4,
+            "hedge": 1,
+            "pause": 58,
+            "prolongation": 10,
+            "sound_rep": 2
+          },
+          "participant": "1833"
+        },
+        {
+          "n_word_search": 32,
+          "n_fluent": 15,
+          "n_partner": 13,
+          "recall": 0.875,
+          "false_alarm_rate": 0.4,
+          "partner_fire_rate": 0.0,
+          "fires": 91,
+          "fires_per_min": 18.2,
+          "triggers": {
+            "filler": 21,
+            "filler_acoustic": 4,
+            "hedge": 1,
+            "pause": 64,
+            "prolongation": 1
+          },
+          "participant": "1944"
+        }
+      ]
+    }
+  },
+  "details": {
+    "1554": {
+      "old (intended ASR + FillerNet)": {
+        "score": {
+          "n_word_search": 8,
+          "n_fluent": 9,
+          "n_partner": 11,
+          "recall": 0.875,
+          "false_alarm_rate": 0.6667,
+          "partner_fire_rate": 0.5455,
+          "fires": 82,
+          "fires_per_min": 16.4,
+          "triggers": {
+            "filler": 1,
+            "filler_acoustic": 21,
+            "pause": 55,
+            "prolongation": 5
+          },
+          "participant": "1554"
+        },
+        "sample_fires": [
+          {
+            "at_ms": 4700,
+            "trigger": "filler_acoustic",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 5900,
+            "trigger": "filler_acoustic",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 7700,
+            "trigger": "filler_acoustic",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 11000,
+            "trigger": "pause",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 13400,
+            "trigger": "prolongation",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 15500,
+            "trigger": "filler_acoustic",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          }
+        ],
+        "n_words": 306
+      },
+      "verbatim ASR + FillerNet": {
+        "score": {
+          "n_word_search": 8,
+          "n_fluent": 9,
+          "n_partner": 11,
+          "recall": 0.75,
+          "false_alarm_rate": 0.8889,
+          "partner_fire_rate": 0.7273,
+          "fires": 92,
+          "fires_per_min": 18.4,
+          "triggers": {
+            "filler": 18,
+            "filler_acoustic": 16,
+            "pause": 54,
+            "prolongation": 4
+          },
+          "participant": "1554"
+        },
+        "sample_fires": [
+          {
+            "at_ms": 4100,
+            "trigger": "filler",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 7700,
+            "trigger": "pause",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 7600,
+            "trigger": "filler",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 13400,
+            "trigger": "prolongation",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 15500,
+            "trigger": "filler_acoustic",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 15500,
+            "trigger": "filler",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          }
+        ],
+        "n_words": 385
+      },
+      "intended ASR + StutterNet": {
+        "score": {
+          "n_word_search": 8,
+          "n_fluent": 9,
+          "n_partner": 11,
+          "recall": 0.875,
+          "false_alarm_rate": 0.5556,
+          "partner_fire_rate": 0.5455,
+          "fires": 73,
+          "fires_per_min": 14.6,
+          "triggers": {
+            "filler": 1,
+            "filler_acoustic": 6,
+            "pause": 61,
+            "prolongation": 5
+          },
+          "participant": "1554"
+        },
+        "sample_fires": [
+          {
+            "at_ms": 4500,
+            "trigger": "filler_acoustic",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 7400,
+            "trigger": "filler_acoustic",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 11000,
+            "trigger": "pause",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 13400,
+            "trigger": "prolongation",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 17000,
+            "trigger": "pause",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 19300,
+            "trigger": "pause",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          }
+        ],
+        "n_words": 306
+      },
+      "new (verbatim ASR + StutterNet)": {
+        "score": {
+          "n_word_search": 8,
+          "n_fluent": 9,
+          "n_partner": 11,
+          "recall": 0.75,
+          "false_alarm_rate": 0.8889,
+          "partner_fire_rate": 0.7273,
+          "fires": 87,
+          "fires_per_min": 17.4,
+          "triggers": {
+            "filler": 23,
+            "filler_acoustic": 5,
+            "pause": 55,
+            "prolongation": 4
+          },
+          "participant": "1554"
+        },
+        "sample_fires": [
+          {
+            "at_ms": 4100,
+            "trigger": "filler",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 7400,
+            "trigger": "filler_acoustic",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 7600,
+            "trigger": "filler",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 13400,
+            "trigger": "prolongation",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 15500,
+            "trigger": "filler",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 18600,
+            "trigger": "filler",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          }
+        ],
+        "n_words": 385
+      }
+    },
+    "1713": {
+      "old (intended ASR + FillerNet)": {
+        "score": {
+          "n_word_search": 31,
+          "n_fluent": 18,
+          "n_partner": 37,
+          "recall": 0.8387,
+          "false_alarm_rate": 0.6667,
+          "partner_fire_rate": 0.2703,
+          "fires": 78,
+          "fires_per_min": 15.6,
+          "triggers": {
+            "filler_acoustic": 32,
+            "pause": 46
+          },
+          "participant": "1713"
+        },
+        "sample_fires": [
+          {
+            "at_ms": 4900,
+            "trigger": "filler_acoustic",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 6000,
+            "trigger": "pause",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 12300,
+            "trigger": "filler_acoustic",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 19100,
+            "trigger": "pause",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 20200,
+            "trigger": "filler_acoustic",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 26200,
+            "trigger": "filler_acoustic",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          }
+        ],
+        "n_words": 460
+      },
+      "verbatim ASR + FillerNet": {
+        "score": {
+          "n_word_search": 31,
+          "n_fluent": 18,
+          "n_partner": 37,
+          "recall": 0.8387,
+          "false_alarm_rate": 0.4444,
+          "partner_fire_rate": 0.2162,
+          "fires": 98,
+          "fires_per_min": 19.6,
+          "triggers": {
+            "filler": 28,
+            "filler_acoustic": 33,
+            "hedge": 2,
+            "pause": 35
+          },
+          "participant": "1713"
+        },
+        "sample_fires": [
+          {
+            "at_ms": 4900,
+            "trigger": "filler_acoustic",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 6000,
+            "trigger": "pause",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 12300,
+            "trigger": "filler_acoustic",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 13700,
+            "trigger": "filler_acoustic",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 19100,
+            "trigger": "pause",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 20200,
+            "trigger": "filler_acoustic",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          }
+        ],
+        "n_words": 597
+      },
+      "intended ASR + StutterNet": {
+        "score": {
+          "n_word_search": 31,
+          "n_fluent": 18,
+          "n_partner": 37,
+          "recall": 0.8387,
+          "false_alarm_rate": 0.6667,
+          "partner_fire_rate": 0.2432,
+          "fires": 67,
+          "fires_per_min": 13.4,
+          "triggers": {
+            "filler_acoustic": 14,
+            "pause": 49,
+            "word_rep": 4
+          },
+          "participant": "1713"
+        },
+        "sample_fires": [
+          {
+            "at_ms": 5300,
+            "trigger": "word_rep",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 6000,
+            "trigger": "pause",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 19100,
+            "trigger": "pause",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 19900,
+            "trigger": "filler_acoustic",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 25700,
+            "trigger": "word_rep",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 29200,
+            "trigger": "pause",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          }
+        ],
+        "n_words": 460
+      },
+      "new (verbatim ASR + StutterNet)": {
+        "score": {
+          "n_word_search": 31,
+          "n_fluent": 18,
+          "n_partner": 37,
+          "recall": 0.8065,
+          "false_alarm_rate": 0.5,
+          "partner_fire_rate": 0.2162,
+          "fires": 88,
+          "fires_per_min": 17.6,
+          "triggers": {
+            "filler": 28,
+            "filler_acoustic": 16,
+            "hedge": 2,
+            "pause": 38,
+            "word_rep": 4
+          },
+          "participant": "1713"
+        },
+        "sample_fires": [
+          {
+            "at_ms": 5300,
+            "trigger": "word_rep",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 6000,
+            "trigger": "pause",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 19100,
+            "trigger": "pause",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 19900,
+            "trigger": "filler_acoustic",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 22000,
+            "trigger": "filler",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 25700,
+            "trigger": "word_rep",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          }
+        ],
+        "n_words": 597
+      }
+    },
+    "1731": {
+      "old (intended ASR + FillerNet)": {
+        "score": {
+          "n_word_search": 33,
+          "n_fluent": 41,
+          "n_partner": 56,
+          "recall": 0.7273,
+          "false_alarm_rate": 0.6829,
+          "partner_fire_rate": 0.1786,
+          "fires": 86,
+          "fires_per_min": 17.2,
+          "triggers": {
+            "filler": 1,
+            "filler_acoustic": 16,
+            "pause": 68,
+            "prolongation": 1
+          },
+          "participant": "1731"
+        },
+        "sample_fires": [
+          {
+            "at_ms": 6200,
+            "trigger": "pause",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 9200,
+            "trigger": "filler_acoustic",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 10900,
+            "trigger": "pause",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 15200,
+            "trigger": "pause",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 24400,
+            "trigger": "pause",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 25600,
+            "trigger": "pause",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          }
+        ],
+        "n_words": 277
+      },
+      "verbatim ASR + FillerNet": {
+        "score": {
+          "n_word_search": 33,
+          "n_fluent": 41,
+          "n_partner": 56,
+          "recall": 0.7576,
+          "false_alarm_rate": 0.7073,
+          "partner_fire_rate": 0.2679,
+          "fires": 88,
+          "fires_per_min": 17.6,
+          "triggers": {
+            "filler": 19,
+            "filler_acoustic": 16,
+            "pause": 50,
+            "prolongation": 3
+          },
+          "participant": "1731"
+        },
+        "sample_fires": [
+          {
+            "at_ms": 3300,
+            "trigger": "filler",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 6200,
+            "trigger": "pause",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 9200,
+            "trigger": "filler_acoustic",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 12000,
+            "trigger": "filler",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 15200,
+            "trigger": "pause",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 17700,
+            "trigger": "pause",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          }
+        ],
+        "n_words": 378
+      },
+      "intended ASR + StutterNet": {
+        "score": {
+          "n_word_search": 33,
+          "n_fluent": 41,
+          "n_partner": 56,
+          "recall": 0.7273,
+          "false_alarm_rate": 0.5854,
+          "partner_fire_rate": 0.1786,
+          "fires": 82,
+          "fires_per_min": 16.4,
+          "triggers": {
+            "filler": 1,
+            "filler_acoustic": 4,
+            "pause": 75,
+            "prolongation": 2
+          },
+          "participant": "1731"
+        },
+        "sample_fires": [
+          {
+            "at_ms": 6200,
+            "trigger": "pause",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 8900,
+            "trigger": "filler_acoustic",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 10900,
+            "trigger": "pause",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 15200,
+            "trigger": "pause",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 24400,
+            "trigger": "pause",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 25600,
+            "trigger": "pause",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          }
+        ],
+        "n_words": 277
+      },
+      "new (verbatim ASR + StutterNet)": {
+        "score": {
+          "n_word_search": 33,
+          "n_fluent": 41,
+          "n_partner": 56,
+          "recall": 0.7576,
+          "false_alarm_rate": 0.6098,
+          "partner_fire_rate": 0.2679,
+          "fires": 84,
+          "fires_per_min": 16.8,
+          "triggers": {
+            "filler": 24,
+            "filler_acoustic": 5,
+            "pause": 53,
+            "prolongation": 2
+          },
+          "participant": "1731"
+        },
+        "sample_fires": [
+          {
+            "at_ms": 3300,
+            "trigger": "filler",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 6200,
+            "trigger": "pause",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 8900,
+            "trigger": "filler_acoustic",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 12000,
+            "trigger": "filler",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 15200,
+            "trigger": "pause",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 17700,
+            "trigger": "pause",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          }
+        ],
+        "n_words": 378
+      }
+    },
+    "1738": {
+      "old (intended ASR + FillerNet)": {
+        "score": {
+          "n_word_search": 27,
+          "n_fluent": 16,
+          "n_partner": 23,
+          "recall": 0.8889,
+          "false_alarm_rate": 0.75,
+          "partner_fire_rate": 0.1304,
+          "fires": 111,
+          "fires_per_min": 22.2,
+          "triggers": {
+            "filler_acoustic": 38,
+            "pause": 43,
+            "prolongation": 30
+          },
+          "participant": "1738"
+        },
+        "sample_fires": [
+          {
+            "at_ms": 5300,
+            "trigger": "pause",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 7300,
+            "trigger": "pause",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 8200,
+            "trigger": "filler_acoustic",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 9900,
+            "trigger": "filler_acoustic",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 10800,
+            "trigger": "prolongation",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 11900,
+            "trigger": "pause",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          }
+        ],
+        "n_words": 394
+      },
+      "verbatim ASR + FillerNet": {
+        "score": {
+          "n_word_search": 27,
+          "n_fluent": 16,
+          "n_partner": 23,
+          "recall": 0.8889,
+          "false_alarm_rate": 0.75,
+          "partner_fire_rate": 0.1304,
+          "fires": 120,
+          "fires_per_min": 24.0,
+          "triggers": {
+            "filler": 36,
+            "filler_acoustic": 26,
+            "pause": 34,
+            "prolongation": 24
+          },
+          "participant": "1738"
+        },
+        "sample_fires": [
+          {
+            "at_ms": 1700,
+            "trigger": "filler",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 7300,
+            "trigger": "pause",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 8200,
+            "trigger": "filler_acoustic",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 9900,
+            "trigger": "filler_acoustic",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 11900,
+            "trigger": "pause",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 13200,
+            "trigger": "prolongation",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          }
+        ],
+        "n_words": 482
+      },
+      "intended ASR + StutterNet": {
+        "score": {
+          "n_word_search": 27,
+          "n_fluent": 16,
+          "n_partner": 23,
+          "recall": 0.8519,
+          "false_alarm_rate": 0.6875,
+          "partner_fire_rate": 0.087,
+          "fires": 91,
+          "fires_per_min": 18.2,
+          "triggers": {
+            "filler_acoustic": 5,
+            "pause": 50,
+            "prolongation": 36
+          },
+          "participant": "1738"
+        },
+        "sample_fires": [
+          {
+            "at_ms": 5300,
+            "trigger": "pause",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 7300,
+            "trigger": "pause",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 10800,
+            "trigger": "prolongation",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 11900,
+            "trigger": "pause",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 13200,
+            "trigger": "prolongation",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 15300,
+            "trigger": "pause",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          }
+        ],
+        "n_words": 394
+      },
+      "new (verbatim ASR + StutterNet)": {
+        "score": {
+          "n_word_search": 27,
+          "n_fluent": 16,
+          "n_partner": 23,
+          "recall": 0.8889,
+          "false_alarm_rate": 0.75,
+          "partner_fire_rate": 0.1304,
+          "fires": 115,
+          "fires_per_min": 23.0,
+          "triggers": {
+            "filler": 44,
+            "filler_acoustic": 4,
+            "pause": 39,
+            "prolongation": 27,
+            "word_rep": 1
+          },
+          "participant": "1738"
+        },
+        "sample_fires": [
+          {
+            "at_ms": 1700,
+            "trigger": "filler",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 7300,
+            "trigger": "pause",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 10800,
+            "trigger": "prolongation",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 11900,
+            "trigger": "pause",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 13200,
+            "trigger": "prolongation",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 16600,
+            "trigger": "pause",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          }
+        ],
+        "n_words": 482
+      }
+    },
+    "1833": {
+      "old (intended ASR + FillerNet)": {
+        "score": {
+          "n_word_search": 28,
+          "n_fluent": 9,
+          "n_partner": 30,
+          "recall": 0.9286,
+          "false_alarm_rate": 0.6667,
+          "partner_fire_rate": 0.2,
+          "fires": 98,
+          "fires_per_min": 19.6,
+          "triggers": {
+            "filler": 1,
+            "filler_acoustic": 35,
+            "pause": 51,
+            "prolongation": 11
+          },
+          "participant": "1833"
+        },
+        "sample_fires": [
+          {
+            "at_ms": 2900,
+            "trigger": "prolongation",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 5000,
+            "trigger": "prolongation",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 9000,
+            "trigger": "pause",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 16000,
+            "trigger": "prolongation",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 22500,
+            "trigger": "pause",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 26200,
+            "trigger": "pause",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          }
+        ],
+        "n_words": 325
+      },
+      "verbatim ASR + FillerNet": {
+        "score": {
+          "n_word_search": 28,
+          "n_fluent": 9,
+          "n_partner": 30,
+          "recall": 0.9286,
+          "false_alarm_rate": 0.6667,
+          "partner_fire_rate": 0.3,
+          "fires": 123,
+          "fires_per_min": 24.6,
+          "triggers": {
+            "filler": 35,
+            "filler_acoustic": 24,
+            "hedge": 1,
+            "pause": 53,
+            "prolongation": 10
+          },
+          "participant": "1833"
+        },
+        "sample_fires": [
+          {
+            "at_ms": 2900,
+            "trigger": "prolongation",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 4400,
+            "trigger": "filler",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 7100,
+            "trigger": "pause",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 7500,
+            "trigger": "filler",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 13500,
+            "trigger": "pause",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 16000,
+            "trigger": "prolongation",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          }
+        ],
+        "n_words": 462
+      },
+      "intended ASR + StutterNet": {
+        "score": {
+          "n_word_search": 28,
+          "n_fluent": 9,
+          "n_partner": 30,
+          "recall": 0.8929,
+          "false_alarm_rate": 0.6667,
+          "partner_fire_rate": 0.2,
+          "fires": 90,
+          "fires_per_min": 18.0,
+          "triggers": {
+            "filler": 1,
+            "filler_acoustic": 10,
+            "pause": 66,
+            "prolongation": 11,
+            "sound_rep": 2
+          },
+          "participant": "1833"
+        },
+        "sample_fires": [
+          {
+            "at_ms": 2900,
+            "trigger": "prolongation",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 5000,
+            "trigger": "prolongation",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 9000,
+            "trigger": "pause",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 16000,
+            "trigger": "prolongation",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 22500,
+            "trigger": "pause",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 26200,
+            "trigger": "pause",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          }
+        ],
+        "n_words": 325
+      },
+      "new (verbatim ASR + StutterNet)": {
+        "score": {
+          "n_word_search": 28,
+          "n_fluent": 9,
+          "n_partner": 30,
+          "recall": 0.9286,
+          "false_alarm_rate": 0.6667,
+          "partner_fire_rate": 0.2667,
+          "fires": 114,
+          "fires_per_min": 22.8,
+          "triggers": {
+            "filler": 39,
+            "filler_acoustic": 4,
+            "hedge": 1,
+            "pause": 58,
+            "prolongation": 10,
+            "sound_rep": 2
+          },
+          "participant": "1833"
+        },
+        "sample_fires": [
+          {
+            "at_ms": 2900,
+            "trigger": "prolongation",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 4400,
+            "trigger": "filler",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 7100,
+            "trigger": "pause",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 7500,
+            "trigger": "filler",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 13500,
+            "trigger": "pause",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 16000,
+            "trigger": "prolongation",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          }
+        ],
+        "n_words": 462
+      }
+    },
+    "1944": {
+      "old (intended ASR + FillerNet)": {
+        "score": {
+          "n_word_search": 32,
+          "n_fluent": 15,
+          "n_partner": 13,
+          "recall": 0.8438,
+          "false_alarm_rate": 0.8,
+          "partner_fire_rate": 0.0,
+          "fires": 101,
+          "fires_per_min": 20.2,
+          "triggers": {
+            "filler_acoustic": 39,
+            "hedge": 1,
+            "pause": 60,
+            "prolongation": 1
+          },
+          "participant": "1944"
+        },
+        "sample_fires": [
+          {
+            "at_ms": 2200,
+            "trigger": "filler_acoustic",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 8700,
+            "trigger": "pause",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 10300,
+            "trigger": "hedge",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 15400,
+            "trigger": "filler_acoustic",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 17200,
+            "trigger": "filler_acoustic",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 22100,
+            "trigger": "pause",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          }
+        ],
+        "n_words": 304
+      },
+      "verbatim ASR + FillerNet": {
+        "score": {
+          "n_word_search": 32,
+          "n_fluent": 15,
+          "n_partner": 13,
+          "recall": 0.875,
+          "false_alarm_rate": 0.7333,
+          "partner_fire_rate": 0.0,
+          "fires": 107,
+          "fires_per_min": 21.4,
+          "triggers": {
+            "filler": 18,
+            "filler_acoustic": 36,
+            "hedge": 1,
+            "pause": 51,
+            "prolongation": 1
+          },
+          "participant": "1944"
+        },
+        "sample_fires": [
+          {
+            "at_ms": 2200,
+            "trigger": "filler_acoustic",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 8700,
+            "trigger": "pause",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 10300,
+            "trigger": "hedge",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 13500,
+            "trigger": "pause",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 15400,
+            "trigger": "filler_acoustic",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 17200,
+            "trigger": "filler_acoustic",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          }
+        ],
+        "n_words": 432
+      },
+      "intended ASR + StutterNet": {
+        "score": {
+          "n_word_search": 32,
+          "n_fluent": 15,
+          "n_partner": 13,
+          "recall": 0.8438,
+          "false_alarm_rate": 0.4,
+          "partner_fire_rate": 0.0,
+          "fires": 82,
+          "fires_per_min": 16.4,
+          "triggers": {
+            "filler_acoustic": 4,
+            "hedge": 1,
+            "pause": 76,
+            "prolongation": 1
+          },
+          "participant": "1944"
+        },
+        "sample_fires": [
+          {
+            "at_ms": 2600,
+            "trigger": "pause",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 8700,
+            "trigger": "pause",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 10300,
+            "trigger": "hedge",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 15900,
+            "trigger": "pause",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 18100,
+            "trigger": "pause",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 22100,
+            "trigger": "pause",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          }
+        ],
+        "n_words": 304
+      },
+      "new (verbatim ASR + StutterNet)": {
+        "score": {
+          "n_word_search": 32,
+          "n_fluent": 15,
+          "n_partner": 13,
+          "recall": 0.875,
+          "false_alarm_rate": 0.4,
+          "partner_fire_rate": 0.0,
+          "fires": 91,
+          "fires_per_min": 18.2,
+          "triggers": {
+            "filler": 21,
+            "filler_acoustic": 4,
+            "hedge": 1,
+            "pause": 64,
+            "prolongation": 1
+          },
+          "participant": "1944"
+        },
+        "sample_fires": [
+          {
+            "at_ms": 2300,
+            "trigger": "filler",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 8700,
+            "trigger": "pause",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 10300,
+            "trigger": "hedge",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 13500,
+            "trigger": "pause",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 18100,
+            "trigger": "pause",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          },
+          {
+            "at_ms": 22100,
+            "trigger": "pause",
+            "fragment": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]"
+          }
+        ],
+        "n_words": 432
+      }
+    }
+  },
+  "_redaction": "Verbatim APROCSA participant speech has been removed from this file. Metrics, counts, spans and participant IDs are unchanged. Regenerate the full record locally from eval/results/cache/aprocsa/ (gitignored)."
+}

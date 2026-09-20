@@ -1,0 +1,782 @@
+{
+  "status": "OK",
+  "source": "SEP-28k (74%% subset, 5 of 8 shows) -- see docs/DATA_PROVENANCE.md",
+  "window_s": 6.0,
+  "n_events": 60,
+  "metric": "dysfluency preserved = explicit filler token OR discourse filler OR cut-off word fragment ('f-') OR immediate word/phrase repetition. LOWER BOUND: Apple's Interjection definition includes person-specific fillers no fixed list can enumerate.",
+  "chrome_baseline": {
+    "preserved": 0.0,
+    "n": 5044,
+    "source": "eval/results/stall_eval.json transcript_baseline"
+  },
+  "models": {
+    "small": {
+      "n": 60,
+      "preserved": 0.8833,
+      "preserved_legacy_metric": 0.8167,
+      "by_type": {
+        "Block": {
+          "n": 12,
+          "preserved": 0.75
+        },
+        "Prolongation": {
+          "n": 12,
+          "preserved": 0.75
+        },
+        "SoundRep": {
+          "n": 13,
+          "preserved": 0.923
+        },
+        "WordRep": {
+          "n": 13,
+          "preserved": 0.923
+        },
+        "Interjection": {
+          "n": 20,
+          "preserved": 1.0
+        }
+      },
+      "latency_ms_median": 389.0,
+      "latency_ms_median_word_timestamps": 710.3,
+      "word_timestamp_overhead_ms": 321.3,
+      "samples": [
+        {
+          "show": "HVSA",
+          "ep": "0",
+          "clip": "7",
+          "labels": {
+            "Block": 1,
+            "Prolongation": 0,
+            "SoundRep": 0,
+            "WordRep": 0,
+            "Interjection": 1
+          },
+          "text": "So that one [UH] kind of hit me hard, cause I never got my.",
+          "evidence": {
+            "filler": true,
+            "fragment": false,
+            "repetition": false
+          },
+          "any": true,
+          "legacy": true
+        },
+        {
+          "show": "HeStutters",
+          "ep": "7",
+          "clip": "1",
+          "labels": {
+            "Block": 1,
+            "Prolongation": 0,
+            "SoundRep": 0,
+            "WordRep": 0,
+            "Interjection": 0
+          },
+          "text": "[UM] [UM] Yeah, there's very few peop- people, I think, that are.",
+          "evidence": {
+            "filler": true,
+            "fragment": true,
+            "repetition": true
+          },
+          "any": true,
+          "legacy": true
+        },
+        {
+          "show": "HeStutters",
+          "ep": "20",
+          "clip": "254",
+          "labels": {
+            "Block": 1,
+            "Prolongation": 0,
+            "SoundRep": 1,
+            "WordRep": 0,
+            "Interjection": 0
+          },
+          "text": "Never realized or no how it.",
+          "evidence": {
+            "filler": false,
+            "fragment": false,
+            "repetition": false
+          },
+          "any": false,
+          "legacy": false
+        },
+        {
+          "show": "MyStutteringLife",
+          "ep": "28",
+          "clip": "27",
+          "labels": {
+            "Block": 1,
+            "Prolongation": 0,
+            "SoundRep": 0,
+            "WordRep": 0,
+            "Interjection": 0
+          },
+          "text": "Don't get me started on drive-throughs. Did you know that I bought a long time ago?",
+          "evidence": {
+            "filler": true,
+            "fragment": false,
+            "repetition": false
+          },
+          "any": true,
+          "legacy": true
+        },
+        {
+          "show": "StutterTalk",
+          "ep": "20",
+          "clip": "15",
+          "labels": {
+            "Block": 1,
+            "Prolongation": 0,
+            "SoundRep": 0,
+            "WordRep": 0,
+            "Interjection": 0
+          },
+          "text": "And [UM] then eventually when you know a few weeks or months later I c- can't remember we went down to.",
+          "evidence": {
+            "filler": true,
+            "fragment": true,
+            "repetition": false
+          },
+          "any": true,
+          "legacy": true
+        },
+        {
+          "show": "StutterTalk",
+          "ep": "47",
+          "clip": "36",
+          "labels": {
+            "Block": 1,
+            "Prolongation": 0,
+            "SoundRep": 0,
+            "WordRep": 0,
+            "Interjection": 0
+          },
+          "text": "This strong magnet that's always pulling us back m- [UH] says in my field.",
+          "evidence": {
+            "filler": true,
+            "fragment": true,
+            "repetition": false
+          },
+          "any": true,
+          "legacy": true
+        },
+        {
+          "show": "StutterTalk",
+          "ep": "75",
+          "clip": "0",
+          "labels": {
+            "Block": 1,
+            "Prolongation": 0,
+            "SoundRep": 0,
+            "WordRep": 0,
+            "Interjection": 0
+          },
+          "text": "Back to sh- [breath] Chavar and there's no record.",
+          "evidence": {
+            "filler": false,
+            "fragment": true,
+            "repetition": false
+          },
+          "any": true,
+          "legacy": false
+        },
+        {
+          "show": "WomenWhoStutter",
+          "ep": "10",
+          "clip": "136",
+          "labels": {
+            "Block": 1,
+            "Prolongation": 0,
+            "SoundRep": 0,
+            "WordRep": 0,
+            "Interjection": 0
+          },
+          "text": "And what does she think about all this? Well, I have to admit that.",
+          "evidence": {
+            "filler": false,
+            "fragment": false,
+            "repetition": false
+          },
+          "any": false,
+          "legacy": false
+        }
+      ]
+    },
+    "medium": {
+      "n": 60,
+      "preserved": 0.8833,
+      "preserved_legacy_metric": 0.8,
+      "by_type": {
+        "Block": {
+          "n": 12,
+          "preserved": 0.833
+        },
+        "Prolongation": {
+          "n": 12,
+          "preserved": 0.75
+        },
+        "SoundRep": {
+          "n": 13,
+          "preserved": 0.769
+        },
+        "WordRep": {
+          "n": 13,
+          "preserved": 1.0
+        },
+        "Interjection": {
+          "n": 20,
+          "preserved": 1.0
+        }
+      },
+      "latency_ms_median": 813.8,
+      "latency_ms_median_word_timestamps": 1664.2,
+      "word_timestamp_overhead_ms": 850.4,
+      "samples": [
+        {
+          "show": "HVSA",
+          "ep": "0",
+          "clip": "7",
+          "labels": {
+            "Block": 1,
+            "Prolongation": 0,
+            "SoundRep": 0,
+            "WordRep": 0,
+            "Interjection": 1
+          },
+          "text": "S- so that one [UH] k- kind of hit me hard, cause I never got my",
+          "evidence": {
+            "filler": true,
+            "fragment": true,
+            "repetition": false
+          },
+          "any": true,
+          "legacy": true
+        },
+        {
+          "show": "HeStutters",
+          "ep": "7",
+          "clip": "1",
+          "labels": {
+            "Block": 1,
+            "Prolongation": 0,
+            "SoundRep": 0,
+            "WordRep": 0,
+            "Interjection": 0
+          },
+          "text": "Mm-hmm. [lipsmack] Yeah, there's very few peop- people, I think, that are at.",
+          "evidence": {
+            "filler": true,
+            "fragment": true,
+            "repetition": false
+          },
+          "any": true,
+          "legacy": true
+        },
+        {
+          "show": "HeStutters",
+          "ep": "20",
+          "clip": "254",
+          "labels": {
+            "Block": 1,
+            "Prolongation": 0,
+            "SoundRep": 1,
+            "WordRep": 0,
+            "Interjection": 0
+          },
+          "text": "Never realize or know how it.",
+          "evidence": {
+            "filler": false,
+            "fragment": false,
+            "repetition": false
+          },
+          "any": false,
+          "legacy": false
+        },
+        {
+          "show": "MyStutteringLife",
+          "ep": "28",
+          "clip": "27",
+          "labels": {
+            "Block": 1,
+            "Prolongation": 0,
+            "SoundRep": 0,
+            "WordRep": 0,
+            "Interjection": 0
+          },
+          "text": "Gave me started on drive-thrus. Did you know that I bought a long time ago?",
+          "evidence": {
+            "filler": true,
+            "fragment": false,
+            "repetition": false
+          },
+          "any": true,
+          "legacy": true
+        },
+        {
+          "show": "StutterTalk",
+          "ep": "20",
+          "clip": "15",
+          "labels": {
+            "Block": 1,
+            "Prolongation": 0,
+            "SoundRep": 0,
+            "WordRep": 0,
+            "Interjection": 0
+          },
+          "text": "And [UM] then eventually when, you know, a few weeks or months later, I c- can't remember, we went down to.",
+          "evidence": {
+            "filler": true,
+            "fragment": true,
+            "repetition": false
+          },
+          "any": true,
+          "legacy": true
+        },
+        {
+          "show": "StutterTalk",
+          "ep": "47",
+          "clip": "36",
+          "labels": {
+            "Block": 1,
+            "Prolongation": 0,
+            "SoundRep": 0,
+            "WordRep": 0,
+            "Interjection": 0
+          },
+          "text": "This strong magnet that's always pulling us back [UM] us as in my field.",
+          "evidence": {
+            "filler": true,
+            "fragment": false,
+            "repetition": false
+          },
+          "any": true,
+          "legacy": true
+        },
+        {
+          "show": "StutterTalk",
+          "ep": "75",
+          "clip": "0",
+          "labels": {
+            "Block": 1,
+            "Prolongation": 0,
+            "SoundRep": 0,
+            "WordRep": 0,
+            "Interjection": 0
+          },
+          "text": "to sh- Sharvar and there's no record.",
+          "evidence": {
+            "filler": false,
+            "fragment": true,
+            "repetition": false
+          },
+          "any": true,
+          "legacy": false
+        },
+        {
+          "show": "WomenWhoStutter",
+          "ep": "10",
+          "clip": "136",
+          "labels": {
+            "Block": 1,
+            "Prolongation": 0,
+            "SoundRep": 0,
+            "WordRep": 0,
+            "Interjection": 0
+          },
+          "text": "And what does she think about all this?",
+          "evidence": {
+            "filler": false,
+            "fragment": false,
+            "repetition": false
+          },
+          "any": false,
+          "legacy": false
+        }
+      ]
+    },
+    "turbo": {
+      "n": 60,
+      "preserved": 0.9,
+      "preserved_legacy_metric": 0.8333,
+      "by_type": {
+        "Block": {
+          "n": 12,
+          "preserved": 0.75
+        },
+        "Prolongation": {
+          "n": 12,
+          "preserved": 0.917
+        },
+        "SoundRep": {
+          "n": 13,
+          "preserved": 0.923
+        },
+        "WordRep": {
+          "n": 13,
+          "preserved": 0.846
+        },
+        "Interjection": {
+          "n": 20,
+          "preserved": 1.0
+        }
+      },
+      "latency_ms_median": 326.6,
+      "latency_ms_median_word_timestamps": 1737.6,
+      "word_timestamp_overhead_ms": 1411.0,
+      "samples": [
+        {
+          "show": "HVSA",
+          "ep": "0",
+          "clip": "7",
+          "labels": {
+            "Block": 1,
+            "Prolongation": 0,
+            "SoundRep": 0,
+            "WordRep": 0,
+            "Interjection": 1
+          },
+          "text": "So that one [UH] kind of hit me hard cause I never got my",
+          "evidence": {
+            "filler": true,
+            "fragment": false,
+            "repetition": false
+          },
+          "any": true,
+          "legacy": true
+        },
+        {
+          "show": "HeStutters",
+          "ep": "7",
+          "clip": "1",
+          "labels": {
+            "Block": 1,
+            "Prolongation": 0,
+            "SoundRep": 0,
+            "WordRep": 0,
+            "Interjection": 0
+          },
+          "text": "[UM] [UM] Yeah, there's very few peep people I think that are",
+          "evidence": {
+            "filler": true,
+            "fragment": false,
+            "repetition": true
+          },
+          "any": true,
+          "legacy": true
+        },
+        {
+          "show": "HeStutters",
+          "ep": "20",
+          "clip": "254",
+          "labels": {
+            "Block": 1,
+            "Prolongation": 0,
+            "SoundRep": 1,
+            "WordRep": 0,
+            "Interjection": 0
+          },
+          "text": "Never realize or know how it.",
+          "evidence": {
+            "filler": false,
+            "fragment": false,
+            "repetition": false
+          },
+          "any": false,
+          "legacy": false
+        },
+        {
+          "show": "MyStutteringLife",
+          "ep": "28",
+          "clip": "27",
+          "labels": {
+            "Block": 1,
+            "Prolongation": 0,
+            "SoundRep": 0,
+            "WordRep": 0,
+            "Interjection": 0
+          },
+          "text": "Don't get me started on drive-thrus. Did you know that I bought a long time ago?",
+          "evidence": {
+            "filler": true,
+            "fragment": false,
+            "repetition": false
+          },
+          "any": true,
+          "legacy": true
+        },
+        {
+          "show": "StutterTalk",
+          "ep": "20",
+          "clip": "15",
+          "labels": {
+            "Block": 1,
+            "Prolongation": 0,
+            "SoundRep": 0,
+            "WordRep": 0,
+            "Interjection": 0
+          },
+          "text": "And [UM] then eventually when you know a few weeks or months later, I c- I can't remember, we went down to",
+          "evidence": {
+            "filler": true,
+            "fragment": true,
+            "repetition": false
+          },
+          "any": true,
+          "legacy": true
+        },
+        {
+          "show": "StutterTalk",
+          "ep": "47",
+          "clip": "36",
+          "labels": {
+            "Block": 1,
+            "Prolongation": 0,
+            "SoundRep": 0,
+            "WordRep": 0,
+            "Interjection": 0
+          },
+          "text": "This strong magnet that's always pulling us back [UM] us as in my field.",
+          "evidence": {
+            "filler": true,
+            "fragment": false,
+            "repetition": false
+          },
+          "any": true,
+          "legacy": true
+        },
+        {
+          "show": "StutterTalk",
+          "ep": "75",
+          "clip": "0",
+          "labels": {
+            "Block": 1,
+            "Prolongation": 0,
+            "SoundRep": 0,
+            "WordRep": 0,
+            "Interjection": 0
+          },
+          "text": "to sh- sh- Sharvar and there's no record.",
+          "evidence": {
+            "filler": false,
+            "fragment": true,
+            "repetition": true
+          },
+          "any": true,
+          "legacy": true
+        },
+        {
+          "show": "WomenWhoStutter",
+          "ep": "10",
+          "clip": "136",
+          "labels": {
+            "Block": 1,
+            "Prolongation": 0,
+            "SoundRep": 0,
+            "WordRep": 0,
+            "Interjection": 0
+          },
+          "text": "And what does she think about all this? Well, I have to admit that",
+          "evidence": {
+            "filler": false,
+            "fragment": false,
+            "repetition": false
+          },
+          "any": false,
+          "legacy": false
+        }
+      ]
+    },
+    "large": {
+      "n": 60,
+      "preserved": 0.85,
+      "preserved_legacy_metric": 0.8167,
+      "by_type": {
+        "Block": {
+          "n": 12,
+          "preserved": 0.667
+        },
+        "Prolongation": {
+          "n": 12,
+          "preserved": 0.667
+        },
+        "SoundRep": {
+          "n": 13,
+          "preserved": 0.923
+        },
+        "WordRep": {
+          "n": 13,
+          "preserved": 0.923
+        },
+        "Interjection": {
+          "n": 20,
+          "preserved": 1.0
+        }
+      },
+      "latency_ms_median": 1071.5,
+      "latency_ms_median_word_timestamps": 2703.1,
+      "word_timestamp_overhead_ms": 1631.6,
+      "samples": [
+        {
+          "show": "HVSA",
+          "ep": "0",
+          "clip": "7",
+          "labels": {
+            "Block": 1,
+            "Prolongation": 0,
+            "SoundRep": 0,
+            "WordRep": 0,
+            "Interjection": 1
+          },
+          "text": "So that one [UH] kind of hit me hard cause I never got my.",
+          "evidence": {
+            "filler": true,
+            "fragment": false,
+            "repetition": false
+          },
+          "any": true,
+          "legacy": true
+        },
+        {
+          "show": "HeStutters",
+          "ep": "7",
+          "clip": "1",
+          "labels": {
+            "Block": 1,
+            "Prolongation": 0,
+            "SoundRep": 0,
+            "WordRep": 0,
+            "Interjection": 0
+          },
+          "text": "[UM] [UM] Yeah, there's very few peop- people I think that are.",
+          "evidence": {
+            "filler": true,
+            "fragment": true,
+            "repetition": true
+          },
+          "any": true,
+          "legacy": true
+        },
+        {
+          "show": "HeStutters",
+          "ep": "20",
+          "clip": "254",
+          "labels": {
+            "Block": 1,
+            "Prolongation": 0,
+            "SoundRep": 1,
+            "WordRep": 0,
+            "Interjection": 0
+          },
+          "text": "Never realize or know how it.",
+          "evidence": {
+            "filler": false,
+            "fragment": false,
+            "repetition": false
+          },
+          "any": false,
+          "legacy": false
+        },
+        {
+          "show": "MyStutteringLife",
+          "ep": "28",
+          "clip": "27",
+          "labels": {
+            "Block": 1,
+            "Prolongation": 0,
+            "SoundRep": 0,
+            "WordRep": 0,
+            "Interjection": 0
+          },
+          "text": "Bill gave me started on drive-throughs. Did you know that I bought a long time ago?",
+          "evidence": {
+            "filler": true,
+            "fragment": false,
+            "repetition": false
+          },
+          "any": true,
+          "legacy": true
+        },
+        {
+          "show": "StutterTalk",
+          "ep": "20",
+          "clip": "15",
+          "labels": {
+            "Block": 1,
+            "Prolongation": 0,
+            "SoundRep": 0,
+            "WordRep": 0,
+            "Interjection": 0
+          },
+          "text": "And [UM] then eventually when you know a few weeks or months later I c- can't remember we went down to.",
+          "evidence": {
+            "filler": true,
+            "fragment": true,
+            "repetition": false
+          },
+          "any": true,
+          "legacy": true
+        },
+        {
+          "show": "StutterTalk",
+          "ep": "47",
+          "clip": "36",
+          "labels": {
+            "Block": 1,
+            "Prolongation": 0,
+            "SoundRep": 0,
+            "WordRep": 0,
+            "Interjection": 0
+          },
+          "text": "This strong magnet that's always pulling us back [UM] us as in my field.",
+          "evidence": {
+            "filler": true,
+            "fragment": false,
+            "repetition": false
+          },
+          "any": true,
+          "legacy": true
+        },
+        {
+          "show": "StutterTalk",
+          "ep": "75",
+          "clip": "0",
+          "labels": {
+            "Block": 1,
+            "Prolongation": 0,
+            "SoundRep": 0,
+            "WordRep": 0,
+            "Interjection": 0
+          },
+          "text": "to sh- sh- Sharvar and there's no record.",
+          "evidence": {
+            "filler": false,
+            "fragment": true,
+            "repetition": true
+          },
+          "any": true,
+          "legacy": true
+        },
+        {
+          "show": "WomenWhoStutter",
+          "ep": "10",
+          "clip": "136",
+          "labels": {
+            "Block": 1,
+            "Prolongation": 0,
+            "SoundRep": 0,
+            "WordRep": 0,
+            "Interjection": 0
+          },
+          "text": "And what does she think about all this? Well, I have to admit that.",
+          "evidence": {
+            "filler": false,
+            "fragment": false,
+            "repetition": false
+          },
+          "any": false,
+          "legacy": false
+        }
+      ]
+    }
+  }
+}

@@ -1,0 +1,64 @@
+{
+  "status": "ok",
+  "construction": {
+    "words_per_cycle": 6,
+    "mix_ratio_note": "1 embedded filler event per cycle of 6 real Words clips (measured 240.0s of real speech / 40 fillers = 6.00s speech per filler on average)",
+    "n_fillers": 40,
+    "n_words": 240,
+    "silence_gap_ms": 1600,
+    "tick_ms": 100,
+    "pause_ms": 1300,
+    "conf_thresh": 0.75,
+    "total_stream_seconds": 344.0,
+    "seed": 13,
+    "attribution_window": "per cycle: (onset, onset + filler_clip_duration + silence_gap_ms] -- bounded by THAT cycle's own silence gap ending, never by the next cycle's onset, so a fire during the following cycle's fluent speech cannot be credited as a (falsely late) detection of this cycle's filler",
+    "note": "clips concatenated from many speakers/episodes across PFSD's TEST split only (never train/validation); every cycle boundary inserts a segment/speaker discontinuity absent from one continuous speaker's prosody -- same caveat as eval_stream_falsefire's stream-level false-alarm bench. Transcript channel text is placeholder (StallDetector only checks FILLERS/HEDGES membership and content-word count, never lexical identity)."
+  },
+  "detected_before_pause": {
+    "hits": 36,
+    "n": 39,
+    "rate": 0.9231,
+    "definition": "ON fired trigger=='filler_acoustic' strictly before the ms at which OFF's in-window fire occurred, both attributed within the same cycle's tight [onset, onset+filler+gap] window (see attribution_window above)"
+  },
+  "latency_from_onset_ms": {
+    "acoustic_on": {
+      "n": 36,
+      "mean_ms": 754.4,
+      "median_ms": 760.0,
+      "min_ms": 40.0,
+      "max_ms": 1040.0
+    },
+    "pause_off": {
+      "n": 40,
+      "mean_ms": 1300.0,
+      "median_ms": 1300.0,
+      "min_ms": 1300.0,
+      "max_ms": 1300.0
+    },
+    "paired_delta": {
+      "n": 36,
+      "mean_ms": 545.6,
+      "median_ms": 540.0,
+      "min_ms": 260,
+      "max_ms": 1260
+    },
+    "paired_delta_definition": "off_pause_fire_ms - on_acoustic_fire_ms per cycle, only where ON fired filler_acoustic AND OFF fired pause for that cycle; positive = acoustic detected earlier"
+  },
+  "spurious_acoustic_fires_during_fluent_speech": {
+    "count": 19,
+    "fluent_speech_seconds": 240.0,
+    "rate_per_min": 4.75,
+    "definition": "ON fires with trigger=='filler_acoustic' whose at_ms falls outside EVERY cycle's [onset, onset+filler+gap] window -- i.e. FillerNet fired during real fluent speech, not on an embedded filler. Never credited toward detected_before_pause or latency_from_onset_ms; a fused system that 'wins' by firing everywhere isn't winning, so this is disclosed on its own."
+  },
+  "raw_fire_triggers": {
+    "on": {
+      "filler_acoustic": 36,
+      "pause": 3
+    },
+    "on_missed": 1,
+    "off": {
+      "pause": 40
+    },
+    "off_missed": 0
+  }
+}

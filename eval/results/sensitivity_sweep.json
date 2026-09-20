@@ -1,0 +1,261 @@
+{
+  "status": "OK",
+  "dataset": "APROCSA 6 speakers, 300s region from 120s, pause_ms=1300, min_gap_ms=0",
+  "backend": "cnn",
+  "asr_mode": "verbatim (cached, matches 'new' shipped arm)",
+  "acoustic_model": "C:\\Users\\eric\\hackmit\\models\\stutternet.pt",
+  "note": "full_* = fused acoustic+transcript (1300ms pause fallback dominates); acoustic_* = acoustic channel ALONE (its true sensitivity); clean_ff = acoustic events/min on real PFSD fluent 'Words' speech. acoustic_conf is NOT swept: it governs only the FillerNet path, which is superseded by StutterNet whenever stutter_model is set (the default).",
+  "rows": [
+    {
+      "stutter_scale": 1.0,
+      "min_voiced_ms": 800,
+      "backend": "cnn",
+      "full_recall": 0.8176,
+      "full_false_alarm": 0.6481,
+      "full_partner": 0.1588,
+      "full_fires_per_min": 18.53,
+      "acoustic_recall": 0.3962,
+      "acoustic_false_alarm": 0.1574,
+      "acoustic_partner": 0.0176,
+      "acoustic_fires_per_min": 4.93,
+      "acoustic_triggers": {
+        "filler": 58,
+        "prolongation": 77,
+        "word_rep": 11,
+        "sound_rep": 2
+      },
+      "clean_ff": {
+        "seconds": 120.0,
+        "events": 6,
+        "events_per_min": 3.0,
+        "by_kind": {
+          "filler": 3,
+          "sound_rep": 1,
+          "word_rep": 2
+        }
+      }
+    },
+    {
+      "stutter_scale": 0.9,
+      "min_voiced_ms": 800,
+      "backend": "cnn",
+      "full_recall": 0.8868,
+      "full_false_alarm": 0.7315,
+      "full_partner": 0.2882,
+      "full_fires_per_min": 21.37,
+      "acoustic_recall": 0.6604,
+      "acoustic_false_alarm": 0.4259,
+      "acoustic_partner": 0.2471,
+      "acoustic_fires_per_min": 11.83,
+      "acoustic_triggers": {
+        "filler": 103,
+        "word_rep": 157,
+        "prolongation": 83,
+        "block": 8,
+        "sound_rep": 4
+      },
+      "clean_ff": {
+        "seconds": 120.0,
+        "events": 40,
+        "events_per_min": 20.0,
+        "by_kind": {
+          "word_rep": 35,
+          "filler": 4,
+          "sound_rep": 1
+        }
+      }
+    },
+    {
+      "stutter_scale": 0.8,
+      "min_voiced_ms": 800,
+      "backend": "cnn",
+      "full_recall": 0.9057,
+      "full_false_alarm": 0.7963,
+      "full_partner": 0.3412,
+      "full_fires_per_min": 23.07,
+      "acoustic_recall": 0.7736,
+      "acoustic_false_alarm": 0.5833,
+      "acoustic_partner": 0.3412,
+      "acoustic_fires_per_min": 16.03,
+      "acoustic_triggers": {
+        "filler": 122,
+        "word_rep": 231,
+        "prolongation": 88,
+        "block": 34,
+        "sound_rep": 6
+      },
+      "clean_ff": {
+        "seconds": 120.0,
+        "events": 47,
+        "events_per_min": 23.5,
+        "by_kind": {
+          "word_rep": 39,
+          "filler": 6,
+          "sound_rep": 1,
+          "block": 1
+        }
+      }
+    },
+    {
+      "stutter_scale": 0.7,
+      "min_voiced_ms": 800,
+      "backend": "cnn",
+      "full_recall": 0.9119,
+      "full_false_alarm": 0.8241,
+      "full_partner": 0.3882,
+      "full_fires_per_min": 24.17,
+      "acoustic_recall": 0.805,
+      "acoustic_false_alarm": 0.6574,
+      "acoustic_partner": 0.3882,
+      "acoustic_fires_per_min": 19.97,
+      "acoustic_triggers": {
+        "filler": 142,
+        "word_rep": 291,
+        "prolongation": 97,
+        "block": 59,
+        "sound_rep": 10
+      },
+      "clean_ff": {
+        "seconds": 120.0,
+        "events": 61,
+        "events_per_min": 30.5,
+        "by_kind": {
+          "word_rep": 43,
+          "filler": 10,
+          "block": 5,
+          "sound_rep": 1,
+          "prolongation": 2
+        }
+      }
+    },
+    {
+      "stutter_scale": 0.6,
+      "min_voiced_ms": 800,
+      "backend": "cnn",
+      "full_recall": 0.9245,
+      "full_false_alarm": 0.8704,
+      "full_partner": 0.4176,
+      "full_fires_per_min": 25.3,
+      "acoustic_recall": 0.8491,
+      "acoustic_false_alarm": 0.787,
+      "acoustic_partner": 0.4647,
+      "acoustic_fires_per_min": 24.2,
+      "acoustic_triggers": {
+        "word_rep": 347,
+        "filler": 156,
+        "prolongation": 105,
+        "block": 100,
+        "sound_rep": 18
+      },
+      "clean_ff": {
+        "seconds": 120.0,
+        "events": 68,
+        "events_per_min": 34.0,
+        "by_kind": {
+          "word_rep": 47,
+          "filler": 11,
+          "block": 7,
+          "sound_rep": 1,
+          "prolongation": 2
+        }
+      }
+    },
+    {
+      "stutter_scale": 0.5,
+      "min_voiced_ms": 800,
+      "backend": "cnn",
+      "full_recall": 0.9434,
+      "full_false_alarm": 0.8981,
+      "full_partner": 0.4412,
+      "full_fires_per_min": 26.13,
+      "acoustic_recall": 0.8931,
+      "acoustic_false_alarm": 0.8704,
+      "acoustic_partner": 0.5118,
+      "acoustic_fires_per_min": 29.03,
+      "acoustic_triggers": {
+        "word_rep": 413,
+        "filler": 169,
+        "prolongation": 114,
+        "block": 151,
+        "sound_rep": 24
+      },
+      "clean_ff": {
+        "seconds": 120.0,
+        "events": 79,
+        "events_per_min": 39.5,
+        "by_kind": {
+          "word_rep": 53,
+          "filler": 12,
+          "block": 11,
+          "sound_rep": 1,
+          "prolongation": 2
+        }
+      }
+    },
+    {
+      "stutter_scale": 0.7,
+      "min_voiced_ms": 600,
+      "backend": "cnn",
+      "full_recall": 0.9119,
+      "full_false_alarm": 0.8333,
+      "full_partner": 0.3882,
+      "full_fires_per_min": 24.27,
+      "acoustic_recall": 0.8302,
+      "acoustic_false_alarm": 0.6667,
+      "acoustic_partner": 0.3824,
+      "acoustic_fires_per_min": 21.17,
+      "acoustic_triggers": {
+        "filler": 152,
+        "word_rep": 305,
+        "prolongation": 107,
+        "block": 60,
+        "sound_rep": 11
+      },
+      "clean_ff": {
+        "seconds": 120.0,
+        "events": 61,
+        "events_per_min": 30.5,
+        "by_kind": {
+          "word_rep": 43,
+          "filler": 10,
+          "block": 5,
+          "sound_rep": 1,
+          "prolongation": 2
+        }
+      }
+    },
+    {
+      "stutter_scale": 0.7,
+      "min_voiced_ms": 400,
+      "backend": "cnn",
+      "full_recall": 0.9182,
+      "full_false_alarm": 0.8333,
+      "full_partner": 0.3882,
+      "full_fires_per_min": 24.3,
+      "acoustic_recall": 0.8428,
+      "acoustic_false_alarm": 0.6574,
+      "acoustic_partner": 0.3882,
+      "acoustic_fires_per_min": 21.87,
+      "acoustic_triggers": {
+        "filler": 156,
+        "word_rep": 318,
+        "prolongation": 111,
+        "block": 60,
+        "sound_rep": 11
+      },
+      "clean_ff": {
+        "seconds": 120.0,
+        "events": 61,
+        "events_per_min": 30.5,
+        "by_kind": {
+          "word_rep": 43,
+          "filler": 10,
+          "block": 5,
+          "sound_rep": 1,
+          "prolongation": 2
+        }
+      }
+    }
+  ],
+  "wall_s": 2555.4
+}

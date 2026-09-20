@@ -1,0 +1,168 @@
+{
+  "status": "OK",
+  "model": "nyralabs/CrisperWhisper2.0_turbo",
+  "source": "SEP-28k, Interjection >= 2/3 agreement",
+  "metric": "dysfluency preserved in transcript = explicit filler token OR discourse filler OR immediate word/phrase repetition. Lower bound: interjections are person-specific per Apple's spec.",
+  "n_events": 50,
+  "by_window_s": {
+    "1.0": {
+      "n": 50,
+      "recall": 0.08
+    },
+    "3.0": {
+      "n": 50,
+      "recall": 0.06
+    },
+    "6.0": {
+      "n": 50,
+      "recall": 0.2
+    },
+    "12.0": {
+      "n": 50,
+      "recall": 0.24
+    }
+  },
+  "chrome_baseline_recall": 0.0,
+  "note": "Negatives deliberately not scored: a long window of natural conversation may contain a neighbouring filler, which would count as a false positive while being a correct detection of a different event. That needs word-level timestamps.",
+  "samples": [
+    {
+      "show": "HeStutters",
+      "ep": "1",
+      "clip": "3",
+      "texts": {
+        "1.0": {
+          "text": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]",
+          "detected": true
+        },
+        "3.0": {
+          "text": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]",
+          "detected": false
+        },
+        "6.0": {
+          "text": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]",
+          "detected": false
+        },
+        "12.0": {
+          "text": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]",
+          "detected": true
+        }
+      }
+    },
+    {
+      "show": "HeStutters",
+      "ep": "1",
+      "clip": "14",
+      "texts": {
+        "1.0": {
+          "text": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]",
+          "detected": false
+        },
+        "3.0": {
+          "text": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]",
+          "detected": false
+        },
+        "6.0": {
+          "text": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]",
+          "detected": true
+        },
+        "12.0": {
+          "text": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]",
+          "detected": true
+        }
+      }
+    },
+    {
+      "show": "HeStutters",
+      "ep": "1",
+      "clip": "24",
+      "texts": {
+        "1.0": {
+          "text": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]",
+          "detected": false
+        },
+        "3.0": {
+          "text": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]",
+          "detected": false
+        },
+        "6.0": {
+          "text": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]",
+          "detected": false
+        },
+        "12.0": {
+          "text": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]",
+          "detected": false
+        }
+      }
+    },
+    {
+      "show": "HeStutters",
+      "ep": "1",
+      "clip": "26",
+      "texts": {
+        "1.0": {
+          "text": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]",
+          "detected": false
+        },
+        "3.0": {
+          "text": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]",
+          "detected": false
+        },
+        "6.0": {
+          "text": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]",
+          "detected": false
+        },
+        "12.0": {
+          "text": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]",
+          "detected": false
+        }
+      }
+    },
+    {
+      "show": "HeStutters",
+      "ep": "1",
+      "clip": "28",
+      "texts": {
+        "1.0": {
+          "text": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]",
+          "detected": false
+        },
+        "3.0": {
+          "text": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]",
+          "detected": false
+        },
+        "6.0": {
+          "text": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]",
+          "detected": false
+        },
+        "12.0": {
+          "text": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]",
+          "detected": false
+        }
+      }
+    },
+    {
+      "show": "HeStutters",
+      "ep": "1",
+      "clip": "32",
+      "texts": {
+        "1.0": {
+          "text": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]",
+          "detected": false
+        },
+        "3.0": {
+          "text": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]",
+          "detected": true
+        },
+        "6.0": {
+          "text": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]",
+          "detected": true
+        },
+        "12.0": {
+          "text": "[redacted: APROCSA participant speech -- see docs/DATA_PROVENANCE.md]",
+          "detected": false
+        }
+      }
+    }
+  ],
+  "_redaction": "Verbatim APROCSA participant speech has been removed from this file. Metrics, counts, spans and participant IDs are unchanged. Regenerate the full record locally from eval/results/cache/aprocsa/ (gitignored)."
+}

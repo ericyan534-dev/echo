@@ -1,0 +1,1330 @@
+{
+  "provenance": {
+    "script": "eval/run_prediction_eval.py",
+    "dataset": "eval\\data\\prediction_eval_set.jsonl",
+    "dataset_sha256": "9fd89ea1d59bc7e8490c50a4749f244e6e808e58ae65c657b19b4351bb9dd467",
+    "n_items": 60,
+    "provider": "gemini",
+    "model": "gemini-3.5-flash",
+    "ablate_context": false,
+    "sleep_s": 1.0,
+    "timestamp_utc": "2026-07-07T16:36:51+00:00",
+    "normalization": "lowercase; strip one trailing \"'s\"; strip punctuation; collapse whitespace; strip one trailing plural \"s\"",
+    "freeze_protocol": "The dataset eval/data/prediction_eval_set.jsonl is frozen at its first commit. After the first live run, items may never be edited, added, or removed in response to results. One headline live run per condition (full and context-ablated). Any future change to the set requires a new versioned filename and both old and new results files must be kept."
+  },
+  "overall": {
+    "top1": {
+      "hits": 58,
+      "n": 60,
+      "rate": 0.9667
+    },
+    "top3": {
+      "hits": 59,
+      "n": 60,
+      "rate": 0.9833
+    }
+  },
+  "per_category": {
+    "concrete": {
+      "top1": {
+        "hits": 20,
+        "n": 20,
+        "rate": 1.0
+      },
+      "top3": {
+        "hits": 20,
+        "n": 20,
+        "rate": 1.0
+      }
+    },
+    "proper_context": {
+      "top1": {
+        "hits": 19,
+        "n": 20,
+        "rate": 0.95
+      },
+      "top3": {
+        "hits": 19,
+        "n": 20,
+        "rate": 0.95
+      }
+    },
+    "abstract_verb": {
+      "top1": {
+        "hits": 19,
+        "n": 20,
+        "rate": 0.95
+      },
+      "top3": {
+        "hits": 20,
+        "n": 20,
+        "rate": 1.0
+      }
+    }
+  },
+  "confidence": {
+    "definition": "confidence of the top-ranked candidate, split by top-1 hit/miss; items with zero candidates excluded",
+    "mean_when_correct": 0.992,
+    "mean_when_wrong": 0.95,
+    "n_correct": 58,
+    "n_wrong": 1
+  },
+  "items": [
+    {
+      "id": "concrete_01",
+      "category": "concrete",
+      "gold": [
+        "umbrella"
+      ],
+      "candidates": [
+        {
+          "word": "umbrella",
+          "confidence": 1.0
+        },
+        {
+          "word": "raincoat",
+          "confidence": 0.8
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true
+    },
+    {
+      "id": "concrete_02",
+      "category": "concrete",
+      "gold": [
+        "remote",
+        "remote control",
+        "TV remote"
+      ],
+      "candidates": [
+        {
+          "word": "remote",
+          "confidence": 1.0
+        },
+        {
+          "word": "clicker",
+          "confidence": 0.9
+        },
+        {
+          "word": "controller",
+          "confidence": 0.8
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true
+    },
+    {
+      "id": "concrete_03",
+      "category": "concrete",
+      "gold": [
+        "scissors"
+      ],
+      "candidates": [
+        {
+          "word": "scissors",
+          "confidence": 1.0
+        },
+        {
+          "word": "shears",
+          "confidence": 0.75
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true
+    },
+    {
+      "id": "concrete_04",
+      "category": "concrete",
+      "gold": [
+        "wallet"
+      ],
+      "candidates": [
+        {
+          "word": "wallet",
+          "confidence": 1.0
+        },
+        {
+          "word": "purse",
+          "confidence": 0.9
+        },
+        {
+          "word": "handbag",
+          "confidence": 0.75
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true
+    },
+    {
+      "id": "concrete_05",
+      "category": "concrete",
+      "gold": [
+        "stapler"
+      ],
+      "candidates": [
+        {
+          "word": "stapler",
+          "confidence": 1.0
+        },
+        {
+          "word": "paperclip",
+          "confidence": 0.8
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true
+    },
+    {
+      "id": "concrete_06",
+      "category": "concrete",
+      "gold": [
+        "vacuum",
+        "vacuum cleaner"
+      ],
+      "candidates": [
+        {
+          "word": "vacuum",
+          "confidence": 1.0
+        },
+        {
+          "word": "vacuum cleaner",
+          "confidence": 0.95
+        },
+        {
+          "word": "sweeper",
+          "confidence": 0.6
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true
+    },
+    {
+      "id": "concrete_07",
+      "category": "concrete",
+      "gold": [
+        "dishwasher"
+      ],
+      "candidates": [
+        {
+          "word": "dishwasher",
+          "confidence": 1.0
+        },
+        {
+          "word": "sink",
+          "confidence": 0.7
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true
+    },
+    {
+      "id": "concrete_08",
+      "category": "concrete",
+      "gold": [
+        "flashlight",
+        "torch"
+      ],
+      "candidates": [
+        {
+          "word": "flashlight",
+          "confidence": 1.0
+        },
+        {
+          "word": "torch",
+          "confidence": 0.9
+        },
+        {
+          "word": "candle",
+          "confidence": 0.8
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true
+    },
+    {
+      "id": "concrete_09",
+      "category": "concrete",
+      "gold": [
+        "thermostat"
+      ],
+      "candidates": [
+        {
+          "word": "thermostat",
+          "confidence": 1.0
+        },
+        {
+          "word": "heater",
+          "confidence": 0.8
+        },
+        {
+          "word": "heating",
+          "confidence": 0.7
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true
+    },
+    {
+      "id": "concrete_10",
+      "category": "concrete",
+      "gold": [
+        "corkscrew",
+        "wine opener"
+      ],
+      "candidates": [
+        {
+          "word": "corkscrew",
+          "confidence": 1.0
+        },
+        {
+          "word": "bottle opener",
+          "confidence": 0.8
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true
+    },
+    {
+      "id": "concrete_11",
+      "category": "concrete",
+      "gold": [
+        "clothespin",
+        "clothes peg"
+      ],
+      "candidates": [
+        {
+          "word": "clothespins",
+          "confidence": 1.0
+        },
+        {
+          "word": "pegs",
+          "confidence": 0.9
+        },
+        {
+          "word": "clips",
+          "confidence": 0.75
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true
+    },
+    {
+      "id": "concrete_12",
+      "category": "concrete",
+      "gold": [
+        "wheelbarrow"
+      ],
+      "candidates": [
+        {
+          "word": "wheelbarrow",
+          "confidence": 1.0
+        },
+        {
+          "word": "cart",
+          "confidence": 0.7
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true
+    },
+    {
+      "id": "concrete_13",
+      "category": "concrete",
+      "gold": [
+        "tweezers"
+      ],
+      "candidates": [
+        {
+          "word": "tweezers",
+          "confidence": 1.0
+        },
+        {
+          "word": "needle",
+          "confidence": 0.7
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true
+    },
+    {
+      "id": "concrete_14",
+      "category": "concrete",
+      "gold": [
+        "can opener",
+        "tin opener"
+      ],
+      "candidates": [
+        {
+          "word": "can opener",
+          "confidence": 1.0
+        },
+        {
+          "word": "opener",
+          "confidence": 0.9
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true
+    },
+    {
+      "id": "concrete_15",
+      "category": "concrete",
+      "gold": [
+        "mailbox"
+      ],
+      "candidates": [
+        {
+          "word": "mailbox",
+          "confidence": 1.0
+        },
+        {
+          "word": "postbox",
+          "confidence": 0.8
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true
+    },
+    {
+      "id": "concrete_16",
+      "category": "concrete",
+      "gold": [
+        "calendar"
+      ],
+      "candidates": [
+        {
+          "word": "calendar",
+          "confidence": 1.0
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true
+    },
+    {
+      "id": "concrete_17",
+      "category": "concrete",
+      "gold": [
+        "blender"
+      ],
+      "candidates": [
+        {
+          "word": "blender",
+          "confidence": 1.0
+        },
+        {
+          "word": "food processor",
+          "confidence": 0.75
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true
+    },
+    {
+      "id": "concrete_18",
+      "category": "concrete",
+      "gold": [
+        "ladder"
+      ],
+      "candidates": [
+        {
+          "word": "ladder",
+          "confidence": 1.0
+        },
+        {
+          "word": "stepladder",
+          "confidence": 0.8
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true
+    },
+    {
+      "id": "concrete_19",
+      "category": "concrete",
+      "gold": [
+        "wheelchair"
+      ],
+      "candidates": [
+        {
+          "word": "wheelchair",
+          "confidence": 1.0
+        },
+        {
+          "word": "chair",
+          "confidence": 0.75
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true
+    },
+    {
+      "id": "concrete_20",
+      "category": "concrete",
+      "gold": [
+        "thermometer"
+      ],
+      "candidates": [
+        {
+          "word": "thermometer",
+          "confidence": 1.0
+        },
+        {
+          "word": "temp",
+          "confidence": 0.7
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true
+    },
+    {
+      "id": "context_01",
+      "category": "proper_context",
+      "gold": [
+        "Frank"
+      ],
+      "candidates": [
+        {
+          "word": "Frank",
+          "confidence": 1.0
+        },
+        {
+          "word": "name",
+          "confidence": 0.9
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true
+    },
+    {
+      "id": "context_02",
+      "category": "proper_context",
+      "gold": [
+        "Pete's Diner",
+        "Pete's"
+      ],
+      "candidates": [
+        {
+          "word": "Pete's Diner",
+          "confidence": 1.0
+        },
+        {
+          "word": "Pete's",
+          "confidence": 0.95
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true
+    },
+    {
+      "id": "context_03",
+      "category": "proper_context",
+      "gold": [
+        "Biscuit"
+      ],
+      "candidates": [
+        {
+          "word": "Biscuit",
+          "confidence": 1.0
+        },
+        {
+          "word": "dog",
+          "confidence": 0.8
+        },
+        {
+          "word": "pet",
+          "confidence": 0.65
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true
+    },
+    {
+      "id": "context_04",
+      "category": "proper_context",
+      "gold": [
+        "Elena"
+      ],
+      "candidates": [
+        {
+          "word": "Elena",
+          "confidence": 0.95
+        },
+        {
+          "word": "the wedding",
+          "confidence": 0.85
+        },
+        {
+          "word": "them",
+          "confidence": 0.7
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true
+    },
+    {
+      "id": "context_05",
+      "category": "proper_context",
+      "gold": [
+        "Brew Haven"
+      ],
+      "candidates": [
+        {
+          "word": "Brew Haven",
+          "confidence": 1.0
+        },
+        {
+          "word": "coffee shop",
+          "confidence": 0.8
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true
+    },
+    {
+      "id": "context_06",
+      "category": "proper_context",
+      "gold": [
+        "Lake Winnipesaukee",
+        "Winnipesaukee"
+      ],
+      "candidates": [
+        {
+          "word": "Winnipesaukee",
+          "confidence": 1.0
+        },
+        {
+          "word": "lake",
+          "confidence": 0.75
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true
+    },
+    {
+      "id": "context_07",
+      "category": "proper_context",
+      "gold": [
+        "Osei",
+        "Dr. Osei"
+      ],
+      "candidates": [
+        {
+          "word": "Osei",
+          "confidence": 1.0
+        },
+        {
+          "word": "Dr. Osei",
+          "confidence": 0.9
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true
+    },
+    {
+      "id": "context_08",
+      "category": "proper_context",
+      "gold": [
+        "Priya"
+      ],
+      "candidates": [
+        {
+          "word": "Priya",
+          "confidence": 1.0
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true
+    },
+    {
+      "id": "context_09",
+      "category": "proper_context",
+      "gold": [
+        "Waffles"
+      ],
+      "candidates": [],
+      "top1_hit": false,
+      "top3_hit": false
+    },
+    {
+      "id": "context_10",
+      "category": "proper_context",
+      "gold": [
+        "Nexlink"
+      ],
+      "candidates": [
+        {
+          "word": "Nexlink",
+          "confidence": 1.0
+        },
+        {
+          "word": "tech company",
+          "confidence": 0.7
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true
+    },
+    {
+      "id": "context_11",
+      "category": "proper_context",
+      "gold": [
+        "The Salt Path",
+        "Salt Path"
+      ],
+      "candidates": [
+        {
+          "word": "The Salt Path",
+          "confidence": 1.0
+        },
+        {
+          "word": "book",
+          "confidence": 0.85
+        },
+        {
+          "word": "memoir",
+          "confidence": 0.7
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true
+    },
+    {
+      "id": "context_12",
+      "category": "proper_context",
+      "gold": [
+        "Alvarez",
+        "Mrs. Alvarez"
+      ],
+      "candidates": [
+        {
+          "word": "Alvarez",
+          "confidence": 1.0
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true
+    },
+    {
+      "id": "context_13",
+      "category": "proper_context",
+      "gold": [
+        "Logan Airport",
+        "Logan"
+      ],
+      "candidates": [
+        {
+          "word": "Logan",
+          "confidence": 1.0
+        },
+        {
+          "word": "airport",
+          "confidence": 0.8
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true
+    },
+    {
+      "id": "context_14",
+      "category": "proper_context",
+      "gold": [
+        "Big Sal",
+        "Sal"
+      ],
+      "candidates": [
+        {
+          "word": "Big Sal",
+          "confidence": 1.0
+        },
+        {
+          "word": "Sal",
+          "confidence": 0.9
+        },
+        {
+          "word": "plumber",
+          "confidence": 0.7
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true
+    },
+    {
+      "id": "context_15",
+      "category": "proper_context",
+      "gold": [
+        "Marino's Pizzeria",
+        "Marino's"
+      ],
+      "candidates": [
+        {
+          "word": "Marino's Pizzeria",
+          "confidence": 1.0
+        },
+        {
+          "word": "Marino's",
+          "confidence": 0.95
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true
+    },
+    {
+      "id": "context_16",
+      "category": "proper_context",
+      "gold": [
+        "Yusuf"
+      ],
+      "candidates": [
+        {
+          "word": "Yusuf",
+          "confidence": 1.0
+        },
+        {
+          "word": "neighbor",
+          "confidence": 0.75
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true
+    },
+    {
+      "id": "context_17",
+      "category": "proper_context",
+      "gold": [
+        "St. Bridget's Church",
+        "St. Bridget's"
+      ],
+      "candidates": [
+        {
+          "word": "St. Bridget's",
+          "confidence": 1.0
+        },
+        {
+          "word": "Tuesday",
+          "confidence": 0.7
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true
+    },
+    {
+      "id": "context_18",
+      "category": "proper_context",
+      "gold": [
+        "MoveWell"
+      ],
+      "candidates": [
+        {
+          "word": "MoveWell",
+          "confidence": 1.0
+        },
+        {
+          "word": "app",
+          "confidence": 0.8
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true
+    },
+    {
+      "id": "context_19",
+      "category": "proper_context",
+      "gold": [
+        "Deb"
+      ],
+      "candidates": [
+        {
+          "word": "Deb",
+          "confidence": 1.0
+        },
+        {
+          "word": "Debbie",
+          "confidence": 0.8
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true
+    },
+    {
+      "id": "context_20",
+      "category": "proper_context",
+      "gold": [
+        "Chatham"
+      ],
+      "candidates": [
+        {
+          "word": "Chatham",
+          "confidence": 1.0
+        },
+        {
+          "word": "Cape Cod",
+          "confidence": 0.85
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true
+    },
+    {
+      "id": "abstract_01",
+      "category": "abstract_verb",
+      "gold": [
+        "apologize"
+      ],
+      "candidates": [
+        {
+          "word": "apologize",
+          "confidence": 0.95
+        },
+        {
+          "word": "reconcile",
+          "confidence": 0.85
+        },
+        {
+          "word": "forgive",
+          "confidence": 0.7
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true
+    },
+    {
+      "id": "abstract_02",
+      "category": "abstract_verb",
+      "gold": [
+        "postpone",
+        "reschedule"
+      ],
+      "candidates": [
+        {
+          "word": "reschedule",
+          "confidence": 0.95
+        },
+        {
+          "word": "postpone",
+          "confidence": 0.9
+        },
+        {
+          "word": "delay",
+          "confidence": 0.75
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true
+    },
+    {
+      "id": "abstract_03",
+      "category": "abstract_verb",
+      "gold": [
+        "retire"
+      ],
+      "candidates": [
+        {
+          "word": "retire",
+          "confidence": 1.0
+        },
+        {
+          "word": "retirement",
+          "confidence": 0.9
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true
+    },
+    {
+      "id": "abstract_04",
+      "category": "abstract_verb",
+      "gold": [
+        "propose"
+      ],
+      "candidates": [
+        {
+          "word": "propose",
+          "confidence": 1.0
+        },
+        {
+          "word": "ask",
+          "confidence": 0.8
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true
+    },
+    {
+      "id": "abstract_05",
+      "category": "abstract_verb",
+      "gold": [
+        "resign",
+        "quit"
+      ],
+      "candidates": [
+        {
+          "word": "quit",
+          "confidence": 1.0
+        },
+        {
+          "word": "resign",
+          "confidence": 0.9
+        },
+        {
+          "word": "leave",
+          "confidence": 0.85
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true
+    },
+    {
+      "id": "abstract_06",
+      "category": "abstract_verb",
+      "gold": [
+        "negotiate"
+      ],
+      "candidates": [
+        {
+          "word": "negotiate",
+          "confidence": 0.95
+        },
+        {
+          "word": "compromise",
+          "confidence": 0.9
+        },
+        {
+          "word": "settle",
+          "confidence": 0.8
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true
+    },
+    {
+      "id": "abstract_07",
+      "category": "abstract_verb",
+      "gold": [
+        "admit",
+        "confess"
+      ],
+      "candidates": [
+        {
+          "word": "confess",
+          "confidence": 0.95
+        },
+        {
+          "word": "apologize",
+          "confidence": 0.85
+        },
+        {
+          "word": "admit",
+          "confidence": 0.8
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true
+    },
+    {
+      "id": "abstract_08",
+      "category": "abstract_verb",
+      "gold": [
+        "divorce"
+      ],
+      "candidates": [
+        {
+          "word": "divorce",
+          "confidence": 1.0
+        },
+        {
+          "word": "separate",
+          "confidence": 0.8
+        },
+        {
+          "word": "settlement",
+          "confidence": 0.6
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true
+    },
+    {
+      "id": "abstract_09",
+      "category": "abstract_verb",
+      "gold": [
+        "enroll",
+        "register",
+        "sign up"
+      ],
+      "candidates": [
+        {
+          "word": "register",
+          "confidence": 0.95
+        },
+        {
+          "word": "enroll",
+          "confidence": 0.95
+        },
+        {
+          "word": "sign up",
+          "confidence": 0.901
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true
+    },
+    {
+      "id": "abstract_10",
+      "category": "abstract_verb",
+      "gold": [
+        "donate"
+      ],
+      "candidates": [
+        {
+          "word": "donate",
+          "confidence": 0.95
+        },
+        {
+          "word": "charity",
+          "confidence": 0.85
+        },
+        {
+          "word": "recycle",
+          "confidence": 0.65
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true
+    },
+    {
+      "id": "abstract_11",
+      "category": "abstract_verb",
+      "gold": [
+        "volunteer"
+      ],
+      "candidates": [
+        {
+          "word": "volunteer",
+          "confidence": 1.0
+        },
+        {
+          "word": "help",
+          "confidence": 0.8
+        },
+        {
+          "word": "assist",
+          "confidence": 0.6
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true
+    },
+    {
+      "id": "abstract_12",
+      "category": "abstract_verb",
+      "gold": [
+        "compromise",
+        "meet in the middle",
+        "meet halfway"
+      ],
+      "candidates": [
+        {
+          "word": "compromise",
+          "confidence": 1.0
+        },
+        {
+          "word": "negotiate",
+          "confidence": 0.85
+        },
+        {
+          "word": "agree",
+          "confidence": 0.7
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true
+    },
+    {
+      "id": "abstract_13",
+      "category": "abstract_verb",
+      "gold": [
+        "reconsider",
+        "rethink"
+      ],
+      "candidates": [
+        {
+          "word": "reconsider",
+          "confidence": 0.95
+        },
+        {
+          "word": "decide",
+          "confidence": 0.85
+        },
+        {
+          "word": "accept",
+          "confidence": 0.75
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true
+    },
+    {
+      "id": "abstract_14",
+      "category": "abstract_verb",
+      "gold": [
+        "forgive"
+      ],
+      "candidates": [
+        {
+          "word": "forgive",
+          "confidence": 1.0
+        },
+        {
+          "word": "forgiveness",
+          "confidence": 0.9
+        },
+        {
+          "word": "reconcile",
+          "confidence": 0.75
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true
+    },
+    {
+      "id": "abstract_15",
+      "category": "abstract_verb",
+      "gold": [
+        "surrender"
+      ],
+      "candidates": [
+        {
+          "word": "surrender",
+          "confidence": 1.0
+        },
+        {
+          "word": "yield",
+          "confidence": 0.8
+        },
+        {
+          "word": "retreat",
+          "confidence": 0.6
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true
+    },
+    {
+      "id": "abstract_16",
+      "category": "abstract_verb",
+      "gold": [
+        "graduate"
+      ],
+      "candidates": [
+        {
+          "word": "graduate",
+          "confidence": 1.0
+        },
+        {
+          "word": "graduation",
+          "confidence": 0.9
+        },
+        {
+          "word": "commencement",
+          "confidence": 0.75
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true
+    },
+    {
+      "id": "abstract_17",
+      "category": "abstract_verb",
+      "gold": [
+        "immigrate",
+        "emigrate"
+      ],
+      "candidates": [
+        {
+          "word": "flee",
+          "confidence": 0.95
+        },
+        {
+          "word": "emigrate",
+          "confidence": 0.85
+        },
+        {
+          "word": "escape",
+          "confidence": 0.75
+        }
+      ],
+      "top1_hit": false,
+      "top3_hit": true
+    },
+    {
+      "id": "abstract_18",
+      "category": "abstract_verb",
+      "gold": [
+        "sacrifice"
+      ],
+      "candidates": [
+        {
+          "word": "sacrifice",
+          "confidence": 0.95
+        },
+        {
+          "word": "compromise",
+          "confidence": 0.8
+        },
+        {
+          "word": "forgo",
+          "confidence": 0.7
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true
+    },
+    {
+      "id": "abstract_19",
+      "category": "abstract_verb",
+      "gold": [
+        "celebrate"
+      ],
+      "candidates": [
+        {
+          "word": "celebrate",
+          "confidence": 1.0
+        },
+        {
+          "word": "commemorate",
+          "confidence": 0.85
+        },
+        {
+          "word": "gift",
+          "confidence": 0.75
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true
+    },
+    {
+      "id": "abstract_20",
+      "category": "abstract_verb",
+      "gold": [
+        "promise"
+      ],
+      "candidates": [
+        {
+          "word": "promise",
+          "confidence": 1.0
+        },
+        {
+          "word": "guarantee",
+          "confidence": 0.85
+        },
+        {
+          "word": "assurance",
+          "confidence": 0.7
+        }
+      ],
+      "top1_hit": true,
+      "top3_hit": true
+    }
+  ]
+}

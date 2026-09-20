@@ -1,0 +1,252 @@
+{
+  "checkpoint": "stutternet_ssl.pt",
+  "encoder": "microsoft/wavlm-base-plus",
+  "unfreeze_top_n": 0,
+  "params_total": 95564930,
+  "params_trainable": 1182994,
+  "frame_ms": 20,
+  "split": "DESTROYED -- this file was overwritten by a `--limit 200 --epochs 1` smoke run and is NOT the checkpoint behind the published 0.384/0.894. Use models/stutternet_ssl_v2.pt. See docs/VERSIONS.md, 'A checkpoint this project lost'.",
+  "holdout_show": null,
+  "n_train": 200,
+  "n_val": 200,
+  "n_test": 200,
+  "hparams": {
+    "epochs": 1,
+    "batch": 32,
+    "lr": 0.001,
+    "enc_lr": null,
+    "dropout": 0.3,
+    "hidden": 256,
+    "mask_time_prob": 0.0,
+    "amp_bf16": true
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 1.1661,
+      "val_mAP": 0.2288,
+      "val_Block_AP": 0.1411
+    }
+  ],
+  "layer_weights": [
+    0.0796,
+    0.0762,
+    0.0779,
+    0.0782,
+    0.0774,
+    0.0775,
+    0.0769,
+    0.075,
+    0.0749,
+    0.075,
+    0.0763,
+    0.0774,
+    0.0776
+  ],
+  "val": {
+    "Block": {
+      "n_pos": 18,
+      "prevalence": 0.09,
+      "ap": 0.1411,
+      "f1": 0.2295,
+      "precision": 0.1628,
+      "recall": 0.3889,
+      "threshold": 0.5573,
+      "ap_lift_over_chance": 1.57
+    },
+    "Prolongation": {
+      "n_pos": 38,
+      "prevalence": 0.19,
+      "ap": 0.2986,
+      "f1": 0.3864,
+      "precision": 0.34,
+      "recall": 0.4474,
+      "threshold": 0.5553,
+      "ap_lift_over_chance": 1.57
+    },
+    "SoundRep": {
+      "n_pos": 35,
+      "prevalence": 0.175,
+      "ap": 0.2231,
+      "f1": 0.3721,
+      "precision": 0.2553,
+      "recall": 0.6857,
+      "threshold": 0.4868,
+      "ap_lift_over_chance": 1.28
+    },
+    "WordRep": {
+      "n_pos": 13,
+      "prevalence": 0.065,
+      "ap": 0.0982,
+      "f1": 0.1935,
+      "precision": 0.1224,
+      "recall": 0.4615,
+      "threshold": 0.5035,
+      "ap_lift_over_chance": 1.51
+    },
+    "Interjection": {
+      "n_pos": 59,
+      "prevalence": 0.295,
+      "ap": 0.3831,
+      "f1": 0.4845,
+      "precision": 0.3824,
+      "recall": 0.661,
+      "threshold": 0.5128,
+      "ap_lift_over_chance": 1.3
+    },
+    "ANY": {
+      "n_pos": 122,
+      "prevalence": 0.61,
+      "ap": 0.7083,
+      "f1": 0.7578,
+      "precision": 0.61,
+      "recall": 1.0,
+      "threshold": 0.5384
+    }
+  },
+  "test": {
+    "Block": {
+      "n_pos": 23,
+      "prevalence": 0.115,
+      "ap": 0.2127,
+      "f1": 0.3256,
+      "precision": 0.2222,
+      "recall": 0.6087,
+      "threshold": 0.5499,
+      "ap_lift_over_chance": 1.85
+    },
+    "Prolongation": {
+      "n_pos": 17,
+      "prevalence": 0.085,
+      "ap": 0.369,
+      "f1": 0.4444,
+      "precision": 0.6,
+      "recall": 0.3529,
+      "threshold": 0.59,
+      "ap_lift_over_chance": 4.34
+    },
+    "SoundRep": {
+      "n_pos": 17,
+      "prevalence": 0.085,
+      "ap": 0.2256,
+      "f1": 0.2198,
+      "precision": 0.1351,
+      "recall": 0.5882,
+      "threshold": 0.4656,
+      "ap_lift_over_chance": 2.65
+    },
+    "WordRep": {
+      "n_pos": 17,
+      "prevalence": 0.085,
+      "ap": 0.0995,
+      "f1": 0.2143,
+      "precision": 0.1263,
+      "recall": 0.7059,
+      "threshold": 0.4886,
+      "ap_lift_over_chance": 1.17
+    },
+    "Interjection": {
+      "n_pos": 73,
+      "prevalence": 0.365,
+      "ap": 0.36,
+      "f1": 0.5348,
+      "precision": 0.365,
+      "recall": 1.0,
+      "threshold": 0.4808,
+      "ap_lift_over_chance": 0.99
+    },
+    "ANY": {
+      "n_pos": 125,
+      "prevalence": 0.625,
+      "ap": 0.715,
+      "f1": 0.7692,
+      "precision": 0.625,
+      "recall": 1.0,
+      "threshold": 0.5399
+    }
+  },
+  "thresholds": {
+    "Block": 0.5573,
+    "Prolongation": 0.5553,
+    "SoundRep": 0.4868,
+    "WordRep": 0.5035,
+    "Interjection": 0.5128,
+    "ANY": 0.5384
+  },
+  "frame_thresholds": {
+    "Block": 0.681913,
+    "Prolongation": 0.702269,
+    "SoundRep": 0.613301,
+    "WordRep": 0.660172,
+    "Interjection": 0.606909
+  },
+  "frame_temperature": {
+    "Block": 1.0,
+    "Prolongation": 1.0,
+    "SoundRep": 1.0,
+    "WordRep": 1.0,
+    "Interjection": 1.0
+  },
+  "frame_calibration_detail": {
+    "Block": {
+      "temperature": 1.0,
+      "threshold": 0.681913,
+      "logit_threshold": 0.7626,
+      "n_clean": 78,
+      "n_pos": 18,
+      "recall_at_threshold": 0.0556,
+      "clean_fire_rate": 0.0256,
+      "clean_peak_logit_median": 0.56,
+      "pos_peak_logit_median": 0.57
+    },
+    "Prolongation": {
+      "temperature": 1.0,
+      "threshold": 0.702269,
+      "logit_threshold": 0.8581,
+      "n_clean": 78,
+      "n_pos": 38,
+      "recall_at_threshold": 0.0526,
+      "clean_fire_rate": 0.0256,
+      "clean_peak_logit_median": 0.54,
+      "pos_peak_logit_median": 0.62
+    },
+    "SoundRep": {
+      "temperature": 1.0,
+      "threshold": 0.613301,
+      "logit_threshold": 0.4612,
+      "n_clean": 78,
+      "n_pos": 35,
+      "recall_at_threshold": 0.0286,
+      "clean_fire_rate": 0.0256,
+      "clean_peak_logit_median": 0.31,
+      "pos_peak_logit_median": 0.33
+    },
+    "WordRep": {
+      "temperature": 1.0,
+      "threshold": 0.660172,
+      "logit_threshold": 0.6641,
+      "n_clean": 78,
+      "n_pos": 13,
+      "recall_at_threshold": 0.1538,
+      "clean_fire_rate": 0.0385,
+      "clean_peak_logit_median": 0.48,
+      "pos_peak_logit_median": 0.51
+    },
+    "Interjection": {
+      "temperature": 1.0,
+      "threshold": 0.606909,
+      "logit_threshold": 0.4343,
+      "n_clean": 78,
+      "n_pos": 59,
+      "recall_at_threshold": 0.3051,
+      "clean_fire_rate": 0.0256,
+      "clean_peak_logit_median": 0.33,
+      "pos_peak_logit_median": 0.41
+    }
+  },
+  "inference_cost_ms": {},
+  "baseline": "models/stutternet_metrics.json (log-mel CNN, same splits)",
+  "provenance": "DESTROYED -- this file was overwritten by a `--limit 200 --epochs 1` smoke run and is NOT the checkpoint behind the published 0.384/0.894. Use models/stutternet_ssl_v2.pt. See docs/VERSIONS.md, 'A checkpoint this project lost'.",
+  "caveat": "DESTROYED -- this file was overwritten by a `--limit 200 --epochs 1` smoke run and is NOT the checkpoint behind the published 0.384/0.894. Use models/stutternet_ssl_v2.pt. See docs/VERSIONS.md, 'A checkpoint this project lost'.",
+  "trained_on": "DESTROYED -- this file was overwritten by a `--limit 200 --epochs 1` smoke run and is NOT the checkpoint behind the published 0.384/0.894. Use models/stutternet_ssl_v2.pt. See docs/VERSIONS.md, 'A checkpoint this project lost'."
+}

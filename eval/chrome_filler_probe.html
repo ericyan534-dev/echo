@@ -1,0 +1,139 @@
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="utf-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Echo — Chrome filler-stripping probe</title>
+<style>
+  :root { color-scheme: dark; }
+  body {
+    font: 15px/1.5 -apple-system, Segoe UI, Roboto, sans-serif;
+    margin: 0; background: #0d1117; color: #e6edf3;
+    display: flex; flex-direction: column; min-height: 100vh;
+  }
+  header { padding: 20px 28px; border-bottom: 1px solid #21262d; }
+  h1 { margin: 0 0 4px; font-size: 19px; }
+  .sub { color: #8b949e; font-size: 13px; }
+  main { display: grid; grid-template-columns: 1fr 1fr; gap: 0; flex: 1; }
+  section { padding: 22px 28px; }
+  section + section { border-left: 1px solid #21262d; }
+  h2 { font-size: 13px; text-transform: uppercase; letter-spacing: .06em;
+       color: #8b949e; margin: 0 0 12px; }
+  button {
+    font: inherit; font-weight: 600; cursor: pointer; border: 0;
+    border-radius: 8px; padding: 10px 18px; color: #fff; background: #238636;
+  }
+  button.stop { background: #da3633; }
+  button:disabled { opacity: .5; cursor: default; }
+  .pill { display: inline-block; padding: 2px 8px; border-radius: 999px;
+          font-size: 12px; background: #21262d; color: #8b949e; margin-left: 8px; }
+  .pill.live { background: #1f6feb; color: #fff; }
+  ol { margin: 14px 0 0; padding: 0; list-style: none; }
+  li { padding: 8px 12px; border-radius: 8px; margin-bottom: 6px;
+       background: #161b22; border: 1px solid #21262d; }
+  li.interim { opacity: .6; font-style: italic; }
+  li .t { color: #6e7681; font-size: 11px; margin-right: 8px; }
+  .script { background: #161b22; border: 1px solid #21262d; border-radius: 10px;
+            padding: 16px; margin-bottom: 16px; }
+  .script b { color: #58a6ff; }
+  .say { font-size: 16px; margin: 6px 0; }
+  .say .stretch { color: #f0883e; font-weight: 700; }
+  mark { background: #f0883e33; color: #f0883e; padding: 0 3px; border-radius: 3px; }
+  .note { color: #8b949e; font-size: 13px; margin-top: 14px; }
+  .err { color: #f85149; font-size: 13px; margin-top: 10px; min-height: 18px; }
+  code { background: #161b22; padding: 1px 5px; border-radius: 4px; }
+</style>
+</head>
+<body>
+<header>
+  <h1>Echo — Chrome filler-stripping probe <span id="status" class="pill">idle</span></h1>
+  <div class="sub">
+    Standalone proof of the v2 thesis: Chrome's Web Speech recognizer deletes
+    "um/uh" and normalizes stretched vowels — <b>no server, no Echo backend</b>.
+    Open in <b>Chrome</b>, click Start, read the script aloud, and screenshot the
+    transcript. This is the artifact <code>docs/ARCHITECTURE.md</code> asks for.
+  </div>
+</header>
+
+<main>
+  <section>
+    <h2>1 · Read this aloud</h2>
+    <div class="script">
+      <div class="say">Say, <b>naturally with the fillers</b>:</div>
+      <div class="say">“Every morning I, <mark>um</mark>, make some, <mark>uh</mark>,
+        toast.”</div>
+      <div class="say" style="margin-top:12px">Then, stretching the vowel ~1 s:</div>
+      <div class="say">“I’ll take <span class="stretch">theeee…</span> train.”</div>
+    </div>
+    <button id="toggle">▶ Start listening</button>
+    <div id="err" class="err"></div>
+    <div class="note">
+      What you’ll see on the right: the words come through, but the
+      <mark>um</mark> / <mark>uh</mark> never appear, and
+      <span class="stretch">theeee</span> lands as a clean “the”. That gap is
+      exactly what Echo’s acoustic channel exists to recover — the transcript
+      literally cannot see the stall.
+    </div>
+  </section>
+
+  <section>
+    <h2>2 · What Chrome actually transcribes</h2>
+    <ol id="log"></ol>
+  </section>
+</main>
+
+<script>
+const SR = window.SpeechRecognition || window.webkitSpeechRecognition;
+const toggle = document.getElementById("toggle");
+const statusEl = document.getElementById("status");
+const errEl = document.getElementById("err");
+const log = document.getElementById("log");
+let rec = null, running = false;
+
+function stamp() {
+  // performance.now()-based clock so screenshots show relative timing
+  const s = (performance.now() / 1000).toFixed(1);
+  return s + "s";
+}
+
+function addLine(text, interim) {
+  const li = document.createElement("li");
+  if (interim) li.className = "interim";
+  li.innerHTML = `<span class="t">${stamp()}${interim ? " ·interim" : " ·FINAL"}</span>` +
+                 text.replace(/</g, "&lt;");
+  log.prepend(li);
+}
+
+if (!SR) {
+  errEl.textContent = "This browser has no Web Speech API. Use desktop Chrome.";
+  toggle.disabled = true;
+}
+
+toggle.onclick = () => {
+  if (running) { rec && rec.stop(); return; }
+  rec = new SR();
+  rec.continuous = true;
+  rec.interimResults = true;
+  rec.lang = "en-US";
+  rec.onstart = () => {
+    running = true; errEl.textContent = "";
+    statusEl.textContent = "listening"; statusEl.className = "pill live";
+    toggle.textContent = "■ Stop"; toggle.classList.add("stop");
+  };
+  rec.onerror = (e) => { errEl.textContent = "recognition error: " + e.error; };
+  rec.onend = () => {
+    running = false;
+    statusEl.textContent = "idle"; statusEl.className = "pill";
+    toggle.textContent = "▶ Start listening"; toggle.classList.remove("stop");
+  };
+  rec.onresult = (ev) => {
+    for (let i = ev.resultIndex; i < ev.results.length; i++) {
+      const r = ev.results[i];
+      addLine(r[0].transcript.trim(), !r.isFinal);
+    }
+  };
+  rec.start();
+};
+</script>
+</body>
+</html>

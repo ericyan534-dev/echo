@@ -1,0 +1,234 @@
+{
+  "status": "OK",
+  "corpus": "APROCSA -- 6 speakers with chronic post-stroke aphasia",
+  "reference": "CHAT clean_text (clinician transcription), fillers stripped",
+  "note": "Fillers are stripped from both sides. They are measured separately as dysfluency preservation; including them here would reward a model for transcribing hesitations rather than for getting the content words a prediction needs.",
+  "region_s": 300,
+  "skip_s": 120,
+  "results": {
+    "turbo/verbatim": {
+      "wer": 0.4024,
+      "n_ref_words": 1655,
+      "n_hyp_words": 1518,
+      "n_utterances": 267,
+      "per_participant": {
+        "1554": {
+          "errors": 45,
+          "n_ref": 83,
+          "n_hyp": 66,
+          "wer": 0.5422,
+          "median_utt_wer": 0.5,
+          "n_utt": 17
+        },
+        "1713": {
+          "errors": 131,
+          "n_ref": 395,
+          "n_hyp": 370,
+          "wer": 0.3316,
+          "median_utt_wer": 0.4,
+          "n_utt": 49
+        },
+        "1731": {
+          "errors": 129,
+          "n_ref": 237,
+          "n_hyp": 205,
+          "wer": 0.5443,
+          "median_utt_wer": 0.6667,
+          "n_utt": 74
+        },
+        "1738": {
+          "errors": 120,
+          "n_ref": 286,
+          "n_hyp": 265,
+          "wer": 0.4196,
+          "median_utt_wer": 0.3636,
+          "n_utt": 43
+        },
+        "1833": {
+          "errors": 101,
+          "n_ref": 278,
+          "n_hyp": 260,
+          "wer": 0.3633,
+          "median_utt_wer": 0.3333,
+          "n_utt": 37
+        },
+        "1944": {
+          "errors": 140,
+          "n_ref": 376,
+          "n_hyp": 352,
+          "wer": 0.3723,
+          "median_utt_wer": 0.4,
+          "n_utt": 47
+        }
+      }
+    },
+    "large/verbatim": {
+      "wer": 0.4079,
+      "n_ref_words": 1655,
+      "n_hyp_words": 1455,
+      "n_utterances": 267,
+      "per_participant": {
+        "1554": {
+          "errors": 44,
+          "n_ref": 83,
+          "n_hyp": 59,
+          "wer": 0.5301,
+          "median_utt_wer": 0.5263,
+          "n_utt": 17
+        },
+        "1713": {
+          "errors": 140,
+          "n_ref": 395,
+          "n_hyp": 359,
+          "wer": 0.3544,
+          "median_utt_wer": 0.4,
+          "n_utt": 49
+        },
+        "1731": {
+          "errors": 130,
+          "n_ref": 237,
+          "n_hyp": 196,
+          "wer": 0.5485,
+          "median_utt_wer": 0.7083,
+          "n_utt": 74
+        },
+        "1738": {
+          "errors": 116,
+          "n_ref": 286,
+          "n_hyp": 255,
+          "wer": 0.4056,
+          "median_utt_wer": 0.5,
+          "n_utt": 43
+        },
+        "1833": {
+          "errors": 99,
+          "n_ref": 278,
+          "n_hyp": 251,
+          "wer": 0.3561,
+          "median_utt_wer": 0.3333,
+          "n_utt": 37
+        },
+        "1944": {
+          "errors": 146,
+          "n_ref": 376,
+          "n_hyp": 335,
+          "wer": 0.3883,
+          "median_utt_wer": 0.4,
+          "n_utt": 47
+        }
+      }
+    },
+    "medium/verbatim": {
+      "wer": 0.4085,
+      "n_ref_words": 1655,
+      "n_hyp_words": 1513,
+      "n_utterances": 267,
+      "per_participant": {
+        "1554": {
+          "errors": 41,
+          "n_ref": 83,
+          "n_hyp": 59,
+          "wer": 0.494,
+          "median_utt_wer": 0.5,
+          "n_utt": 17
+        },
+        "1713": {
+          "errors": 142,
+          "n_ref": 395,
+          "n_hyp": 370,
+          "wer": 0.3595,
+          "median_utt_wer": 0.4,
+          "n_utt": 49
+        },
+        "1731": {
+          "errors": 132,
+          "n_ref": 237,
+          "n_hyp": 205,
+          "wer": 0.557,
+          "median_utt_wer": 0.55,
+          "n_utt": 74
+        },
+        "1738": {
+          "errors": 106,
+          "n_ref": 286,
+          "n_hyp": 267,
+          "wer": 0.3706,
+          "median_utt_wer": 0.375,
+          "n_utt": 43
+        },
+        "1833": {
+          "errors": 104,
+          "n_ref": 278,
+          "n_hyp": 261,
+          "wer": 0.3741,
+          "median_utt_wer": 0.3846,
+          "n_utt": 37
+        },
+        "1944": {
+          "errors": 151,
+          "n_ref": 376,
+          "n_hyp": 351,
+          "wer": 0.4016,
+          "median_utt_wer": 0.4615,
+          "n_utt": 47
+        }
+      }
+    },
+    "turbo/verbatim/offline": {
+      "wer": 0.2876,
+      "n_ref_words": 1655,
+      "n_hyp_words": 1605,
+      "n_utterances": 267,
+      "per_participant": {
+        "1554": {
+          "errors": 36,
+          "n_ref": 83,
+          "n_hyp": 67,
+          "wer": 0.4337,
+          "median_utt_wer": 0.3333,
+          "n_utt": 17
+        },
+        "1713": {
+          "errors": 111,
+          "n_ref": 395,
+          "n_hyp": 397,
+          "wer": 0.281,
+          "median_utt_wer": 0.25,
+          "n_utt": 49
+        },
+        "1731": {
+          "errors": 112,
+          "n_ref": 237,
+          "n_hyp": 222,
+          "wer": 0.4726,
+          "median_utt_wer": 0.5,
+          "n_utt": 74
+        },
+        "1738": {
+          "errors": 71,
+          "n_ref": 286,
+          "n_hyp": 276,
+          "wer": 0.2483,
+          "median_utt_wer": 0.1818,
+          "n_utt": 43
+        },
+        "1833": {
+          "errors": 58,
+          "n_ref": 278,
+          "n_hyp": 274,
+          "wer": 0.2086,
+          "median_utt_wer": 0.1429,
+          "n_utt": 37
+        },
+        "1944": {
+          "errors": 88,
+          "n_ref": 376,
+          "n_hyp": 369,
+          "wer": 0.234,
+          "median_utt_wer": 0.2,
+          "n_utt": 47
+        }
+      }
+    }
+  }
+}

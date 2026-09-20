@@ -1,0 +1,72 @@
+{
+  "status": "OK",
+  "audio": "APROCSA -- real aphasic connected speech",
+  "note": "RTF here is the STREAM's, not a single transcribe's: the wrapper re-transcribes a growing window every step, so cost is calls-per-second times cost-per-call, and window length sets the second term.",
+  "stall_budget_ms": 1300,
+  "summary": {
+    "silence_commit_ms=280": {
+      "rtf_mean": 0.57,
+      "rtf_max": 0.612,
+      "commit_lag_ms_median": 200,
+      "words": 320,
+      "per_participant": [
+        {
+          "audio_s": 90.0,
+          "wall_s": 47.5,
+          "rtf": 0.528,
+          "words": 132,
+          "turns": 3,
+          "max_window_s": 10.9,
+          "commit_lag_ms_median": 200,
+          "commit_lag_ms_p90": 300,
+          "n_commit_lag_samples": 78,
+          "participant": "1554"
+        },
+        {
+          "audio_s": 90.0,
+          "wall_s": 55.1,
+          "rtf": 0.612,
+          "words": 188,
+          "turns": 2,
+          "max_window_s": 7.0,
+          "commit_lag_ms_median": 200,
+          "commit_lag_ms_p90": 300,
+          "n_commit_lag_samples": 80,
+          "participant": "1713"
+        }
+      ]
+    },
+    "silence_commit_ms=700": {
+      "rtf_mean": 0.588,
+      "rtf_max": 0.609,
+      "commit_lag_ms_median": 350,
+      "words": 311,
+      "per_participant": [
+        {
+          "audio_s": 90.0,
+          "wall_s": 51.1,
+          "rtf": 0.567,
+          "words": 128,
+          "turns": 4,
+          "max_window_s": 16.0,
+          "commit_lag_ms_median": 500,
+          "commit_lag_ms_p90": 700,
+          "n_commit_lag_samples": 33,
+          "participant": "1554"
+        },
+        {
+          "audio_s": 90.0,
+          "wall_s": 54.9,
+          "rtf": 0.609,
+          "words": 183,
+          "turns": 2,
+          "max_window_s": 16.0,
+          "commit_lag_ms_median": 200,
+          "commit_lag_ms_p90": 600,
+          "n_commit_lag_samples": 59,
+          "participant": "1713"
+        }
+      ]
+    }
+  }
+}

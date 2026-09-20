@@ -1,0 +1,88 @@
+{
+  "checkpoint": "stutternet_recall_v2.pt",
+  "derived_from": "stutternet_ssl_v2.pt",
+  "note": "recall-targeted operating point ONLY; weights are byte-identical to the source, so AP is unchanged -- only recall/precision at the operating point move. Fitted on VAL; TEST untouched.",
+  "frame_thresholds": {
+    "Block": 0.880797,
+    "Prolongation": 0.880797,
+    "SoundRep": 0.700993,
+    "WordRep": 0.880797,
+    "Interjection": 0.880797
+  },
+  "frame_temperature": {
+    "Block": 6.7538,
+    "Prolongation": 7.7263,
+    "SoundRep": 1.0,
+    "WordRep": 8.825,
+    "Interjection": 9.3938
+  },
+  "frame_calibration_detail": {
+    "Block": {
+      "temperature": 6.7538,
+      "threshold": 0.880797,
+      "logit_threshold": 13.5075,
+      "target_recall": 0.85,
+      "fpr_cap": 0.08,
+      "capped_by_fpr": true,
+      "recall_at_threshold": 0.3993,
+      "clean_fire_rate": 0.08,
+      "n_pos": 273,
+      "n_clean": 1012
+    },
+    "Prolongation": {
+      "temperature": 7.7263,
+      "threshold": 0.880797,
+      "logit_threshold": 15.4525,
+      "target_recall": 0.85,
+      "fpr_cap": 0.08,
+      "capped_by_fpr": true,
+      "recall_at_threshold": 0.6654,
+      "clean_fire_rate": 0.08,
+      "n_pos": 257,
+      "n_clean": 1012
+    },
+    "SoundRep": {
+      "temperature": 1.0,
+      "threshold": 0.700993,
+      "logit_threshold": 0.852,
+      "target_recall": 0.85,
+      "fpr_cap": 0.08,
+      "capped_by_fpr": true,
+      "recall_at_threshold": 0.8182,
+      "clean_fire_rate": 0.08,
+      "n_pos": 165,
+      "n_clean": 1012
+    },
+    "WordRep": {
+      "temperature": 8.825,
+      "threshold": 0.880797,
+      "logit_threshold": 17.65,
+      "target_recall": 0.85,
+      "fpr_cap": 0.08,
+      "capped_by_fpr": false,
+      "recall_at_threshold": 0.8481,
+      "clean_fire_rate": 0.0267,
+      "n_pos": 283,
+      "n_clean": 1012
+    },
+    "Interjection": {
+      "temperature": 9.3938,
+      "threshold": 0.880797,
+      "logit_threshold": 18.7875,
+      "target_recall": 0.7,
+      "fpr_cap": 0.08,
+      "capped_by_fpr": false,
+      "recall_at_threshold": 0.6994,
+      "clean_fire_rate": 0.0138,
+      "n_pos": 662,
+      "n_clean": 1012
+    }
+  },
+  "shipped_ssl_v2_recall_at_fpr_0.02": {
+    "Block": 0.158,
+    "Prolongation": 0.373,
+    "SoundRep": 0.521,
+    "WordRep": 0.816,
+    "Interjection": 0.725
+  }
+}

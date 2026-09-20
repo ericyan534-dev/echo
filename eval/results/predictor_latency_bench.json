@@ -1,0 +1,688 @@
+{
+  "provenance": {
+    "script": "eval/bench_predictor_latency.py",
+    "model": "gemini-3.5-flash",
+    "extra_models": "gemini-3.5-flash-lite,gemini-2.5-flash-lite",
+    "rounds": 4,
+    "fragments": [
+      "name-from-context",
+      "concrete-object",
+      "place-from-fragment",
+      "hedge"
+    ],
+    "gap_s": 0.3,
+    "timestamp_utc": "2026-09-07T13:22:32+00:00",
+    "measures": "wall-clock ms around GeminiPredictor.predict (prompt assembly + API round-trip + parse); excludes WebSocket/pipeline overhead",
+    "interleaved": true
+  },
+  "summary": {
+    "gemini-3.5-flash nonstream (shipped)": {
+      "n": 16,
+      "median_ms": 1046.8,
+      "p90_ms": 1162.4,
+      "min_ms": 913.6,
+      "max_ms": 1696.7,
+      "errors": 0,
+      "empty_candidate_calls": 0
+    },
+    "gemini-3.5-flash stream": {
+      "n": 16,
+      "median_ms": 876.2,
+      "p90_ms": 1065.4,
+      "min_ms": 818.8,
+      "max_ms": 1339.2,
+      "errors": 0,
+      "empty_candidate_calls": 0
+    },
+    "gemini-3.5-flash-lite nonstream": {
+      "n": 0,
+      "errors": 16,
+      "empty_candidate_calls": 0
+    },
+    "gemini-3.5-flash-lite stream": {
+      "n": 0,
+      "errors": 16,
+      "empty_candidate_calls": 0
+    },
+    "gemini-2.5-flash-lite nonstream": {
+      "n": 16,
+      "median_ms": 777.5,
+      "p90_ms": 856.7,
+      "min_ms": 676.7,
+      "max_ms": 1123.9,
+      "errors": 0,
+      "empty_candidate_calls": 0
+    },
+    "gemini-2.5-flash-lite stream": {
+      "n": 16,
+      "median_ms": 691.3,
+      "p90_ms": 786.8,
+      "min_ms": 666.0,
+      "max_ms": 1130.8,
+      "errors": 0,
+      "empty_candidate_calls": 0
+    }
+  },
+  "calls": {
+    "gemini-3.5-flash nonstream (shipped)": [
+      {
+        "round": 0,
+        "fragment": "name-from-context",
+        "ms": 1469.5,
+        "n_candidates": 3,
+        "top": "Maria"
+      },
+      {
+        "round": 0,
+        "fragment": "concrete-object",
+        "ms": 913.6,
+        "n_candidates": 2,
+        "top": "toaster"
+      },
+      {
+        "round": 0,
+        "fragment": "place-from-fragment",
+        "ms": 954.0,
+        "n_candidates": 3,
+        "top": "Tokyo"
+      },
+      {
+        "round": 0,
+        "fragment": "hedge",
+        "ms": 1136.9,
+        "n_candidates": 3,
+        "top": "lawnmower"
+      },
+      {
+        "round": 1,
+        "fragment": "name-from-context",
+        "ms": 1123.6,
+        "n_candidates": 3,
+        "top": "Maria"
+      },
+      {
+        "round": 1,
+        "fragment": "concrete-object",
+        "ms": 1039.8,
+        "n_candidates": 2,
+        "top": "toaster"
+      },
+      {
+        "round": 1,
+        "fragment": "place-from-fragment",
+        "ms": 964.8,
+        "n_candidates": 3,
+        "top": "Tokyo"
+      },
+      {
+        "round": 1,
+        "fragment": "hedge",
+        "ms": 965.0,
+        "n_candidates": 3,
+        "top": "lawnmower"
+      },
+      {
+        "round": 2,
+        "fragment": "name-from-context",
+        "ms": 1162.4,
+        "n_candidates": 2,
+        "top": "Maria"
+      },
+      {
+        "round": 2,
+        "fragment": "concrete-object",
+        "ms": 966.8,
+        "n_candidates": 2,
+        "top": "toaster"
+      },
+      {
+        "round": 2,
+        "fragment": "place-from-fragment",
+        "ms": 962.3,
+        "n_candidates": 3,
+        "top": "Tokyo"
+      },
+      {
+        "round": 2,
+        "fragment": "hedge",
+        "ms": 961.9,
+        "n_candidates": 3,
+        "top": "lawnmower"
+      },
+      {
+        "round": 3,
+        "fragment": "name-from-context",
+        "ms": 1101.2,
+        "n_candidates": 2,
+        "top": "Maria"
+      },
+      {
+        "round": 3,
+        "fragment": "concrete-object",
+        "ms": 1696.7,
+        "n_candidates": 2,
+        "top": "toaster"
+      },
+      {
+        "round": 3,
+        "fragment": "place-from-fragment",
+        "ms": 1053.8,
+        "n_candidates": 3,
+        "top": "Tokyo"
+      },
+      {
+        "round": 3,
+        "fragment": "hedge",
+        "ms": 1056.4,
+        "n_candidates": 3,
+        "top": "lawnmower"
+      }
+    ],
+    "gemini-3.5-flash stream": [
+      {
+        "round": 0,
+        "fragment": "name-from-context",
+        "ms": 1339.2,
+        "n_candidates": 2,
+        "top": "Maria"
+      },
+      {
+        "round": 0,
+        "fragment": "concrete-object",
+        "ms": 835.1,
+        "n_candidates": 2,
+        "top": "toaster"
+      },
+      {
+        "round": 0,
+        "fragment": "place-from-fragment",
+        "ms": 1071.4,
+        "n_candidates": 3,
+        "top": "Tokyo"
+      },
+      {
+        "round": 0,
+        "fragment": "hedge",
+        "ms": 866.8,
+        "n_candidates": 3,
+        "top": "lawnmower"
+      },
+      {
+        "round": 1,
+        "fragment": "name-from-context",
+        "ms": 818.8,
+        "n_candidates": 2,
+        "top": "Maria"
+      },
+      {
+        "round": 1,
+        "fragment": "concrete-object",
+        "ms": 1065.4,
+        "n_candidates": 2,
+        "top": "toaster"
+      },
+      {
+        "round": 1,
+        "fragment": "place-from-fragment",
+        "ms": 843.6,
+        "n_candidates": 3,
+        "top": "Tokyo"
+      },
+      {
+        "round": 1,
+        "fragment": "hedge",
+        "ms": 878.1,
+        "n_candidates": 3,
+        "top": "lawnmower"
+      },
+      {
+        "round": 2,
+        "fragment": "name-from-context",
+        "ms": 877.7,
+        "n_candidates": 2,
+        "top": "Maria"
+      },
+      {
+        "round": 2,
+        "fragment": "concrete-object",
+        "ms": 874.6,
+        "n_candidates": 2,
+        "top": "toaster"
+      },
+      {
+        "round": 2,
+        "fragment": "place-from-fragment",
+        "ms": 999.8,
+        "n_candidates": 3,
+        "top": "Tokyo"
+      },
+      {
+        "round": 2,
+        "fragment": "hedge",
+        "ms": 823.7,
+        "n_candidates": 3,
+        "top": "lawnmower"
+      },
+      {
+        "round": 3,
+        "fragment": "name-from-context",
+        "ms": 1040.1,
+        "n_candidates": 2,
+        "top": "Maria"
+      },
+      {
+        "round": 3,
+        "fragment": "concrete-object",
+        "ms": 866.3,
+        "n_candidates": 2,
+        "top": "toaster"
+      },
+      {
+        "round": 3,
+        "fragment": "place-from-fragment",
+        "ms": 867.5,
+        "n_candidates": 3,
+        "top": "Tokyo"
+      },
+      {
+        "round": 3,
+        "fragment": "hedge",
+        "ms": 955.8,
+        "n_candidates": 3,
+        "top": "lawnmower"
+      }
+    ],
+    "gemini-3.5-flash-lite nonstream": [
+      {
+        "round": 0,
+        "fragment": "name-from-context",
+        "error": "ClientError: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'Request contains an invalid argument.', 'status': 'INVALID_ARGUMENT'}}"
+      },
+      {
+        "round": 0,
+        "fragment": "concrete-object",
+        "error": "ClientError: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'Request contains an invalid argument.', 'status': 'INVALID_ARGUMENT'}}"
+      },
+      {
+        "round": 0,
+        "fragment": "place-from-fragment",
+        "error": "ClientError: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'Request contains an invalid argument.', 'status': 'INVALID_ARGUMENT'}}"
+      },
+      {
+        "round": 0,
+        "fragment": "hedge",
+        "error": "ClientError: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'Request contains an invalid argument.', 'status': 'INVALID_ARGUMENT'}}"
+      },
+      {
+        "round": 1,
+        "fragment": "name-from-context",
+        "error": "ClientError: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'Request contains an invalid argument.', 'status': 'INVALID_ARGUMENT'}}"
+      },
+      {
+        "round": 1,
+        "fragment": "concrete-object",
+        "error": "ClientError: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'Request contains an invalid argument.', 'status': 'INVALID_ARGUMENT'}}"
+      },
+      {
+        "round": 1,
+        "fragment": "place-from-fragment",
+        "error": "ClientError: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'Request contains an invalid argument.', 'status': 'INVALID_ARGUMENT'}}"
+      },
+      {
+        "round": 1,
+        "fragment": "hedge",
+        "error": "ClientError: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'Request contains an invalid argument.', 'status': 'INVALID_ARGUMENT'}}"
+      },
+      {
+        "round": 2,
+        "fragment": "name-from-context",
+        "error": "ClientError: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'Request contains an invalid argument.', 'status': 'INVALID_ARGUMENT'}}"
+      },
+      {
+        "round": 2,
+        "fragment": "concrete-object",
+        "error": "ClientError: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'Request contains an invalid argument.', 'status': 'INVALID_ARGUMENT'}}"
+      },
+      {
+        "round": 2,
+        "fragment": "place-from-fragment",
+        "error": "ClientError: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'Request contains an invalid argument.', 'status': 'INVALID_ARGUMENT'}}"
+      },
+      {
+        "round": 2,
+        "fragment": "hedge",
+        "error": "ClientError: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'Request contains an invalid argument.', 'status': 'INVALID_ARGUMENT'}}"
+      },
+      {
+        "round": 3,
+        "fragment": "name-from-context",
+        "error": "ClientError: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'Request contains an invalid argument.', 'status': 'INVALID_ARGUMENT'}}"
+      },
+      {
+        "round": 3,
+        "fragment": "concrete-object",
+        "error": "ClientError: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'Request contains an invalid argument.', 'status': 'INVALID_ARGUMENT'}}"
+      },
+      {
+        "round": 3,
+        "fragment": "place-from-fragment",
+        "error": "ClientError: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'Request contains an invalid argument.', 'status': 'INVALID_ARGUMENT'}}"
+      },
+      {
+        "round": 3,
+        "fragment": "hedge",
+        "error": "ClientError: 400 INVALID_ARGUMENT. {'error': {'code': 400, 'message': 'Request contains an invalid argument.', 'status': 'INVALID_ARGUMENT'}}"
+      }
+    ],
+    "gemini-3.5-flash-lite stream": [
+      {
+        "round": 0,
+        "fragment": "name-from-context",
+        "error": "ClientError: 400 Bad Request. {'message': '{\\n  \"error\": {\\n    \"code\": 400,\\n    \"message\": \"Request contains an invalid argument.\",\\n    \"status\": \"INVALID_ARGUMENT\"\\n  }\\n}\\n', 'status': 'Bad Reque"
+      },
+      {
+        "round": 0,
+        "fragment": "concrete-object",
+        "error": "ClientError: 400 Bad Request. {'message': '{\\n  \"error\": {\\n    \"code\": 400,\\n    \"message\": \"Request contains an invalid argument.\",\\n    \"status\": \"INVALID_ARGUMENT\"\\n  }\\n}\\n', 'status': 'Bad Reque"
+      },
+      {
+        "round": 0,
+        "fragment": "place-from-fragment",
+        "error": "ClientError: 400 Bad Request. {'message': '{\\n  \"error\": {\\n    \"code\": 400,\\n    \"message\": \"Request contains an invalid argument.\",\\n    \"status\": \"INVALID_ARGUMENT\"\\n  }\\n}\\n', 'status': 'Bad Reque"
+      },
+      {
+        "round": 0,
+        "fragment": "hedge",
+        "error": "ClientError: 400 Bad Request. {'message': '{\\n  \"error\": {\\n    \"code\": 400,\\n    \"message\": \"Request contains an invalid argument.\",\\n    \"status\": \"INVALID_ARGUMENT\"\\n  }\\n}\\n', 'status': 'Bad Reque"
+      },
+      {
+        "round": 1,
+        "fragment": "name-from-context",
+        "error": "ClientError: 400 Bad Request. {'message': '{\\n  \"error\": {\\n    \"code\": 400,\\n    \"message\": \"Request contains an invalid argument.\",\\n    \"status\": \"INVALID_ARGUMENT\"\\n  }\\n}\\n', 'status': 'Bad Reque"
+      },
+      {
+        "round": 1,
+        "fragment": "concrete-object",
+        "error": "ClientError: 400 Bad Request. {'message': '{\\n  \"error\": {\\n    \"code\": 400,\\n    \"message\": \"Request contains an invalid argument.\",\\n    \"status\": \"INVALID_ARGUMENT\"\\n  }\\n}\\n', 'status': 'Bad Reque"
+      },
+      {
+        "round": 1,
+        "fragment": "place-from-fragment",
+        "error": "ClientError: 400 Bad Request. {'message': '{\\n  \"error\": {\\n    \"code\": 400,\\n    \"message\": \"Request contains an invalid argument.\",\\n    \"status\": \"INVALID_ARGUMENT\"\\n  }\\n}\\n', 'status': 'Bad Reque"
+      },
+      {
+        "round": 1,
+        "fragment": "hedge",
+        "error": "ClientError: 400 Bad Request. {'message': '{\\n  \"error\": {\\n    \"code\": 400,\\n    \"message\": \"Request contains an invalid argument.\",\\n    \"status\": \"INVALID_ARGUMENT\"\\n  }\\n}\\n', 'status': 'Bad Reque"
+      },
+      {
+        "round": 2,
+        "fragment": "name-from-context",
+        "error": "ClientError: 400 Bad Request. {'message': '{\\n  \"error\": {\\n    \"code\": 400,\\n    \"message\": \"Request contains an invalid argument.\",\\n    \"status\": \"INVALID_ARGUMENT\"\\n  }\\n}\\n', 'status': 'Bad Reque"
+      },
+      {
+        "round": 2,
+        "fragment": "concrete-object",
+        "error": "ClientError: 400 Bad Request. {'message': '{\\n  \"error\": {\\n    \"code\": 400,\\n    \"message\": \"Request contains an invalid argument.\",\\n    \"status\": \"INVALID_ARGUMENT\"\\n  }\\n}\\n', 'status': 'Bad Reque"
+      },
+      {
+        "round": 2,
+        "fragment": "place-from-fragment",
+        "error": "ClientError: 400 Bad Request. {'message': '{\\n  \"error\": {\\n    \"code\": 400,\\n    \"message\": \"Request contains an invalid argument.\",\\n    \"status\": \"INVALID_ARGUMENT\"\\n  }\\n}\\n', 'status': 'Bad Reque"
+      },
+      {
+        "round": 2,
+        "fragment": "hedge",
+        "error": "ClientError: 400 Bad Request. {'message': '{\\n  \"error\": {\\n    \"code\": 400,\\n    \"message\": \"Request contains an invalid argument.\",\\n    \"status\": \"INVALID_ARGUMENT\"\\n  }\\n}\\n', 'status': 'Bad Reque"
+      },
+      {
+        "round": 3,
+        "fragment": "name-from-context",
+        "error": "ClientError: 400 Bad Request. {'message': '{\\n  \"error\": {\\n    \"code\": 400,\\n    \"message\": \"Request contains an invalid argument.\",\\n    \"status\": \"INVALID_ARGUMENT\"\\n  }\\n}\\n', 'status': 'Bad Reque"
+      },
+      {
+        "round": 3,
+        "fragment": "concrete-object",
+        "error": "ClientError: 400 Bad Request. {'message': '{\\n  \"error\": {\\n    \"code\": 400,\\n    \"message\": \"Request contains an invalid argument.\",\\n    \"status\": \"INVALID_ARGUMENT\"\\n  }\\n}\\n', 'status': 'Bad Reque"
+      },
+      {
+        "round": 3,
+        "fragment": "place-from-fragment",
+        "error": "ClientError: 400 Bad Request. {'message': '{\\n  \"error\": {\\n    \"code\": 400,\\n    \"message\": \"Request contains an invalid argument.\",\\n    \"status\": \"INVALID_ARGUMENT\"\\n  }\\n}\\n', 'status': 'Bad Reque"
+      },
+      {
+        "round": 3,
+        "fragment": "hedge",
+        "error": "ClientError: 400 Bad Request. {'message': '{\\n  \"error\": {\\n    \"code\": 400,\\n    \"message\": \"Request contains an invalid argument.\",\\n    \"status\": \"INVALID_ARGUMENT\"\\n  }\\n}\\n', 'status': 'Bad Reque"
+      }
+    ],
+    "gemini-2.5-flash-lite nonstream": [
+      {
+        "round": 0,
+        "fragment": "name-from-context",
+        "ms": 1123.9,
+        "n_candidates": 1,
+        "top": "Maria"
+      },
+      {
+        "round": 0,
+        "fragment": "concrete-object",
+        "ms": 676.7,
+        "n_candidates": 1,
+        "top": "toaster"
+      },
+      {
+        "round": 0,
+        "fragment": "place-from-fragment",
+        "ms": 1070.8,
+        "n_candidates": 3,
+        "top": "Tokyo"
+      },
+      {
+        "round": 0,
+        "fragment": "hedge",
+        "ms": 828.6,
+        "n_candidates": 2,
+        "top": "mower"
+      },
+      {
+        "round": 1,
+        "fragment": "name-from-context",
+        "ms": 711.5,
+        "n_candidates": 1,
+        "top": "Maria"
+      },
+      {
+        "round": 1,
+        "fragment": "concrete-object",
+        "ms": 774.8,
+        "n_candidates": 1,
+        "top": "toaster"
+      },
+      {
+        "round": 1,
+        "fragment": "place-from-fragment",
+        "ms": 780.8,
+        "n_candidates": 3,
+        "top": "Tokyo"
+      },
+      {
+        "round": 1,
+        "fragment": "hedge",
+        "ms": 785.6,
+        "n_candidates": 3,
+        "top": "mower"
+      },
+      {
+        "round": 2,
+        "fragment": "name-from-context",
+        "ms": 768.1,
+        "n_candidates": 2,
+        "top": "Maria"
+      },
+      {
+        "round": 2,
+        "fragment": "concrete-object",
+        "ms": 792.1,
+        "n_candidates": 1,
+        "top": "toaster"
+      },
+      {
+        "round": 2,
+        "fragment": "place-from-fragment",
+        "ms": 856.7,
+        "n_candidates": 3,
+        "top": "Tokyo"
+      },
+      {
+        "round": 2,
+        "fragment": "hedge",
+        "ms": 754.2,
+        "n_candidates": 3,
+        "top": "mower"
+      },
+      {
+        "round": 3,
+        "fragment": "name-from-context",
+        "ms": 694.8,
+        "n_candidates": 1,
+        "top": "Maria"
+      },
+      {
+        "round": 3,
+        "fragment": "concrete-object",
+        "ms": 707.5,
+        "n_candidates": 1,
+        "top": "toaster"
+      },
+      {
+        "round": 3,
+        "fragment": "place-from-fragment",
+        "ms": 765.0,
+        "n_candidates": 3,
+        "top": "Tokyo"
+      },
+      {
+        "round": 3,
+        "fragment": "hedge",
+        "ms": 780.3,
+        "n_candidates": 3,
+        "top": "mower"
+      }
+    ],
+    "gemini-2.5-flash-lite stream": [
+      {
+        "round": 0,
+        "fragment": "name-from-context",
+        "ms": 1130.8,
+        "n_candidates": 2,
+        "top": "Maria"
+      },
+      {
+        "round": 0,
+        "fragment": "concrete-object",
+        "ms": 682.2,
+        "n_candidates": 2,
+        "top": "toaster"
+      },
+      {
+        "round": 0,
+        "fragment": "place-from-fragment",
+        "ms": 666.0,
+        "n_candidates": 3,
+        "top": "Tokyo"
+      },
+      {
+        "round": 0,
+        "fragment": "hedge",
+        "ms": 738.5,
+        "n_candidates": 3,
+        "top": "lawnmower"
+      },
+      {
+        "round": 1,
+        "fragment": "name-from-context",
+        "ms": 678.2,
+        "n_candidates": 2,
+        "top": "Maria"
+      },
+      {
+        "round": 1,
+        "fragment": "concrete-object",
+        "ms": 685.2,
+        "n_candidates": 1,
+        "top": "toaster"
+      },
+      {
+        "round": 1,
+        "fragment": "place-from-fragment",
+        "ms": 703.1,
+        "n_candidates": 3,
+        "top": "Tokyo"
+      },
+      {
+        "round": 1,
+        "fragment": "hedge",
+        "ms": 683.3,
+        "n_candidates": 3,
+        "top": "lawnmower"
+      },
+      {
+        "round": 2,
+        "fragment": "name-from-context",
+        "ms": 865.5,
+        "n_candidates": 2,
+        "top": "Maria"
+      },
+      {
+        "round": 2,
+        "fragment": "concrete-object",
+        "ms": 687.7,
+        "n_candidates": 1,
+        "top": "toaster"
+      },
+      {
+        "round": 2,
+        "fragment": "place-from-fragment",
+        "ms": 695.1,
+        "n_candidates": 3,
+        "top": "Tokyo"
+      },
+      {
+        "round": 2,
+        "fragment": "hedge",
+        "ms": 745.4,
+        "n_candidates": 2,
+        "top": "lawnmower"
+      },
+      {
+        "round": 3,
+        "fragment": "name-from-context",
+        "ms": 677.1,
+        "n_candidates": 2,
+        "top": "Maria"
+      },
+      {
+        "round": 3,
+        "fragment": "concrete-object",
+        "ms": 691.3,
+        "n_candidates": 1,
+        "top": "toaster"
+      },
+      {
+        "round": 3,
+        "fragment": "place-from-fragment",
+        "ms": 786.8,
+        "n_candidates": 3,
+        "top": "Tokyo"
+      },
+      {
+        "round": 3,
+        "fragment": "hedge",
+        "ms": 691.4,
+        "n_candidates": 3,
+        "top": "lawnmower"
+      }
+    ]
+  }
+}

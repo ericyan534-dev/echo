@@ -1,0 +1,211 @@
+{
+  "cpu": {
+    "status": "OK",
+    "device": "cpu",
+    "dtype": "float32",
+    "model": "nyralabs/CrisperWhisper2.0_turbo",
+    "load_s": 1.8,
+    "vram_mb": null,
+    "n_clips": 12,
+    "rtf_median": 8.162,
+    "rtf_p90": 10.466,
+    "proc_s_median": 8.162,
+    "est_latency_4s_utterance_s": 32.65,
+    "rows": [
+      {
+        "clip": "Uh/00050.wav",
+        "audio_s": 1.0,
+        "proc_s": 10.653,
+        "rtf": 10.653,
+        "text": "[UH]"
+      },
+      {
+        "clip": "Uh/00063.wav",
+        "audio_s": 1.0,
+        "proc_s": 10.466,
+        "rtf": 10.466,
+        "text": "I mean,"
+      },
+      {
+        "clip": "Uh/00097.wav",
+        "audio_s": 1.0,
+        "proc_s": 8.543,
+        "rtf": 8.543,
+        "text": "about"
+      },
+      {
+        "clip": "Uh/00103.wav",
+        "audio_s": 1.0,
+        "proc_s": 8.26,
+        "rtf": 8.26,
+        "text": "[UH]"
+      },
+      {
+        "clip": "Um/00025.wav",
+        "audio_s": 1.0,
+        "proc_s": 8.157,
+        "rtf": 8.157,
+        "text": "[UM]"
+      },
+      {
+        "clip": "Um/00032.wav",
+        "audio_s": 1.0,
+        "proc_s": 8.216,
+        "rtf": 8.216,
+        "text": "It's important."
+      },
+      {
+        "clip": "Um/00066.wav",
+        "audio_s": 1.0,
+        "proc_s": 7.602,
+        "rtf": 7.602,
+        "text": "ribbon"
+      },
+      {
+        "clip": "Um/00108.wav",
+        "audio_s": 1.0,
+        "proc_s": 8.167,
+        "rtf": 8.167,
+        "text": "And"
+      },
+      {
+        "clip": "Words/00012.wav",
+        "audio_s": 1.0,
+        "proc_s": 7.965,
+        "rtf": 7.965,
+        "text": "I think a four thirty three."
+      },
+      {
+        "clip": "Words/00210.wav",
+        "audio_s": 1.0,
+        "proc_s": 7.96,
+        "rtf": 7.96,
+        "text": "Yeah."
+      },
+      {
+        "clip": "Words/00214.wav",
+        "audio_s": 1.0,
+        "proc_s": 7.991,
+        "rtf": 7.991,
+        "text": "Yeah."
+      },
+      {
+        "clip": "Words/00235.wav",
+        "audio_s": 1.0,
+        "proc_s": 7.781,
+        "rtf": 7.781,
+        "text": "Yeah."
+      }
+    ]
+  },
+  "cuda": {
+    "status": "OK",
+    "device": "cuda",
+    "dtype": "float16",
+    "model": "nyralabs/CrisperWhisper2.0_turbo",
+    "load_s": 1.6,
+    "vram_mb": 1619,
+    "n_clips": 12,
+    "rtf_median": 0.127,
+    "rtf_p90": 0.162,
+    "proc_s_median": 0.127,
+    "est_latency_4s_utterance_s": 0.51,
+    "rows": [
+      {
+        "clip": "Uh/00050.wav",
+        "audio_s": 1.0,
+        "proc_s": 1.638,
+        "rtf": 1.638,
+        "text": "[UH]"
+      },
+      {
+        "clip": "Uh/00063.wav",
+        "audio_s": 1.0,
+        "proc_s": 0.13,
+        "rtf": 0.13,
+        "text": "I mean,"
+      },
+      {
+        "clip": "Uh/00097.wav",
+        "audio_s": 1.0,
+        "proc_s": 0.127,
+        "rtf": 0.127,
+        "text": "about"
+      },
+      {
+        "clip": "Uh/00103.wav",
+        "audio_s": 1.0,
+        "proc_s": 0.127,
+        "rtf": 0.127,
+        "text": "[UH]"
+      },
+      {
+        "clip": "Um/00025.wav",
+        "audio_s": 1.0,
+        "proc_s": 0.122,
+        "rtf": 0.122,
+        "text": "[UM]"
+      },
+      {
+        "clip": "Um/00032.wav",
+        "audio_s": 1.0,
+        "proc_s": 0.143,
+        "rtf": 0.143,
+        "text": "It's important."
+      },
+      {
+        "clip": "Um/00066.wav",
+        "audio_s": 1.0,
+        "proc_s": 0.119,
+        "rtf": 0.119,
+        "text": "ribbon"
+      },
+      {
+        "clip": "Um/00108.wav",
+        "audio_s": 1.0,
+        "proc_s": 0.118,
+        "rtf": 0.118,
+        "text": "And"
+      },
+      {
+        "clip": "Words/00012.wav",
+        "audio_s": 1.0,
+        "proc_s": 0.162,
+        "rtf": 0.162,
+        "text": "I think a four thirty three."
+      },
+      {
+        "clip": "Words/00210.wav",
+        "audio_s": 1.0,
+        "proc_s": 0.127,
+        "rtf": 0.127,
+        "text": "Yeah."
+      },
+      {
+        "clip": "Words/00214.wav",
+        "audio_s": 1.0,
+        "proc_s": 0.126,
+        "rtf": 0.126,
+        "text": "Yeah."
+      },
+      {
+        "clip": "Words/00235.wav",
+        "audio_s": 1.0,
+        "proc_s": 0.127,
+        "rtf": 0.127,
+        "text": "Yeah."
+      }
+    ]
+  },
+  "coresident": {
+    "status": "OK",
+    "note": "CrisperWhisper fp16 + Qwen3.8-27B Q4_K_M at -ngl 48, both on GPU. Measured, not estimated.",
+    "vram_both_mib": 15682,
+    "vram_total_mib": 16376,
+    "asr_median_ms": 128,
+    "asr_rtf": 0.13,
+    "llm_median_ms": 6947,
+    "llm_median_ms_at_ngl56_alone": 3885,
+    "verdict": "Co-residency works but costs the LLM 78% more latency (3885 -> 6947 ms) because 8 layers move to CPU. Total stall->word would be ~7.4 s against a ~1.5-2 s budget. ASR is unaffected (RTF 0.13)."
+  }
+}

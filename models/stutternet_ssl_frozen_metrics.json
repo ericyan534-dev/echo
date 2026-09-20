@@ -1,0 +1,371 @@
+{
+  "checkpoint": "stutternet_ssl_frozen.pt",
+  "encoder": "microsoft/wavlm-base-plus",
+  "unfreeze_top_n": 0,
+  "params_total": 95564930,
+  "params_trainable": 1182994,
+  "frame_ms": 20,
+  "split": "episode-disjoint (host leakage measured: mean gap Block +0.003, ANY -0.004)",
+  "holdout_show": null,
+  "n_train": 14619,
+  "n_val": 2296,
+  "n_test": 3209,
+  "hparams": {
+    "epochs": 8,
+    "batch": 32,
+    "lr": 0.001,
+    "enc_lr": null,
+    "dropout": 0.3,
+    "hidden": 256,
+    "mask_time_prob": 0.0,
+    "amp_bf16": true
+  },
+  "history": [
+    {
+      "epoch": 1,
+      "train_loss": 0.932,
+      "val_mAP": 0.5127,
+      "val_Block_AP": 0.245
+    },
+    {
+      "epoch": 2,
+      "train_loss": 0.7678,
+      "val_mAP": 0.5603,
+      "val_Block_AP": 0.2619
+    },
+    {
+      "epoch": 3,
+      "train_loss": 0.7238,
+      "val_mAP": 0.5611,
+      "val_Block_AP": 0.2782
+    },
+    {
+      "epoch": 4,
+      "train_loss": 0.6843,
+      "val_mAP": 0.5553,
+      "val_Block_AP": 0.2856
+    },
+    {
+      "epoch": 5,
+      "train_loss": 0.651,
+      "val_mAP": 0.5822,
+      "val_Block_AP": 0.2978
+    },
+    {
+      "epoch": 6,
+      "train_loss": 0.6136,
+      "val_mAP": 0.5823,
+      "val_Block_AP": 0.2993
+    },
+    {
+      "epoch": 7,
+      "train_loss": 0.5816,
+      "val_mAP": 0.5814,
+      "val_Block_AP": 0.297
+    },
+    {
+      "epoch": 8,
+      "train_loss": 0.5643,
+      "val_mAP": 0.5823,
+      "val_Block_AP": 0.2976
+    }
+  ],
+  "layer_weights": [
+    0.0588,
+    0.0609,
+    0.0567,
+    0.0454,
+    0.0199,
+    0.0122,
+    0.0073,
+    0.0721,
+    0.3403,
+    0.1341,
+    0.1574,
+    0.0257,
+    0.0092
+  ],
+  "val": {
+    "Block": {
+      "n_pos": 273,
+      "prevalence": 0.1189,
+      "ap": 0.2993,
+      "f1": 0.373,
+      "precision": 0.2919,
+      "recall": 0.5165,
+      "threshold": 0.618,
+      "ap_lift_over_chance": 2.52
+    },
+    "Prolongation": {
+      "n_pos": 257,
+      "prevalence": 0.1119,
+      "ap": 0.512,
+      "f1": 0.5074,
+      "precision": 0.4841,
+      "recall": 0.5331,
+      "threshold": 0.8386,
+      "ap_lift_over_chance": 4.57
+    },
+    "SoundRep": {
+      "n_pos": 165,
+      "prevalence": 0.0719,
+      "ap": 0.4318,
+      "f1": 0.4837,
+      "precision": 0.3925,
+      "recall": 0.6303,
+      "threshold": 0.8164,
+      "ap_lift_over_chance": 6.01
+    },
+    "WordRep": {
+      "n_pos": 283,
+      "prevalence": 0.1233,
+      "ap": 0.7588,
+      "f1": 0.7439,
+      "precision": 0.7288,
+      "recall": 0.7597,
+      "threshold": 0.8492,
+      "ap_lift_over_chance": 6.16
+    },
+    "Interjection": {
+      "n_pos": 662,
+      "prevalence": 0.2883,
+      "ap": 0.9097,
+      "f1": 0.8669,
+      "precision": 0.8493,
+      "recall": 0.8852,
+      "threshold": 0.8102,
+      "ap_lift_over_chance": 3.16
+    },
+    "ANY": {
+      "n_pos": 1284,
+      "prevalence": 0.5592,
+      "ap": 0.9085,
+      "f1": 0.8259,
+      "precision": 0.7985,
+      "recall": 0.8551,
+      "threshold": 0.767
+    }
+  },
+  "test": {
+    "Block": {
+      "n_pos": 440,
+      "prevalence": 0.1371,
+      "ap": 0.3464,
+      "f1": 0.4262,
+      "precision": 0.3488,
+      "recall": 0.5477,
+      "threshold": 0.6434,
+      "ap_lift_over_chance": 2.53
+    },
+    "Prolongation": {
+      "n_pos": 315,
+      "prevalence": 0.0982,
+      "ap": 0.5616,
+      "f1": 0.5414,
+      "precision": 0.4792,
+      "recall": 0.6222,
+      "threshold": 0.8182,
+      "ap_lift_over_chance": 5.72
+    },
+    "SoundRep": {
+      "n_pos": 277,
+      "prevalence": 0.0863,
+      "ap": 0.5194,
+      "f1": 0.5372,
+      "precision": 0.4868,
+      "recall": 0.5993,
+      "threshold": 0.8282,
+      "ap_lift_over_chance": 6.02
+    },
+    "WordRep": {
+      "n_pos": 386,
+      "prevalence": 0.1203,
+      "ap": 0.7219,
+      "f1": 0.7176,
+      "precision": 0.6847,
+      "recall": 0.7539,
+      "threshold": 0.7905,
+      "ap_lift_over_chance": 6.0
+    },
+    "Interjection": {
+      "n_pos": 744,
+      "prevalence": 0.2318,
+      "ap": 0.8591,
+      "f1": 0.8316,
+      "precision": 0.7784,
+      "recall": 0.8925,
+      "threshold": 0.7546,
+      "ap_lift_over_chance": 3.71
+    },
+    "ANY": {
+      "n_pos": 1769,
+      "prevalence": 0.5513,
+      "ap": 0.8832,
+      "f1": 0.829,
+      "precision": 0.7652,
+      "recall": 0.9045,
+      "threshold": 0.6847
+    }
+  },
+  "thresholds": {
+    "Block": 0.618,
+    "Prolongation": 0.8386,
+    "SoundRep": 0.8164,
+    "WordRep": 0.8492,
+    "Interjection": 0.8102,
+    "ANY": 0.767
+  },
+  "frame_thresholds": {
+    "Block": 0.880797,
+    "Prolongation": 0.880797,
+    "SoundRep": 0.880797,
+    "WordRep": 0.880797,
+    "Interjection": 0.880797
+  },
+  "frame_calibration_detail": {
+    "Block": {
+      "temperature": 6.6425,
+      "threshold": 0.880797,
+      "logit_threshold": 13.285,
+      "n_clean": 1012,
+      "n_pos": 273,
+      "recall_at_threshold": 0.0952,
+      "clean_fire_rate": 0.0208,
+      "clean_peak_logit_median": 0.66,
+      "pos_peak_logit_median": 5.81
+    },
+    "Prolongation": {
+      "temperature": 9.0625,
+      "threshold": 0.880797,
+      "logit_threshold": 18.125,
+      "n_clean": 1012,
+      "n_pos": 257,
+      "recall_at_threshold": 0.3658,
+      "clean_fire_rate": 0.0217,
+      "clean_peak_logit_median": -2.03,
+      "pos_peak_logit_median": 13.88
+    },
+    "SoundRep": {
+      "temperature": 14.0212,
+      "threshold": 0.880797,
+      "logit_threshold": 28.0425,
+      "n_clean": 1012,
+      "n_pos": 165,
+      "recall_at_threshold": 0.3212,
+      "clean_fire_rate": 0.0208,
+      "clean_peak_logit_median": -2.55,
+      "pos_peak_logit_median": 18.62
+    },
+    "WordRep": {
+      "temperature": 7.3794,
+      "threshold": 0.880797,
+      "logit_threshold": 14.7587,
+      "n_clean": 1012,
+      "n_pos": 283,
+      "recall_at_threshold": 0.6608,
+      "clean_fire_rate": 0.0208,
+      "clean_peak_logit_median": -3.78,
+      "pos_peak_logit_median": 21.5
+    },
+    "Interjection": {
+      "temperature": 6.6875,
+      "threshold": 0.880797,
+      "logit_threshold": 13.375,
+      "n_clean": 1012,
+      "n_pos": 662,
+      "recall_at_threshold": 0.7341,
+      "clean_fire_rate": 0.0217,
+      "clean_peak_logit_median": -4.22,
+      "pos_peak_logit_median": 21.88
+    }
+  },
+  "inference_cost_ms": {
+    "cuda_batch1_ms": 9.54,
+    "cuda_batch32_ms_per_clip": 4.63,
+    "cpu_batch1_ms": 104.69,
+    "cpu_1thread_batch1_ms": 359.54,
+    "cpu_threads_default": 24
+  },
+  "baseline": "models/stutternet_metrics.json (log-mel CNN, same splits)",
+  "provenance": "SEP-28k reconstructed from Apple's official labels; 258/385 episodes recovered, 3 shows lost to link rot. NOT comparable to published SEP-28k numbers (different corpus).",
+  "caveat": "Stuttered speech, not aphasic speech. Transfers because the surface evidence overlaps; it is not an aphasia measurement. Thresholds and epoch selection are fitted on VAL only.",
+  "frame_temperature": {
+    "Block": 6.6425,
+    "Prolongation": 9.0625,
+    "SoundRep": 14.0212,
+    "WordRep": 7.3794,
+    "Interjection": 6.6875
+  },
+  "selection": "ablation: encoder fully frozen. Selected AGAINST on VAL mAP (0.5823 vs 0.5962).",
+  "bootstrap_vs_baseline": {
+    "method": "2000 paired bootstrap resamples of the 3209 TEST clips; both models scored on identical clips. delta = SSL AP - StutterNet AP.",
+    "per_type": {
+      "Block": {
+        "ap_cnn": 0.2556,
+        "ap_ssl": 0.3474,
+        "delta": 0.0917,
+        "delta_ci95": [
+          0.0535,
+          0.1299
+        ],
+        "p_ssl_worse": 0.0,
+        "n_pos": 440
+      },
+      "Prolongation": {
+        "ap_cnn": 0.4845,
+        "ap_ssl": 0.5602,
+        "delta": 0.0757,
+        "delta_ci95": [
+          0.0298,
+          0.1189
+        ],
+        "p_ssl_worse": 0.0,
+        "n_pos": 315
+      },
+      "SoundRep": {
+        "ap_cnn": 0.3064,
+        "ap_ssl": 0.5195,
+        "delta": 0.2131,
+        "delta_ci95": [
+          0.158,
+          0.2716
+        ],
+        "p_ssl_worse": 0.0,
+        "n_pos": 277
+      },
+      "WordRep": {
+        "ap_cnn": 0.2538,
+        "ap_ssl": 0.7206,
+        "delta": 0.4668,
+        "delta_ci95": [
+          0.4119,
+          0.5191
+        ],
+        "p_ssl_worse": 0.0,
+        "n_pos": 386
+      },
+      "Interjection": {
+        "ap_cnn": 0.7344,
+        "ap_ssl": 0.8595,
+        "delta": 0.1251,
+        "delta_ci95": [
+          0.0959,
+          0.1539
+        ],
+        "p_ssl_worse": 0.0,
+        "n_pos": 744
+      },
+      "ANY": {
+        "ap_cnn": 0.786,
+        "ap_ssl": 0.8837,
+        "delta": 0.0976,
+        "delta_ci95": [
+          0.0817,
+          0.1136
+        ],
+        "p_ssl_worse": 0.0,
+        "n_pos": 1769
+      }
+    }
+  }
+}

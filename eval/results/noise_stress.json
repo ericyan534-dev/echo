@@ -1,0 +1,119 @@
+{
+  "status": "ok",
+  "sample": {
+    "n": 300,
+    "class_balance": {
+      "uh": 89,
+      "um": 83,
+      "speech": 65,
+      "other": 63
+    },
+    "note": "items drawn via scripts/train_filler.py:scan_split(['test'], limit=n) -- identical code path and shuffle (random.Random(13)) as the training-time test scan, sliced to n for runtime. class_balance (uh/um/speech/other counts) is reported so the clean-condition F1's comparability to the full-test-split 0.933 anchor is auditable, not asserted.",
+    "interferer_assignment_seed": 13
+  },
+  "interferer": {
+    "source": "PFSD TEST-split 'Music' clips (real recorded music, an ambient-noise proxy for a demo hall; zero new downloads, fully reproducible)",
+    "pool_size": 822,
+    "assignment": "one Music clip pre-assigned per eval item via numpy default_rng(seed), reused unchanged across all SNR levels so only the mix level differs between conditions -- isolates the SNR variable from interferer-instance variance"
+  },
+  "snr_definition": "target_noise_rms = rms(signal) / 10**(snr_db/20); interferer scaled to that RMS then added; mix clipped to [-1, 1] (clipping incidence reported per condition below; 'clean' is the unmixed signal, never clipped)",
+  "operating_point_conf_thresh": 0.75,
+  "clipped_mixes": {
+    "clean": 0,
+    "15dB": 1,
+    "10dB": 3,
+    "5dB": 14
+  },
+  "conditions": {
+    "clean": {
+      "standard": {
+        "precision": 0.9405,
+        "recall": 0.9186,
+        "f1": 0.9294,
+        "tp": 158,
+        "fp": 10,
+        "fn": 14,
+        "tn": 118
+      },
+      "operating_point": {
+        "precision": 0.9732,
+        "recall": 0.843,
+        "f1": 0.9034,
+        "tp": 145,
+        "fp": 4,
+        "fn": 27,
+        "tn": 124
+      },
+      "n": 300,
+      "n_filler_true": 172
+    },
+    "15dB": {
+      "standard": {
+        "precision": 0.9597,
+        "recall": 0.8314,
+        "f1": 0.891,
+        "tp": 143,
+        "fp": 6,
+        "fn": 29,
+        "tn": 122
+      },
+      "operating_point": {
+        "precision": 0.9921,
+        "recall": 0.7326,
+        "f1": 0.8428,
+        "tp": 126,
+        "fp": 1,
+        "fn": 46,
+        "tn": 127
+      },
+      "n": 300,
+      "n_filler_true": 172
+    },
+    "10dB": {
+      "standard": {
+        "precision": 0.9843,
+        "recall": 0.7267,
+        "f1": 0.8361,
+        "tp": 125,
+        "fp": 2,
+        "fn": 47,
+        "tn": 126
+      },
+      "operating_point": {
+        "precision": 1.0,
+        "recall": 0.5814,
+        "f1": 0.7353,
+        "tp": 100,
+        "fp": 0,
+        "fn": 72,
+        "tn": 128
+      },
+      "n": 300,
+      "n_filler_true": 172
+    },
+    "5dB": {
+      "standard": {
+        "precision": 0.989,
+        "recall": 0.5233,
+        "f1": 0.6844,
+        "tp": 90,
+        "fp": 1,
+        "fn": 82,
+        "tn": 127
+      },
+      "operating_point": {
+        "precision": 1.0,
+        "recall": 0.3314,
+        "f1": 0.4978,
+        "tp": 57,
+        "fp": 0,
+        "fn": 115,
+        "tn": 128
+      },
+      "n": 300,
+      "n_filler_true": 172
+    }
+  },
+  "clean_sanity_anchor": "docs/EVAL.md Table 1 reports binary filler F1=0.933 on the FULL ~9.4k-clip test split (scripts/train_filler.py evaluate()); this script's 'clean'/'standard' row uses the identical decision rule on a random n=300 subset of that same split, so it should land close to 0.933 within sampling noise, not reproduce it exactly.",
+  "caveat": "measures the FillerNet CLASSIFIER IN ISOLATION on fixed 1.0 s clips. The live AcousticStream pipeline additionally applies a Silero VAD gate, a >=800 ms accumulated-voiced-time gate, and a 1200 ms per-kind refractory (backend/acoustic/stream.py) that may mitigate noise-induced misses in practice -- that mitigation is NOT measured here, only named as an open question."
+}

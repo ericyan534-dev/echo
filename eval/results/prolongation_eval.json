@@ -1,0 +1,41 @@
+{
+  "thresholds": {
+    "sim_thresh": 0.94,
+    "min_ms": 600,
+    "energy_floor": 0.005
+  },
+  "detection": {
+    "status": "ok",
+    "construction": "palindrome-looped real vowel frames -- natural jitter, no wrap discontinuity",
+    "n_source_clips": 40,
+    "scored": 40,
+    "skipped_quiet": 0,
+    "fired": 5,
+    "detection_rate": 0.125,
+    "note": "Voiced 50 ms frames of real Uh/Um clips palindrome-cycled to 1500 ms, so EVERY transition is between frames that were adjacent in the real clip (natural jitter, cos-sim ~0.95-0.98), with no wrap discontinuity and no sim=1.0 tiling. Still synthetic: PFSD has no labelled prolongations, and a conversational um/uh is not a deliberately held vowel; the self-recorded set (eval/record_protocol.md) is the ground-truth path. Tracker-level."
+  },
+  "false_fires_speech": {
+    "status": "ok",
+    "running_speech_seconds": 120.0,
+    "n_clips_concatenated": 120,
+    "false_fires": 0,
+    "false_fire_rate_per_min": 0.0,
+    "note": "real PFSD 'Words' (lexical speech) concatenated into a continuous stream; running speech changes phones every ~100-150 ms, breaking the envelope-similarity streak, so expectation is ~0 fires"
+  },
+  "false_fires_music": {
+    "status": "ok",
+    "music_seconds": 120.0,
+    "n_clips_concatenated": 120,
+    "false_fires": 11,
+    "false_fire_rate_per_min": 5.5,
+    "note": "real PFSD 'Music' clips concatenated; music has near-static spectral envelopes -- the known false-fire hazard for the mel-envelope cosine rule. A non-zero false-fire rate here is expected and should be disclosed. The live AcousticStream applies a VAD gate (min_voiced_ms=800) which Music clips will not pass in the real path, limiting real-world exposure."
+  },
+  "stream_falsefire": {
+    "status": "ok",
+    "speech_seconds": 300.0,
+    "n_clips_concatenated": 300,
+    "filler_events": 29,
+    "filler_events_per_min": 5.8,
+    "note": "Full AcousticStream path: VAD gate + FillerNet + confidence gate (min_voiced_ms=800, conf_thresh=0.75), fed 20 ms chunks. Source: real PFSD 'Words' (lexical speech). Caveat: concatenating 1 s clips from many speakers inserts a speaker/segment boundary every second, which likely inflates the rate vs one continuous speaker; treat as a conservative upper bound."
+  }
+}

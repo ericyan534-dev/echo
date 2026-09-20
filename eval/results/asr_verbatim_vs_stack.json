@@ -1,0 +1,26 @@
+{
+  "status": "OK",
+  "model": "nyralabs/CrisperWhisper2.0_turbo (backend=transformers)",
+  "source": "SEP-28k annotated dysfluency events, 6 s window, n=50",
+  "metric": "dysfluency preserved in transcript = explicit filler token OR discourse filler OR immediate word/phrase repetition OR cut-off ('w-'). Apple's Interjection spec allows PERSON-SPECIFIC fillers, so any lexical rule is a lower bound.",
+  "crisperwhisper_verbatim": 0.9,
+  "crisperwhisper_intended": 0.06,
+  "chrome_current_stack": 0.0,
+  "chrome_source": "eval/results/stall_eval.json transcript_baseline, n=5044",
+  "verbatim_latency_ms_median": 316,
+  "audio_s": 6,
+  "rtf": 0.053,
+  "vendor_benchmark_disfluency_f1": {
+    "CrisperWhisper2.0": 87.8,
+    "CrisperWhisper2.0_Pro": 93.5,
+    "ElevenLabs_Scribe_v2": 79.2,
+    "Deepgram_Nova3": 37.8,
+    "AssemblyAI_Universal3_Pro": 30.5
+  },
+  "license": "nyra-health-non-commercial-research -- NOT usable in a commercial product without a licence",
+  "caveats": [
+    "Vendor-reported F1 numbers are the vendor's own benchmark, not reproduced here.",
+    "The ct2 backend requires a nyra fork of ctranslate2; stock ctranslate2 4.8.1 lacks required APIs on Windows. backend='transformers' works.",
+    "Earlier figures of 0.217 and 0.24 in this session were measurement bugs: a uh/um-only regex, and never selecting verbatim mode."
+  ]
+}
