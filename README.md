@@ -175,16 +175,3 @@ entry points:
 Also: [`eval/record_protocol.md`](eval/record_protocol.md) (self-recorded
 eval-set protocol, not yet recorded).
 
-## Known gaps (deliberate)
-
-- StutterNet trains on stuttered podcast speech (SEP-28k), not aphasia.
-  Evaluation on real aphasic speech runs against **APROCSA** (6 speakers,
-  clinician CHAT coding — `eval/run_aphasia_eval.py`); AphasiaBank itself remains
-  membership-gated. See `docs/DATA_PROVENANCE.md`.
-- CrisperWhisper ships under `nyra-health-non-commercial-research`. Research and
-  evaluation are covered; a product needs a licence from nyra labs.
-- Server-side streaming STT (Deepgram) is an interface + skeleton; browser STT is
-  the demo path.
-- On-device predictor (EchoLM) is Phase 3 — recipe validated, drops in behind
-  `WordPredictor` with zero refactor.
-- Prototype, not a medical device.
